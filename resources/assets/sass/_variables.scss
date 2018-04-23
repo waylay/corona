@@ -1,0 +1,40 @@
+
+// Colors
+$brand-primary: #0c2440;
+$brand-secondary: #ffb819;
+$brand-danger: #ff0000;
+
+
+// Typography
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$font-family-sans-serif: 'Helvetica Neue Condensed Bold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-base: 18px;
+$line-height-base: 1.5;
+$headings-line-height: 1.2;
+$headings-font-weight: 400;
+$text-color: $brand-primary;
+$headings-color: $brand-primary;
+$state-danger-text: $brand-danger;
+
+// Buttons
+$btn-default-color: $text-color;
+$btn-primary-color: $text-color;
+$btn-border-radius-base: 0;
+$btn-border-radius-large: 0;
+
+// Links
+$link-color: $text-color;
+$link-hover-color: $brand-secondary;
+$link-hover-decoration: none;
+
+// Inputs
+$input-color: $brand-primary;
+$input-border: $brand-primary;
+$input-border-size: 2px;
+$input-border-radius: 0;
+$input-border-focus: $brand-primary;
+$input-height-base: 70px;
+$input-color-placeholder: $brand-primary;
+
+// Panels
+
