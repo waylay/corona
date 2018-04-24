@@ -11,19 +11,20 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class NewEntry extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
-	/**
-	 * @var Entry
-	 */
-	private $entry;
+    /**
+     * @var Entry
+     */
+    private $entry;
 
-	/**
-	 * Create a new message instance.
-	 *
-	 * @param Entry $entry
-	 */
+    /**
+     * Create a new message instance.
+     *
+     * @param Entry $entry
+     */
     public function __construct(Entry $entry)
     {
-	    $this->entry = $entry;
+        $this->entry = $entry;
+        \App::setLocale($entry->language);
     }
 
     /**
@@ -34,8 +35,7 @@ class NewEntry extends Mailable implements ShouldQueue
     public function build()
     {
         return $this->markdown('emails.entry.new')->with([
-	        'name' => $this->entry->firstname.' '.$this->entry->lastname,
-	        'imei' => $this->entry->imei,
-        ])->subject('Claim your Motorola Offer');
+            'user'     => $this->entry
+        ])->subject(trans('email.subject'));
     }
 }

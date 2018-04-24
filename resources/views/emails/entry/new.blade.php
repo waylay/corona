@@ -1,15 +1,10 @@
 @component('mail::message')
-# Hello, {{ $name }}!
 
-We have received your request and we will contact you as soon as possible. Please check again if the IMEI # is correct.<br><br>
+# {{ trans('email.heading') }}
 
-<strong>IMEI #:</strong>{{ $imei }}<br><br><br>
+## {{ trans('email.text-1') }}
+## {{ trans('email.text-2') }}
 
-
-@component('mail::button', ['url' => config('app.url') ])
-Make a new request
+@component('mail::subcopy')
 @endcomponent
-
-Thanks,<br>
-{{ config('app.name') }}
 @endcomponent

@@ -27,7 +27,7 @@
 
 </head>
 
-<body {!! request()->is('signup') ? 'class="signup-page"' : '' !!}>
+<body class="{{ Route::currentRouteName() }}" >
     <div id="app">
 
         <div id="header">
@@ -37,6 +37,10 @@
                     <a href="/language/en" class="{{ (app()->getLocale() == 'en') ? 'active' : null  }}">En</a>
                     <span>|</span>
                     <a href="/language/fr" class="border-left-0 {{ (app()->getLocale() == 'fr') ? 'active' : null  }}">Fr</a>
+                    @if( request()->is('dashboard') )
+                    <span>|</span>
+                    <a href="{{ url('/logout') }}"> logout </a>
+                    @endif
                 </div> <!-- end .locale  -->
 
 

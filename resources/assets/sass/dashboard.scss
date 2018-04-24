@@ -16,10 +16,10 @@
 table.dataTable {
   margin: 10px auto;
   th {
-    font-size: 12px;
+    font-size: 15px;
   }
   td {
-    font-size: 12px;
+    font-size: 13px;
   }
   .dtr-title {
     font-weight: 600;
@@ -37,76 +37,15 @@ div.dt-button-info h2 {
   margin-bottom: 5px;
 }
 
-table.dataTable.display tbody tr {
-  cursor: pointer;
-}
-
 table.dataTable.display tbody tr.shown + tr:hover {
   background-color: #fff;
+}
+
+table.dataTable.compact tfoot th {
+  padding-left: 0 !important;
 }
 
 table.dataTable.display tfoot th.id-text-filter input{
   width: 30px;
 }
 
-
-
-.details {
-  display: none;
-  padding: 30px 20px;
-  font-size: 115%;
-  clear: both;
-  overflow: hidden;
-  background-color: #fff;
-  cursor: initial;
-  &:hover{
-    background-color: #fff;
-  }
-
-  input[type="checkbox"] {
-    margin: 0 2px 0 0;
-  }
-
-  label {
-    font-weight: 400;
-    display: block;
-    margin-bottom: 0;
-  }
-  
-  a {
-    text-decoration: underline;
-  }
-
-  textarea {
-    background-color: #fdfdfd;
-    border: 1px solid #ddd;
-  }
-
-  ul {
-    padding-left: 0;
-    list-style: none;
-    margin-top: 10px;
-    li {
-      margin-bottom: 10px;
-      > div {
-        background-color: #fafafa;
-        padding: 5px 10px;
-        margin-bottom: 0;
-        border-radius: 3px;
-        box-shadow: 0px 1px 2px 0px rgba(17, 17, 17, 0.14);
-        display: block;
-        white-space: pre-wrap;
-      }
-
-      em {
-        text-align: right;
-        display: block;
-        color: #666;
-        font-family: serif;
-        line-height: 1.1em;
-        padding: 3px 8px;
-        border-radius: 0 0 3px 3px;
-      }
-    }
-  }
-}

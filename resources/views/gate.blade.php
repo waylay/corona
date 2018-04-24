@@ -50,7 +50,7 @@
 
         <div class="form-group text-center">
             <div class="selectdiv">
-                <select class="form-control" id="province" name="province" data-msg-required="{{ trans('form.province-error') }}">
+                <select class="form-control" id="province" name="province" data-msg-required="{{ trans('form.province_required') }}">
                     <option value="">{{ trans('form.province') }}</option>
                     <option value="Alberta" @if(old('province') == 'Alberta') selected @endif >Alberta</option>
                     <option value="British Columbia" @if(old('province') == 'British Columbia') selected @endif >British Columbia</option>
@@ -67,7 +67,7 @@
                     <option value="Prince Edward Island" @if(old('province') == 'Prince Edward Island') selected @endif >Prince Edward Island</option>
                 </select>
                 @if ($errors->has('province'))
-                <span id="province-error" class="error form-text text-danger">{{ trans('form.province-error') }}</span>
+                <span id="province-error" class="error form-text text-danger">{{ trans('form.province_required') }}</span>
                 @endif
             </div>
         </div>

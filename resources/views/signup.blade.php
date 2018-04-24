@@ -15,7 +15,7 @@
     <h3>{{ trans('text.signup-text-1') }}</h3>
     <h3>{{ trans('text.signup-text-2') }}</h3>
 
-    <form class="signup" id="signup" action="/gate" method="POST" enctype="multipart/form-data" novalidate >
+    <form class="signup" id="signup" action="/process" method="POST" enctype="multipart/form-data" novalidate >
         {{ csrf_field() }}
 
         <p class="required-field">* {{ trans('form.required_field') }} </p>
@@ -68,24 +68,24 @@
 
         <div class="form-group">
             <div class="selectdiv">
-                <select class="form-control" id="province" name="province" data-msg-required="{{ trans('form.province-error') }}">
+                <select class="form-control" id="province" name="province" data-msg-required="{{ trans('form.province_required') }}">
                     <option value="">{{ trans('form.province') }}</option>
-                    <option value="Alberta" @if(old('province') == 'Alberta') selected @endif >Alberta</option>
-                    <option value="British Columbia" @if(old('province') == 'British Columbia') selected @endif >British Columbia</option>
-                    <option value="Manitoba" @if(old('province') == 'Manitoba') selected @endif >Manitoba</option>
-                    <option value="New Brunswick" @if(old('province') == 'New Brunswick') selected @endif >New Brunswick</option>
-                    <option value="Newfoundland and Labrador" @if(old('province') == 'Newfoundland and Labrador') selected @endif >Newfoundland and Labrador</option>
-                    <option value="Nova Scotia" @if(old('province') == 'Nova Scotia') selected @endif >Nova Scotia</option>
-                    <option value="Northwest Territories" @if(old('province') == 'Northwest Territories') selected @endif >Northwest Territories</option>
-                    <option value="Nunavut" @if(old('province') == 'Nunavut') selected @endif >Nunavut</option>
-                    <option value="Ontario" @if(old('province') == 'Ontario') selected @endif >Ontario</option>
-                    <option value="Quebec" @if(old('province') == 'Quebec') selected @endif >Quebec</option>
-                    <option value="Saskatchewan" @if(old('province') == 'Saskatchewan') selected @endif >Saskatchewan</option>
-                    <option value="Yukon" @if(old('province') == 'Yukon') selected @endif >Yukon</option>
-                    <option value="Prince Edward Island" @if(old('province') == 'Prince Edward Island') selected @endif >Prince Edward Island</option>
+                    <option value="Alberta" @if(session('province') == 'Alberta') selected @endif >Alberta</option>
+                    <option value="British Columbia" @if(session('province') == 'British Columbia') selected @endif >British Columbia</option>
+                    <option value="Manitoba" @if(session('province') == 'Manitoba') selected @endif >Manitoba</option>
+                    <option value="New Brunswick" @if(session('province') == 'New Brunswick') selected @endif >New Brunswick</option>
+                    <option value="Newfoundland and Labrador" @if(session('province') == 'Newfoundland and Labrador') selected @endif >Newfoundland and Labrador</option>
+                    <option value="Nova Scotia" @if(session('province') == 'Nova Scotia') selected @endif >Nova Scotia</option>
+                    <option value="Northwest Territories" @if(session('province') == 'Northwest Territories') selected @endif >Northwest Territories</option>
+                    <option value="Nunavut" @if(session('province') == 'Nunavut') selected @endif >Nunavut</option>
+                    <option value="Ontario" @if(session('province') == 'Ontario') selected @endif >Ontario</option>
+                    <option value="Quebec" @if(session('province') == 'Quebec') selected @endif >Quebec</option>
+                    <option value="Saskatchewan" @if(session('province') == 'Saskatchewan') selected @endif >Saskatchewan</option>
+                    <option value="Yukon" @if(session('province') == 'Yukon') selected @endif >Yukon</option>
+                    <option value="Prince Edward Island" @if(session('province') == 'Prince Edward Island') selected @endif >Prince Edward Island</option>
                 </select>
                 @if ($errors->has('province'))
-                <span id="province-error" class="error form-text text-danger">{{ trans('form.province-error') }}</span>
+                <span id="province-error" class="error text-danger">{{ trans('form.province-error') }}</span>
                 @endif
             </div>
         </div>
@@ -97,7 +97,7 @@
                 <p>* {{ trans('form.agree') }}<br><a href="{{ trans('text.privacy-policy-link') }}" target="_blank">{{ trans('text.privacy-policy') }}</a></p>
             </label>
             @if ($errors->has('agree'))
-                <span id="agree-error" class="error form-text text-danger">{{ trans('form.must_agree') }}</span>
+                <span id="agree-error" class="error text-danger">{{ trans('form.must_agree') }}</span>
             @endif
         </div>
 

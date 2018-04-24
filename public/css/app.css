@@ -8371,6 +8371,15 @@ body.signup-page {
   background-color: #000103;
 }
 
+body.dashboard {
+  background-image: none;
+  background-color: #000103;
+}
+
+body.dashboard #footer {
+  display: none;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -8402,6 +8411,28 @@ h3,
 h4 {
   text-transform: uppercase;
   text-align: center;
+}
+
+.panel {
+  margin-top: 70px;
+}
+
+.panel.panel-default {
+  margin-top: 30vh;
+  margin-bottom: 30vh;
+}
+
+.panel .form-control {
+  height: auto;
+}
+
+.panel button,
+.panel button:hover {
+  color: #FFF;
+}
+
+.container {
+  max-width: 100%;
 }
 
 .signup-page h1,
@@ -8808,6 +8839,11 @@ h4 {
 .signup .form-control.is-invalid:not(:focus):-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: #ff0000 !important;
+}
+
+.signup .is-valid + .error,
+.signup .error + .error {
+  display: none !important;
 }
 
 .signup button {

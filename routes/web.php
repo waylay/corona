@@ -11,11 +11,11 @@ Route::get('/language/{locale}', function ($locale) {
 /* Pages */
 Route::get('/', function () {
     return view('gate');
-});
+})->name('gate');;
 
 Route::get('/underage', function () {
     return view('underage');
-});
+})->name('underage');;
 
 Route::get('/thankyou', function () {
     return view('thankyou');
@@ -24,7 +24,7 @@ Route::get('/thankyou', function () {
 /* Process Date Gage */
 Route::post('/gate', 'EntryController@gate');
 
-Route::get('/signup', 'EntryController@signup')->name('signup');
+Route::get('/signup', 'EntryController@signup')->name('signup-page');
 
 /* Entry */
 Route::post('/process', 'EntryController@store');
@@ -49,7 +49,7 @@ Route::post('/api/entries/{entry}', 'EntryController@update')->middleware('auth'
 
 // Deployment fast migrate
 Route::get('/migrate', function () {
-    \Artisan::call('migrate', [
+    \Artisan::call('migrate:fresh', [
         '--force' => true,
     ]);
 
@@ -59,3 +59,9 @@ Route::get('/migrate', function () {
 
     dd('Done');
 })->middleware('auth');
+
+Route::get('/mail', function () {
+    $entry = App\Entry::find(2);
+
+    return new App\Mail\NewEntry($entry);
+});

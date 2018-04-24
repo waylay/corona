@@ -39,8 +39,8 @@ class EntryController extends Controller
         $hundred_years_ago     = (new Carbon('100 years ago'))->year;
 
         $validator             = Validator::make($request->all(), [
-            'month'    => 'required|integer|between:1,12',
-            'day'      => 'required|integer|between:1,31',
+            'month'    => 'required|digits_between:1,12',
+            'day'      => 'required|digits_between:1,31',
             'year'     => 'required|integer|digits:4|between:' . $hundred_years_ago . ',' . $current_year,
             'province' => 'required',
         ]);
@@ -83,29 +83,20 @@ class EntryController extends Controller
     public function store(Request $request)
     {
         $validEntry = $request->validate([
-            'firstname'  => 'required',
-            'lastname'   => 'required',
+            'firstname'  => 'required|alpha',
+            'lastname'   => 'required|alpha',
             'email'      => 'required|email',
-            'phone'      => 'required',
-            'address'    => 'required',
-            'address2'   => 'nullable',
-            'city'       => 'required',
             'province'   => 'required',
-            'postalcode' => [
-                'required',
-                'regex:/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ] ?\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i', // Canadian Postal Code
-            ],
-            'imei'                 => 'required|digits:15|unique:entries',
-            'purchased'            => 'required',
-            'receipt'              => 'required|mimes:jpeg,gif,png|max:10240',
-            'g-recaptcha-response' => 'required|captcha'
-        ], [
-            'imei.digits' => trans('form.valid_imei'),
-            'imei.unique' => trans('form.unique_imei'),
+            'agree'      => 'required'
         ]);
 
-        // Store the Language used when form was submitted
-        $validEntry['postalcode'] = strtoupper($validEntry['postalcode']);
+        unset($validEntry['agree']);
+
+        // Get the birthday from session
+        $validEntry['birthday'] = session('birthday');
+
+        // Get the province from session
+        $validEntry['province'] = session('province');
 
         // Store the Language used when form was submitted
         $validEntry['language'] = \App::getLocale();
@@ -113,8 +104,8 @@ class EntryController extends Controller
         // Store the entry
         $entry = Entry::forceCreate($validEntry);
 
-        // Queue an email confirmation
-        // Mail::to($entry->email)->send(new NewEntry($entry));
+        // Queue an email notification
+        Mail::to($entry->email)->send(new NewEntry($entry));
 
         // Done, redirect visitor to thank you page
         return redirect('/thankyou');
@@ -141,7 +132,7 @@ class EntryController extends Controller
      */
     private function isLegalDrinkingAge()
     {
-        $birthday = Carbon::parse(request('year') . '-' . request('month') . '-' . request('day'));
+        $birthday = Carbon::createFromFormat('Y-m-d', request('year') . '-' . request('month') . '-' . request('day'));
         $age      = intval($birthday->diff(Carbon::now())->format('%y'));
 
         $drinking_age = 19;
@@ -151,7 +142,7 @@ class EntryController extends Controller
 
         if ($age >= $drinking_age) {
             session([
-                'birthday'    => $birthday->format('m-d-Y'),
+                'birthday'    => $birthday,
                 'province'    => request('province')
             ]);
 

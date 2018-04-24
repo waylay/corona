@@ -10,7 +10,7 @@ return [
     |
     */
 
-    'site-title'                => 'Corola SUNSET Festival',
+    'site-title'                => 'Corola Sunsets Festival',
     'gate-age'                  => 'You must be of legal drinking age to enter this site.',
     'sorry'                     => 'Sorry',
     'underage'                  => 'Must be legal drinking age in province or territory of residence.',

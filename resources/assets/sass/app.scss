@@ -25,6 +25,13 @@ body {
     background: url('/images/background-signup.jpg') no-repeat top left;
     background-color: #000103;
   }
+  &.dashboard {
+    background-image: none;
+    background-color: #000103;
+    #footer {
+      display: none;
+    }
+  }
 }
 
 img {
@@ -58,6 +65,25 @@ img {
 h1,h2,h3,h4 {
   text-transform: uppercase;
   text-align: center;
+}
+
+
+.panel {
+  margin-top: 70px;
+  &.panel-default {
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+  }
+  .form-control {
+    height: auto;
+  }
+  button, button:hover {
+    color: #FFF;
+  }
+}
+
+.container {
+  max-width: 100%;
 }
 
 .signup-page {
@@ -445,6 +471,10 @@ h1,h2,h3,h4 {
       color: $brand-danger !important;
     }
     
+  }
+  .is-valid + .error,
+  .error + .error {
+    display: none !important;
   }
 
   button {
