@@ -1,44 +1,238 @@
-@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max){
-  h3 {
-    font-size: 19px;
+@media screen and (max-width: $screen-md-max){
+  .signup-form-wrapper h3 {
+    font-size: 33px;
   }
-  h4 {
-    font-size: 14px;
+  .connecting {
+    font-size: 30px;
   }
-}
-
-@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
-  h3 {
-    font-size: 22px;
-  }
-  h4 {
-    font-size: 16px;
+  .get-inspired {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 }
 
 @media screen and (max-width: $screen-xs-max){
+  body.signup-page {
+    background-position-x: 26%;
+    background-size: cover;
+  }
+  #header {
+    top: 10px;
+    right: 12px;
+  }
+  #content {
+    padding: 0 25px 50px;
+  }
+  .brand .logo {
+    max-width: 205px;
+    margin: 7vw auto 3vw;
+  }
+
+  .signup {
+    margin: 10px auto 0;
+
+    input, select {
+      font-size: 18px;
+    }    
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-control {
+      height: 38px;
+      padding: 0 5px;
+    }
+
+    .selectdiv {
+      select {
+        padding-right: 38px;
+        padding-left: 5px;
+      }
+      &::after{
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        font-size: 15px;
+      }
+    }
+
+    button {
+      width: 220px;
+      height: 52px;
+      font-size: 28px;
+    }
+
+  }
+
+  .gate-form-wrapper {
+    padding: 0 20px;
+
+    h1 {
+      font-size: 40px;
+      margin-top: 40px;
+    }
+
+    h2 {
+      font-size: 17px;
+    }
+
+    h2.legal-age {
+      margin-top: 4vw;
+      margin-bottom: 3vw;
+      font-size: 18px;
+      padding: 0 15px;
+    }
+
+    h3 {
+      font-size: 17px;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+
+    #month, #day{
+      width: 40px;
+      margin: 0 2px;
+    }
+    #year {
+      width: 60px;
+      margin: 0 2px;
+    }
+
+    .selectdiv {
+      margin-top: 0;
+      margin-bottom: 0;
+      max-width: 220px;
+    }
+
+    .error {
+      top: 40px;
+      font-size: 14px;
+    }
+
+    h2.thankyou {
+      margin-top: 0;
+      padding: 0 17px;
+    }
+
+    .thankyou-social {
+      margin-top: 30px;
+      img {
+        max-height: 50px;
+        width: auto;
+      }
+    }
+  }
+
+  .signup-form-wrapper {
+    h1 {
+
+    }
+    h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-size: 17px;
+      margin-bottom: 0;
+      margin-top: 20px;
+      &:first-of-type{
+        padding: 0 0;
+      }
+    }
+
+    form.signup {
+      padding-top: 20px;
+      font-size: 14px;
+
+      .form-group {
+        margin-bottom: 8px;
+      }
+
+      .form-control {
+        height: 38px;
+      }
+
+      input, select {
+        padding-left: 10px;
+      }
+
+      .selectdiv{
+        select option {
+          background-color: #283a52;
+        }
+      }
+
+      input:not(.is-invalid) {
+        margin-bottom: 12px;
+      }
+
+      label.form-check-label p {
+        font-size: 13px;
+      }
+
+      .error {
+        font-size: 13px;
+      }
+      
+    }
+
+  }
+
   
-  .locale {
-    background-color: transparent !important;
-    box-shadow: none !important;
-    .change-language, .admin-links{
-      clear: both;
+  .connecting {
+    font-size: 18px;
+  }
+  .get-inspired {
+    font-size: 16px;
+  }
+
+  body:not(.signup-page) {
+    #footer {
+      display: none;
     }
-    .admin-links {
-      margin-top: 15px;
+  }
+
+  #footer {
+    padding: 20px 30px;
+    background-color: $brand-primary;
+
+    hr {
+      display: none;
     }
+
+    .copy {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      a {
+        display: block;
+        flex: 1;
+        font-size: 15px;
+      }
+      p {
+        flex: 1;
+        align-self: flex-start;
+        order: 4;
+        font-size: 15px;
+        margin-top: 15px;
+      }
+    }
+    
+    
   }
-  h1, h3, h4 {
-    text-align: center;
-  }
-  h3 {
-    font-size: 20px;
-  }
-  h4 {
-    font-size: 14px;
-  }
+  
 
 }
-@media screen and (max-width: $screen-xs){
-
+@media screen and (max-width: 374px){
+  body:not(.signup-page) #content {
+    padding: 0 5px 20px;
+  }
+  .brand .logo {
+    margin: 9vw auto 3vw;
+  }
+  .gate-form-wrapper h2.legal-age {
+    font-size: 17px;
+  }
 }

@@ -10,9 +10,8 @@ window._ = require('lodash');
 try {
     window.$ = window.jQuery = require('jquery');
     require('bootstrap-sass');
-    require('./bootstrap-filestyle.min');
+    require('./jquery.fitvids.js');
     require('jquery-validation');
-    require('jquery-validation/dist/additional-methods');
 } catch (e) {}
 
 /**

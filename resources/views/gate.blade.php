@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="gate-form">
+<div class="gate-form-wrapper">
 
     <div class="brand">
         <div class="logo">
@@ -10,7 +10,8 @@
         </div>
     </div>
 
-    <h2>{!! trans('text.gate-age') !!} </h2>
+    
+    <h2 class="legal-age">{!! trans('text.gate-age') !!}</h2>
 
     <form class="signup" id="age" action="/gate" method="POST" enctype="multipart/form-data" novalidate >
         {{ csrf_field() }}
@@ -19,26 +20,26 @@
 
         <div class="form-group text-center">
 
-            <input type="text" class="form-control" maxlength="2"  id="month" name="month"
+            <input type="text" class="form-control {{ $errors->has('month') ? 'is-invalid' :'' }}" maxlength="2" tabindex="1" id="month" name="month"
                 value="{{ old('month') }}"
                 placeholder="{{ trans('form.month') }}"
                 data-msg-required="{{ trans('form.date-error') }}">
         
 
         
-            <input type="text" class="form-control" maxlength="2" id="day" name="day"
+            <input type="text" class="form-control {{ $errors->has('day') ? 'is-invalid' :'' }}" maxlength="2" id="day" name="day"
                 value="{{ old('day') }}"
                 placeholder="{{ trans('form.day') }}"
                 data-msg-required="{{ trans('form.date-error') }}">
         
         
         
-            <input type="text" class="form-control" maxlength="4"  id="year" name="year"
+            <input type="text" class="form-control {{ $errors->has('year') ? 'is-invalid' :'' }}" maxlength="4"  id="year" name="year"
                 value="{{ old('year') }}"
                 placeholder="{{ trans('form.year') }}"
                 data-msg-required="{{ trans('form.date-error') }}">
 
-            @if ($errors->has('date'))
+            @if ($errors->has('day') || $errors->has('month') || $errors->has('year') || $errors->has('date'))
             <span id="date-error" class="error text-danger">
                     {{ trans('form.date-error') }}
             </span>

@@ -21,6 +21,10 @@ body {
   background-size: cover;
   background-color: $brand-primary;
   overflow-y: scroll;
+  &.signup-page {
+    background: url('/images/background-signup.jpg') no-repeat top left;
+    background-color: #000103;
+  }
 }
 
 img {
@@ -48,34 +52,17 @@ img {
 
 #content {
   position: relative;
-  padding-bottom: 150px;
+  padding: 0 30px 50px;
 }
 
-h1,h2,h3 {
+h1,h2,h3,h4 {
   text-transform: uppercase;
   text-align: center;
 }
 
-.admin-link {
-  margin-right: 10px;
-}
-
-
-.form-check label {
-  font-weight: normal;
-  margin-left: 20px;
-  input {
-    margin-left: -20px;
-  }
-  a {
-    text-decoration: underline;
-    color: #fff;
-  }
-  span {
-    display: block;
-    margin-top: -24px;
-    color: #fff;
-    font-size: 12px;
+.signup-page {
+  h1,h2,h3,h4,p,a {
+    color: #FFF;
   }
 }
 
@@ -84,12 +71,11 @@ h1,h2,h3 {
   top: 36px;
   right: 32px;
   z-index: 2;
-  .locale, .admin-links {
+  .locale{
     text-transform: uppercase;
     font-size: 19px;
     a,span {
       color: #FFF;
-      text-decoration: none;
       padding: 0 2px;
       line-height: 1;
       &.active {
@@ -109,17 +95,31 @@ h1,h2,h3 {
 
 
 
-.gate-form {
+.gate-form-wrapper {
   max-width: 722px;
   min-height: 1079px;
-  padding: 0 100px;
+  padding: 0 60px;
   margin: 20px auto;
   background: url('/images/background-form-gate.png') no-repeat top left;
   background-attachment: scroll;
   background-size: contain;
 
-  h3 {
+  h1 {
+    font-size: 75px;
+    margin-top: 64px;
+  }
+  h2 {
     font-size: 35px;
+    &.legal-age{
+      font-size: 38px;
+      padding: 0 10px;
+    }
+    &.thankyou{
+      text-transform: initial;
+    }
+  }
+  h3 {
+    font-size: 31px;
   }
 
   #month, #day{
@@ -135,24 +135,213 @@ h1,h2,h3 {
     margin: 0 5px;
   }
 
+  input, select{
+    background-color: rgba(12, 36, 64, 0.1);
+  }
+
   .selectdiv {
     margin-top: 40px;
     margin-bottom: 40px;
+    max-width: 370px;
   }
 
   .error {
     position: absolute;
     text-align: center;
+    line-height: 1;
     width: 100%;
     left: 0;
     top: 80px;
     text-transform: uppercase;
   }
+
+  .thankyou-social {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    a{
+      margin: 0 20px;
+    }
+  }
 }
 
-form.signup {
 
-  margin-top: 20px;
+
+
+.signup-form-wrapper {
+  max-width: 750px;
+  margin: 20px auto;
+  color: #FFF;
+  h1 {
+    font-size: 45px;
+    color: #FFF;
+  }
+  h2 {
+    font-size: 37px;
+    color: $brand-secondary;
+    margin-top: 25px;
+    margin-bottom: 65px;
+    line-height: 1.1;
+  }
+  h3 {
+    line-height: 1.1;
+    font-size: 35px;
+    color: #FFF;
+    text-transform: initial;
+    &:first-of-type {
+      padding: 0 20px;
+    }
+  }
+
+  form.signup {
+    width: 100%;
+    max-width: 650px;
+    padding: 50px 10px 0;
+
+    .required-field {
+      text-transform: uppercase;
+      margin-left: -10px;
+    }
+
+    .form-control {
+      border: 2px solid #FFF;
+      color: #FFF;
+      &::-webkit-input-placeholder{
+        color: #FFF;
+      }
+      &::-moz-placeholder{
+        color: #FFF;
+      }
+      &:-moz-placeholder{
+        color: #FFF;
+      }
+    }
+  
+    input, select{
+      padding-left: 17px;
+      background-color: rgba(225, 225, 225, 0.1);
+      text-transform: uppercase;
+    }
+
+    input:not(.is-invalid) {
+      margin-bottom: 25px;
+    }
+
+    select:not(.is-invalid) {
+      margin-bottom: 6px;
+    }
+    
+    .selectdiv {
+      select {
+        option {
+          background-color: rgb(98, 98, 105);
+          font-size: 90%;  
+        }
+      }
+
+      &::after {
+        border-left: 2px solid #FFF;
+        background-color: rgba(225, 225, 225, 0.25);
+      }
+    }
+
+
+    label.form-check-label {
+      p {
+        float: right;
+        width: calc(100% - 40px);
+        font-size: 25px;
+        cursor: pointer;
+        a {
+          color: #FFF;
+          text-decoration: underline;
+        }
+      }
+      .is-invalid + span + p{
+        color: $brand-danger;
+        a{
+          color: $brand-danger;
+        }
+      }
+    }
+
+    
+    /* Hide the browser's default checkbox */
+    .form-check-input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: rgba(225, 225, 225, 0.1);
+      border: 2px solid #FFF;
+    }
+
+    .is-invalid + .checkmark {
+      border: 2px solid $brand-danger;
+      background-color: rgba(255, 0, 0, 0.25);
+    }
+
+    /* On mouse-over, add a grey background color */
+    .form-check-label:hover input ~ .checkmark {
+      background-color: rgba(225, 225, 225, 0.2);
+    }
+
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .form-check-input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .form-check-label .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    button {
+      background: url('/images/button-signup.png') no-repeat top left;
+      background-size: contain;
+      color: $brand-primary;
+      &:hover{
+        color: #FFF;
+      }
+    }
+
+    .error {
+      display: block;
+      margin-top: 5px;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+  }  
+}
+
+
+.signup {
+
+  margin: 20px auto 0;
   overflow: hidden;
 
   .form-group {
@@ -170,12 +359,11 @@ form.signup {
     font-size: 35px;
     text-transform: uppercase;
     border-width: 2px;
-    background-color: rgba(12, 36, 64, 0.1);
   }
 
   .selectdiv {
     position: relative;
-    width: 370px;
+    width: 100%;
     display: inline-block;
   }
    
@@ -197,14 +385,14 @@ form.signup {
     background-color: rgba(12, 36, 64, 0.25);
     position: absolute;
     pointer-events: none;
+    text-align: center;
   }
   .selectdiv.is-invalid:after {
-    border-left: 2px solid $brand-danger;
+    border-left: 2px solid $brand-danger !important;
     background-color: rgba(255, 0, 0, 0.25);
     color: $brand-danger;
   }
 
-  
    
   .selectdiv select {
     -webkit-appearance: none;
@@ -214,27 +402,19 @@ form.signup {
     
     display: block;
     width: 100%;
-    padding-right: 70px;
+    padding-right: 68px;
+    padding-left: 20px;
     background-color: rgba(12, 36, 64, 0.1);
     background-image: none;
     -ms-word-break: normal;
     word-break: normal;
+
+    option {
+      background-color: rgba(12, 36, 64, 0.15);
+      font-size: 70%;
+    }
   }
   
-
-
-  ::-webkit-input-placeholder { /* WebKit browsers */
-    text-transform: none;
-  }
-  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    text-transform: none;
-  }
-  ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    text-transform: none;
-  }
-  :-ms-input-placeholder { /* Internet Explorer 10+ */
-    text-transform: none;
-  }
 
   input:focus::-webkit-input-placeholder{
     color: transparent!important;
@@ -248,20 +428,20 @@ form.signup {
 
 
   .form-control.is-invalid {
-    border-color: $brand-danger;
-    background-color: rgba(255,0,0,0.1);
-    color: $brand-danger;
+    border-color: $brand-danger !important;
+    background-color: rgba(255,0,0,0.1) !important;
+    color: $brand-danger !important;
 
-    &::-webkit-input-placeholder { /* WebKit browsers */
+    &:not(:focus)::-webkit-input-placeholder { /* WebKit browsers */
       color: $brand-danger !important;
     }
-    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    &:not(:focus):-moz-placeholder { /* Mozilla Firefox 4 to 18 */
       color: $brand-danger !important;
     }
-    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    &:not(:focus)::-moz-placeholder { /* Mozilla Firefox 19+ */
       color: $brand-danger !important;
     }
-    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+    &:not(:focus):-ms-input-placeholder { /* Internet Explorer 10+ */
       color: $brand-danger !important;
     }
     
@@ -269,6 +449,7 @@ form.signup {
 
   button {
     width: 381px;
+    max-width: 100%;
     height: 89px;
     margin: 20px auto;
     display: block;
@@ -323,6 +504,25 @@ form.signup {
       height: 30px;
     }
   }
+}
+
+.connecting {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.get-inspired {
+  text-transform: initial;
+  margin-bottom: 40px;
+}
+
+#video-wrapper {
+  width: 1500px;
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 // Responsive

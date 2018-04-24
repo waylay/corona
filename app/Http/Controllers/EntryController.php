@@ -4,28 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Entry;
 use App\Mail\NewEntry;
-use App\Note;
+use Validator;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
 
 class EntryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display all the entries
      *
-     * @return \Illuminate\Http\Response
+     * @return Illuminate\Support\Collection $data
      */
     public function index()
     {
         //
         $data = [
-            'data' => Entry::with(['notes' => function ($query) {
-                $query->latest();
-            }, 'notes.user'])->get()
+            'data' => Entry::all()
         ];
 
         return $data;
@@ -35,11 +31,47 @@ class EntryController extends Controller
      * Check for legal drinking age.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function gate(Request $request)
     {
-        //
+        // Only allow dates in the last 100 years range
+        $current_year          = Carbon::now()->year;
+        $hundred_years_ago     = (new Carbon('100 years ago'))->year;
+
+        $validator             = Validator::make($request->all(), [
+            'month'    => 'required|integer|between:1,12',
+            'day'      => 'required|integer|between:1,31',
+            'year'     => 'required|integer|digits:4|between:' . $hundred_years_ago . ',' . $current_year,
+            'province' => 'required',
+        ]);
+
+        // Check if the combined date fields make a valid date
+        $validator->after(function ($validator) {
+            if (!$this->isValidDate()) {
+                $validator->errors()->add('date', trans('form.date-error'));
+            }
+        });
+
+        if ($validator->fails()) {
+            return redirect('/')
+                    ->withErrors($validator)
+                    ->withInput();
+        }
+
+        if ($this->isLegalDrinkingAge()) {
+            return redirect('signup');
+        } else {
+            return redirect('underage');
+        }
+    }
+
+    public function signup(Request $request)
+    {
+        if ($request->session()->has('birthday') && $request->session()->has('province')) {
+            return view('signup');
+        }
+
+        return redirect('/');
     }
 
     /**
@@ -72,9 +104,6 @@ class EntryController extends Controller
             'imei.unique' => trans('form.unique_imei'),
         ]);
 
-        // Remove reCaptcha from the fields
-        unset($validEntry['g-recaptcha-response']);
-
         // Store the Language used when form was submitted
         $validEntry['postalcode'] = strtoupper($validEntry['postalcode']);
 
@@ -84,14 +113,6 @@ class EntryController extends Controller
         // Store the entry
         $entry = Entry::forceCreate($validEntry);
 
-        // Resize and store the receipt
-        $receipt_path = $this->saveImage($entry, $request->file('receipt'));
-
-        // Update the entry with the new receipt path
-        $entry->update([
-            'receipt' => $receipt_path
-        ]);
-
         // Queue an email confirmation
         // Mail::to($entry->email)->send(new NewEntry($entry));
 
@@ -100,101 +121,43 @@ class EntryController extends Controller
     }
 
     /**
-     * Save the uploaded receipt.
+     * Check if the date is valid
      *
-     * @param  \App\Entry  $entry
-     * @param  File  $receipt
-     * @return string $path
+     * @return bool
      */
-    public function saveImage(Entry $entry, $receipt)
+    private function isValidDate()
     {
-        // Upload the receipt and rename it using the entry ID
-        // $receipt_path = $request->file('receipt')->storeAs('receipts', $entry->id.'.'.$request->file('receipt')->extension(), 'public');
-        $path = $entry->id . '.jpg';
-
-        // Resize and encode image as JPG
-        $image = Image::make($receipt)->resize(1200, 1200, function ($constraint) {
-            // Keep the aspect ratio
-            $constraint->aspectRatio();
-            // And do not upscale
-            $constraint->upsize();
-        })->stream('jpg', 90);
-
-        // Save it to storage
-        Storage::disk('receipts')->put($path, $image);
-
-        return Storage::disk('receipts')->url($path);
+        return checkdate(
+            request('month'),
+            request('day'),
+            request('year')
+        );
     }
 
     /**
-     * Display the specified resource.
+     * Check if the user is of legal drinking age
      *
-     * @param  \App\Entry  $entry
-     * @return \Illuminate\Http\Response
+     * @return bool
      */
-    public function show(Entry $entry)
+    private function isLegalDrinkingAge()
     {
-        //
-    }
+        $birthday = Carbon::parse(request('year') . '-' . request('month') . '-' . request('day'));
+        $age      = intval($birthday->diff(Carbon::now())->format('%y'));
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Entry  $entry
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Entry $entry)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Entry  $entry
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Entry $entry)
-    {
-        $entry->emailed   = $request->has('emailed') ? 1 : 0;
-        $entry->validated = $request->has('validated') ? 1 : 0;
-        $entry->shipped   = $request->has('shipped') ? 1 : 0;
-
-        try {
-            if ($request->has('note') && !empty($request['note'])) {
-                $note = new Note([
-                    'note'       => $request['note'],
-                    'user_id'    => Auth::id(),
-                    'created_at' => Carbon::now(),
-                ]);
-                $entry->notes()->save($note);
-            }
-            $entry->save();
-
-            return response()->json([
-                'success' => true,
-                'data'    => $entry->load([
-                            'notes' => function ($query) {  $query->latest(); },
-                            'notes.user'
-                ]),
-            ], 200);
-        } catch (Exception $e) {
-            return response()->json([
-                'success' => 'false',
-                'errors'  => $e->getMessage(),
-            ], 400);
+        $drinking_age = 19;
+        if (in_array(request('province'), ['Alberta', 'Manitoba', 'Quebec'])) {
+            $drinking_age = 18;
         }
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Entry  $entry
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Entry $entry)
-    {
-        //
+        if ($age >= $drinking_age) {
+            session([
+                'birthday'    => $birthday->format('m-d-Y'),
+                'province'    => request('province')
+            ]);
+
+            return true;
+        }
+
+        return false;
     }
 }

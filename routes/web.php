@@ -13,16 +13,18 @@ Route::get('/', function () {
     return view('gate');
 });
 
+Route::get('/underage', function () {
+    return view('underage');
+});
+
 Route::get('/thankyou', function () {
     return view('thankyou');
 });
 
-Route::get('/privacy-policy', function () {
-    return redirect(trans('text.privacy-policy-link'));
-});
-
-/* Date Gage */
+/* Process Date Gage */
 Route::post('/gate', 'EntryController@gate');
+
+Route::get('/signup', 'EntryController@signup')->name('signup');
 
 /* Entry */
 Route::post('/process', 'EntryController@store');
@@ -33,14 +35,6 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 /* Main Dashboard */
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-
-/* Download Receipts */
-Route::get('/download-receipts', 'DashboardController@downloadReceipts')->name('download');
-
-/* View image (if authenticated) */
-Route::get('/receipts/{receipt}', function ($receipt) {
-    return Image::make(storage_path('app/receipts/' . $receipt))->response();
-})->middleware('auth');
 
 // API
 

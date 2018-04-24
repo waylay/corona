@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{!! trans('text.site-title') !!}</title>
+    <title>{{ trans('text.site-title') }}</title>
 
     <!-- Styles -->
     <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
@@ -26,7 +26,8 @@
     @endif
 
 </head>
-<body>
+
+<body {!! request()->is('signup') ? 'class="signup-page"' : '' !!}>
     <div id="app">
 
         <div id="header">
@@ -38,17 +39,6 @@
                     <a href="/language/fr" class="border-left-0 {{ (app()->getLocale() == 'fr') ? 'active' : null  }}">Fr</a>
                 </div> <!-- end .locale  -->
 
-                @auth
-                <div class="admin-links">
-                    @if(request()->is('dashboard'))
-                        <a href="/">Front</a>
-                        <a href="/register">Add User</a>
-                        <a href="/logout">Logout</a>
-                    @else
-                        <a href="/dashboard">Dashboard</a>
-                    @endif
-                </div>
-                @endauth
 
         </div> <!-- end .header  -->
 
@@ -65,28 +55,28 @@
                 <hr>
                 
                 <div class="copy">
-                    <p>&copy; {!! date('Y') !!} Corona</p>
-                    <a href="#" target="_blank">{!! trans('text.terms') !!}</a>
-                    <a href="#" target="_blank">{!! trans('text.privacy-policy') !!}</a>
-                    <a href="#" target="_blank">{!! trans('text.contact') !!}</a>
+                    <p>&copy; {{ date('Y') }} Corona</p>
+                    <a href="{{ trans('text.terms-link') }}" target="_blank">{{ trans('text.terms') }}</a>
+                    <a href="{{ trans('text.privacy-policy-link') }}" target="_blank">{{ trans('text.privacy-policy') }}</a>
+                    <a href="{{ trans('text.contact-link') }}" target="_blank">{{ trans('text.contact') }}</a>
                 </div>
 
                     
-                <div class="social">
+                <div class="social hidden-sm hidden-xs">
                     
-                    <a href="#" target="_blank">
+                    <a href="https://instagram.com/corona" target="_blank">
                         <img src="/images/instagram.png" alt="Instagram">
                     </a>
                     
-                    <a href="#" target="_blank">
+                    <a href="https://www.facebook.com/Corona" target="_blank">
                         <img src="/images/facebook.png" alt="Facebook">
                     </a>
                     
-                    <a href="#" target="_blank">
+                    <a href="https://twitter.com/corona" target="_blank">
                         <img src="/images/twitter.png" alt="Twitter">
                     </a>
 
-                    <a href="#" target="_blank">
+                    <a href="https://www.youtube.com/corona" target="_blank">
                         <img src="/images/youtube.png" alt="Youtube">
                     </a>
                 </div>

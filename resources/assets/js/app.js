@@ -7,22 +7,11 @@
 
 require('./bootstrap');
 
-
-/**
- * Custom Validation errors
- */
-
-
-$.validator.addMethod("exactlength", function(value, element, param) {
-    return this.optional(element) || value.length == param;
-}, $.validator.format("Please enter exactly {0} characters."));
-
-$.validator.addMethod("cdnPostal", function(postal, element) {
-    return this.optional(element) ||
-        postal.match(/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]( )?\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i);
-}, "Please specify a valid postal code.");
-
 $( document ).ready( function () {
+
+    // Responsive Video
+    $("#video-wrapper").fitVids();
+    
 
     // Move to next date field
     $("input").bind("input", function() {
@@ -62,6 +51,40 @@ $( document ).ready( function () {
             error.addClass("text-danger");
             if ( element.attr("name") == "day" || element.attr("name") == "month" || element.attr("name") == "year") {
                 error.insertAfter("#year");
+            } else {
+                error.insertAfter(element);
+            }
+
+        },
+        highlight: function (element, errorClass, validClass) {
+            $(element).parent('.selectdiv').addClass("is-invalid").removeClass("is-valid");
+            $(element).addClass("is-invalid").removeClass("is-valid");
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            $(element).parent('.selectdiv').addClass("is-valid").removeClass("is-invalid");
+            $(element).addClass("is-valid").removeClass("is-invalid");
+        }
+    });
+
+
+    $("#signup").validate({
+        ignore: ".ignore",
+        rules: {
+            firstname: "required",
+            lastname: "required",
+            email: {
+                required: true,
+                email: true
+            },
+            province: "required",
+            agree: "required",
+        },
+        errorElement: "span",
+        errorPlacement: function (error, element) {
+            // Add the `text-danger` class to the error element
+            error.addClass("text-danger");
+            if ( element.attr("name") == "agree") {
+                error.insertAfter(".form-check-label p a");
             } else {
                 error.insertAfter(element);
             }

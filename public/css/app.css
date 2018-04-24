@@ -1434,7 +1434,7 @@ a {
 a:hover,
 a:focus {
   color: #ffb819;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:focus {
@@ -4445,7 +4445,7 @@ fieldset[disabled] .btn-link {
 .btn-link:hover,
 .btn-link:focus {
   color: #ffb819;
-  text-decoration: none;
+  text-decoration: underline;
   background-color: transparent;
 }
 
@@ -8366,6 +8366,11 @@ body {
   overflow-y: scroll;
 }
 
+body.signup-page {
+  background: url("/images/background-signup.jpg") no-repeat top left;
+  background-color: #000103;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -8388,39 +8393,24 @@ img {
 
 #content {
   position: relative;
-  padding-bottom: 150px;
+  padding: 0 30px 50px;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   text-transform: uppercase;
   text-align: center;
 }
 
-.admin-link {
-  margin-right: 10px;
-}
-
-.form-check label {
-  font-weight: normal;
-  margin-left: 20px;
-}
-
-.form-check label input {
-  margin-left: -20px;
-}
-
-.form-check label a {
-  text-decoration: underline;
-  color: #fff;
-}
-
-.form-check label span {
-  display: block;
-  margin-top: -24px;
-  color: #fff;
-  font-size: 12px;
+.signup-page h1,
+.signup-page h2,
+.signup-page h3,
+.signup-page h4,
+.signup-page p,
+.signup-page a {
+  color: #FFF;
 }
 
 #header {
@@ -8430,26 +8420,20 @@ h3 {
   z-index: 2;
 }
 
-#header .locale,
-#header .admin-links {
+#header .locale {
   text-transform: uppercase;
   font-size: 19px;
 }
 
 #header .locale a,
-#header .locale span,
-#header .admin-links a,
-#header .admin-links span {
+#header .locale span {
   color: #FFF;
-  text-decoration: none;
   padding: 0 2px;
   line-height: 1;
 }
 
 #header .locale a.active,
-#header .locale span.active,
-#header .admin-links a.active,
-#header .admin-links span.active {
+#header .locale span.active {
   color: #ffb819;
 }
 
@@ -8462,86 +8446,292 @@ h3 {
   margin: 95px auto 50px;
 }
 
-.gate-form {
+.gate-form-wrapper {
   max-width: 722px;
   min-height: 1079px;
-  padding: 0 100px;
+  padding: 0 60px;
   margin: 20px auto;
   background: url("/images/background-form-gate.png") no-repeat top left;
   background-attachment: scroll;
   background-size: contain;
 }
 
-.gate-form h3 {
+.gate-form-wrapper h1 {
+  font-size: 75px;
+  margin-top: 64px;
+}
+
+.gate-form-wrapper h2 {
   font-size: 35px;
 }
 
-.gate-form #month,
-.gate-form #day {
+.gate-form-wrapper h2.legal-age {
+  font-size: 38px;
+  padding: 0 10px;
+}
+
+.gate-form-wrapper h2.thankyou {
+  text-transform: initial;
+}
+
+.gate-form-wrapper h3 {
+  font-size: 31px;
+}
+
+.gate-form-wrapper #month,
+.gate-form-wrapper #day {
   display: inline-block;
   width: 94px;
   text-align: center;
   margin: 0 5px;
 }
 
-.gate-form #year {
+.gate-form-wrapper #year {
   display: inline-block;
   text-align: center;
   width: 120px;
   margin: 0 5px;
 }
 
-.gate-form .selectdiv {
-  margin-top: 40px;
-  margin-bottom: 40px;
+.gate-form-wrapper input,
+.gate-form-wrapper select {
+  background-color: rgba(12, 36, 64, 0.1);
 }
 
-.gate-form .error {
+.gate-form-wrapper .selectdiv {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-width: 370px;
+}
+
+.gate-form-wrapper .error {
   position: absolute;
   text-align: center;
+  line-height: 1;
   width: 100%;
   left: 0;
   top: 80px;
   text-transform: uppercase;
 }
 
-form.signup {
-  margin-top: 20px;
+.gate-form-wrapper .thankyou-social {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.gate-form-wrapper .thankyou-social a {
+  margin: 0 20px;
+}
+
+.signup-form-wrapper {
+  max-width: 750px;
+  margin: 20px auto;
+  color: #FFF;
+}
+
+.signup-form-wrapper h1 {
+  font-size: 45px;
+  color: #FFF;
+}
+
+.signup-form-wrapper h2 {
+  font-size: 37px;
+  color: #ffb819;
+  margin-top: 25px;
+  margin-bottom: 65px;
+  line-height: 1.1;
+}
+
+.signup-form-wrapper h3 {
+  line-height: 1.1;
+  font-size: 35px;
+  color: #FFF;
+  text-transform: initial;
+}
+
+.signup-form-wrapper h3:first-of-type {
+  padding: 0 20px;
+}
+
+.signup-form-wrapper form.signup {
+  width: 100%;
+  max-width: 650px;
+  padding: 50px 10px 0;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add a grey background color */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+
+.signup-form-wrapper form.signup .required-field {
+  text-transform: uppercase;
+  margin-left: -10px;
+}
+
+.signup-form-wrapper form.signup .form-control {
+  border: 2px solid #FFF;
+  color: #FFF;
+}
+
+.signup-form-wrapper form.signup .form-control::-webkit-input-placeholder {
+  color: #FFF;
+}
+
+.signup-form-wrapper form.signup .form-control::-moz-placeholder {
+  color: #FFF;
+}
+
+.signup-form-wrapper form.signup .form-control:-moz-placeholder {
+  color: #FFF;
+}
+
+.signup-form-wrapper form.signup input,
+.signup-form-wrapper form.signup select {
+  padding-left: 17px;
+  background-color: rgba(225, 225, 225, 0.1);
+  text-transform: uppercase;
+}
+
+.signup-form-wrapper form.signup input:not(.is-invalid) {
+  margin-bottom: 25px;
+}
+
+.signup-form-wrapper form.signup select:not(.is-invalid) {
+  margin-bottom: 6px;
+}
+
+.signup-form-wrapper form.signup .selectdiv select option {
+  background-color: #626269;
+  font-size: 90%;
+}
+
+.signup-form-wrapper form.signup .selectdiv::after {
+  border-left: 2px solid #FFF;
+  background-color: rgba(225, 225, 225, 0.25);
+}
+
+.signup-form-wrapper form.signup label.form-check-label p {
+  float: right;
+  width: calc(100% - 40px);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.signup-form-wrapper form.signup label.form-check-label p a {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.signup-form-wrapper form.signup label.form-check-label .is-invalid + span + p {
+  color: #ff0000;
+}
+
+.signup-form-wrapper form.signup label.form-check-label .is-invalid + span + p a {
+  color: #ff0000;
+}
+
+.signup-form-wrapper form.signup .form-check-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.signup-form-wrapper form.signup .checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgba(225, 225, 225, 0.1);
+  border: 2px solid #FFF;
+}
+
+.signup-form-wrapper form.signup .is-invalid + .checkmark {
+  border: 2px solid #ff0000;
+  background-color: rgba(255, 0, 0, 0.25);
+}
+
+.signup-form-wrapper form.signup .form-check-label:hover input ~ .checkmark {
+  background-color: rgba(225, 225, 225, 0.2);
+}
+
+.signup-form-wrapper form.signup .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.signup-form-wrapper form.signup .form-check-input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.signup-form-wrapper form.signup .form-check-label .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.signup-form-wrapper form.signup button {
+  background: url("/images/button-signup.png") no-repeat top left;
+  background-size: contain;
+  color: #0c2440;
+}
+
+.signup-form-wrapper form.signup button:hover {
+  color: #FFF;
+}
+
+.signup-form-wrapper form.signup .error {
+  display: block;
+  margin-top: 5px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.signup {
+  margin: 20px auto 0;
   overflow: hidden;
   /*To remove button from IE11, thank you Matt */
 }
 
-form.signup .form-group {
+.signup .form-group {
   margin-bottom: 12px;
   position: relative;
 }
 
-form.signup .form-control:focus {
+.signup .form-control:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-form.signup input,
-form.signup select {
+.signup input,
+.signup select {
   z-index: 1;
   position: relative;
   font-size: 35px;
   text-transform: uppercase;
   border-width: 2px;
-  background-color: rgba(12, 36, 64, 0.1);
 }
 
-form.signup .selectdiv {
+.signup .selectdiv {
   position: relative;
-  width: 370px;
+  width: 100%;
   display: inline-block;
 }
 
-form.signup select::-ms-expand {
+.signup select::-ms-expand {
   display: none;
 }
 
-form.signup .selectdiv:after {
+.signup .selectdiv:after {
   content: '\25BC';
   font-size: 45px;
   top: 0;
@@ -8554,87 +8744,75 @@ form.signup .selectdiv:after {
   background-color: rgba(12, 36, 64, 0.25);
   position: absolute;
   pointer-events: none;
+  text-align: center;
 }
 
-form.signup .selectdiv.is-invalid:after {
-  border-left: 2px solid #ff0000;
+.signup .selectdiv.is-invalid:after {
+  border-left: 2px solid #ff0000 !important;
   background-color: rgba(255, 0, 0, 0.25);
   color: #ff0000;
 }
 
-form.signup .selectdiv select {
+.signup .selectdiv select {
   -webkit-appearance: none;
   -moz-appearance: none;
   /* Add some styling */
   display: block;
   width: 100%;
-  padding-right: 70px;
+  padding-right: 68px;
+  padding-left: 20px;
   background-color: rgba(12, 36, 64, 0.1);
   background-image: none;
   -ms-word-break: normal;
   word-break: normal;
 }
 
-form.signup ::-webkit-input-placeholder {
-  /* WebKit browsers */
-  text-transform: none;
+.signup .selectdiv select option {
+  background-color: rgba(12, 36, 64, 0.15);
+  font-size: 70%;
 }
 
-form.signup :-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  text-transform: none;
-}
-
-form.signup ::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  text-transform: none;
-}
-
-form.signup :-ms-input-placeholder {
-  /* Internet Explorer 10+ */
-  text-transform: none;
-}
-
-form.signup input:focus::-webkit-input-placeholder {
+.signup input:focus::-webkit-input-placeholder {
   color: transparent !important;
 }
 
-form.signup input:focus::-moz-placeholder {
+.signup input:focus::-moz-placeholder {
   color: transparent !important;
 }
 
-form.signup input:focus:-moz-placeholder {
+.signup input:focus:-moz-placeholder {
   color: transparent !important;
 }
 
-form.signup .form-control.is-invalid {
-  border-color: #ff0000;
-  background-color: rgba(255, 0, 0, 0.1);
-  color: #ff0000;
+.signup .form-control.is-invalid {
+  border-color: #ff0000 !important;
+  background-color: rgba(255, 0, 0, 0.1) !important;
+  color: #ff0000 !important;
 }
 
-form.signup .form-control.is-invalid::-webkit-input-placeholder {
+.signup .form-control.is-invalid:not(:focus)::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #ff0000 !important;
 }
 
-form.signup .form-control.is-invalid:-moz-placeholder {
+.signup .form-control.is-invalid:not(:focus):-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #ff0000 !important;
 }
 
-form.signup .form-control.is-invalid::-moz-placeholder {
+.signup .form-control.is-invalid:not(:focus)::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: #ff0000 !important;
 }
 
-form.signup .form-control.is-invalid:-ms-input-placeholder {
+.signup .form-control.is-invalid:not(:focus):-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: #ff0000 !important;
 }
 
-form.signup button {
+.signup button {
   width: 381px;
+  max-width: 100%;
   height: 89px;
   margin: 20px auto;
   display: block;
@@ -8648,7 +8826,7 @@ form.signup button {
   transition: all .2s;
 }
 
-form.signup button:hover {
+.signup button:hover {
   color: #ffb819;
 }
 
@@ -8707,54 +8885,274 @@ form.signup button:hover {
   height: 30px;
 }
 
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  h3 {
-    font-size: 19px;
-  }
-
-  h4 {
-    font-size: 14px;
-  }
+.connecting {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  line-height: 1;
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  h3 {
-    font-size: 22px;
+.get-inspired {
+  text-transform: initial;
+  margin-bottom: 40px;
+}
+
+#video-wrapper {
+  width: 1500px;
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1199px) {
+  .signup-form-wrapper h3 {
+    font-size: 33px;
   }
 
-  h4 {
-    font-size: 16px;
+  .connecting {
+    font-size: 30px;
+  }
+
+  .get-inspired {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .locale {
-    background-color: transparent !important;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+  body.signup-page {
+    background-position-x: 26%;
+    background-size: cover;
   }
 
-  .locale .change-language,
-  .locale .admin-links {
-    clear: both;
+  #header {
+    top: 10px;
+    right: 12px;
   }
 
-  .locale .admin-links {
+  #content {
+    padding: 0 25px 50px;
+  }
+
+  .brand .logo {
+    max-width: 205px;
+    margin: 7vw auto 3vw;
+  }
+
+  .signup {
+    margin: 10px auto 0;
+  }
+
+  .signup input,
+  .signup select {
+    font-size: 18px;
+  }
+
+  .signup .form-group {
+    margin-bottom: 24px;
+  }
+
+  .signup .form-control {
+    height: 38px;
+    padding: 0 5px;
+  }
+
+  .signup .selectdiv select {
+    padding-right: 38px;
+    padding-left: 5px;
+  }
+
+  .signup .selectdiv::after {
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 15px;
+  }
+
+  .signup button {
+    width: 220px;
+    height: 52px;
+    font-size: 28px;
+  }
+
+  .gate-form-wrapper {
+    padding: 0 20px;
+  }
+
+  .gate-form-wrapper h1 {
+    font-size: 40px;
+    margin-top: 40px;
+  }
+
+  .gate-form-wrapper h2 {
+    font-size: 17px;
+  }
+
+  .gate-form-wrapper h2.legal-age {
+    margin-top: 4vw;
+    margin-bottom: 3vw;
+    font-size: 18px;
+    padding: 0 15px;
+  }
+
+  .gate-form-wrapper h3 {
+    font-size: 17px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .gate-form-wrapper #month,
+  .gate-form-wrapper #day {
+    width: 40px;
+    margin: 0 2px;
+  }
+
+  .gate-form-wrapper #year {
+    width: 60px;
+    margin: 0 2px;
+  }
+
+  .gate-form-wrapper .selectdiv {
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 220px;
+  }
+
+  .gate-form-wrapper .error {
+    top: 40px;
+    font-size: 14px;
+  }
+
+  .gate-form-wrapper h2.thankyou {
+    margin-top: 0;
+    padding: 0 17px;
+  }
+
+  .gate-form-wrapper .thankyou-social {
+    margin-top: 30px;
+  }
+
+  .gate-form-wrapper .thankyou-social img {
+    max-height: 50px;
+    width: auto;
+  }
+
+  .signup-form-wrapper h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .signup-form-wrapper h3 {
+    font-size: 17px;
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+
+  .signup-form-wrapper h3:first-of-type {
+    padding: 0 0;
+  }
+
+  .signup-form-wrapper form.signup {
+    padding-top: 20px;
+    font-size: 14px;
+  }
+
+  .signup-form-wrapper form.signup .form-group {
+    margin-bottom: 8px;
+  }
+
+  .signup-form-wrapper form.signup .form-control {
+    height: 38px;
+  }
+
+  .signup-form-wrapper form.signup input,
+  .signup-form-wrapper form.signup select {
+    padding-left: 10px;
+  }
+
+  .signup-form-wrapper form.signup .selectdiv select option {
+    background-color: #283a52;
+  }
+
+  .signup-form-wrapper form.signup input:not(.is-invalid) {
+    margin-bottom: 12px;
+  }
+
+  .signup-form-wrapper form.signup label.form-check-label p {
+    font-size: 13px;
+  }
+
+  .signup-form-wrapper form.signup .error {
+    font-size: 13px;
+  }
+
+  .connecting {
+    font-size: 18px;
+  }
+
+  .get-inspired {
+    font-size: 16px;
+  }
+
+  body:not(.signup-page) #footer {
+    display: none;
+  }
+
+  #footer {
+    padding: 20px 30px;
+    background-color: #0c2440;
+  }
+
+  #footer hr {
+    display: none;
+  }
+
+  #footer .copy {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  #footer .copy a {
+    display: block;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    font-size: 15px;
+  }
+
+  #footer .copy p {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    font-size: 15px;
     margin-top: 15px;
   }
+}
 
-  h1,
-  h3,
-  h4 {
-    text-align: center;
+@media screen and (max-width: 374px) {
+  body:not(.signup-page) #content {
+    padding: 0 5px 20px;
   }
 
-  h3 {
-    font-size: 20px;
+  .brand .logo {
+    margin: 9vw auto 3vw;
   }
 
-  h4 {
-    font-size: 14px;
+  .gate-form-wrapper h2.legal-age {
+    font-size: 17px;
   }
 }
 

@@ -1,22 +1,30 @@
 <?php
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | General Text Language Lines (french)
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are used to translate the french text blocks
+    |
+    */
 
-	/*
-	|--------------------------------------------------------------------------
-	| General Text Language Lines (french)
-	|--------------------------------------------------------------------------
-	|
-	| The following language lines are used to translate text blocks
-	|
-	*/
-
-	'title' => 'Réclamez votre offre  <strong>Motorola</strong> dès aujourd\'hui!',
-	'welcome' => 'Bienvenue, <strong>:name</strong>!',
-	'sub-title' => 'Entrez les informations suivantes pour commencer.',
-	'privacy-policy' => 'Politique de confidentialité',
-	'privacy-policy-link' => 'https://www.motorola.fr/legal/privacy-policy',
-	'all_rights_reserved' => 'Tous Droits Réservés',
-	'trademark' => 'MOTOROLA et le logo M stylisé sont des marques de commerce ou des marques déposées de Motorola Trademark Holdings, S.A.R.L.',
-	'thank_you' => 'Merci!',
+    'site-title'                => 'Corola SUNSET Festival',
+    'gate-age'                  => 'You must be of legal drinking age to enter this site.',
+    'sorry'                     => 'Sorry',
+    'underage'                  => 'Must be legal drinking age in province or territory of residence.',
+    'signup-title'              => 'One national sunset.<br>One national sunsets festival.',
+    'signup-text-1'             => 'Don\'t miss the global Corona Sunsets Festival when it touches down in Canada this summer.',
+    'signup-text-2'             => 'Stay in the know for updates, news and tickets sales.',
+    'connecting'                => 'Connecting canadians coast-to-coast',
+    'get_inspired'              => 'This August, our global festival series is coming to Canada. Get inspired by past events.',
+    'privacy-policy'            => 'Privacy Policy',
+    'privacy-policy-link'       => 'http://www.coronasunsets.com/privacy-policy/',
+    'terms'                     => 'Terms of Use',
+    'terms-link'                => 'http://www.coronasunsets.com/terms-and-conditions/',
+    'contact'                   => 'Contact Us',
+    'contact-link'              => 'https://contactus.anheuser-busch.com/ContactUs/coronaextrafrench/contact_us.asp',
+    'allset'                    => 'You\'re all set',
+    'thankyou'                  => 'Thank you for signing up. In the meantime, check us out on Facebook and Instagram.',
 ];
