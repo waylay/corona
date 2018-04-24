@@ -225,6 +225,15 @@
   
 
 }
+@media screen and (min-width: 377px) and (max-width: $screen-xs){
+  .brand .logo {
+    margin: 9vw auto 4vw;
+  }
+  .gate-form-wrapper h2.legal-age{
+    margin-top: 8vw;
+    margin-bottom: 7vw;
+  }
+}
 @media screen and (max-width: 374px){
   body:not(.signup-page) #content {
     padding: 0 5px 20px;
