@@ -60,7 +60,7 @@
 
             @if ($errors->has('email'))
             <span id="email-error" class="error text-danger">
-                    {{ trans('form.valid_email') }}
+                {{ $errors->first('email') }}
             </span>
             @endif
 

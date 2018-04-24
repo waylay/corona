@@ -27,6 +27,7 @@ return [
     'lastname_required'  => 'Please fill out your last name',
     'email'              => 'Email Address',
     'email_required'     => 'Please fill out your email address',
+    'email_unique'       => 'This email has already been used',
     'agree'              => 'I confirm that I am of legal drinking age in my province / territory of residence and that I wish to opt in to receive electronic communications from Corona and its affiliates and partners. I understand I can unsubscribe at any time.',
     'must_agree'         => 'You must consent to us collecting your personal data.',
     'valid_email'        => 'Please enter a valid email address.',

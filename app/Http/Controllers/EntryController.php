@@ -85,9 +85,11 @@ class EntryController extends Controller
         $validEntry = $request->validate([
             'firstname'  => 'required|alpha',
             'lastname'   => 'required|alpha',
-            'email'      => 'required|email',
+            'email'      => 'required|email|unique:entries',
             'province'   => 'required',
             'agree'      => 'required'
+        ], [
+            'unique' => trans('form.email_unique')
         ]);
 
         unset($validEntry['agree']);
