@@ -67,6 +67,7 @@
 
   .gate-form-wrapper {
     padding: 0 20px;
+    max-width: 350px;
 
     h1 {
       font-size: 40px;
@@ -78,7 +79,7 @@
     }
 
     h2.legal-age {
-      margin-top: 4vw;
+      margin-top: 3vw;
       margin-bottom: 3vw;
       font-size: 18px;
       padding: 0 15px;
@@ -87,7 +88,7 @@
     h3 {
       font-size: 17px;
       margin-top: 0;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
 
@@ -126,9 +127,7 @@
   }
 
   .signup-form-wrapper {
-    h1 {
 
-    }
     h2 {
       font-size: 22px;
       margin-bottom: 20px;
@@ -174,6 +173,10 @@
 
       .error {
         font-size: 13px;
+      }
+
+      button {
+        margin-bottom: 20px;
       }
       
     }
@@ -225,15 +228,7 @@
   
 
 }
-@media screen and (min-width: 377px) and (max-width: $screen-xs){
-  .brand .logo {
-    margin: 9vw auto 4vw;
-  }
-  .gate-form-wrapper h2.legal-age{
-    margin-top: 8vw;
-    margin-bottom: 7vw;
-  }
-}
+
 @media screen and (max-width: 374px){
   body:not(.signup-page) #content {
     padding: 0 5px 20px;
