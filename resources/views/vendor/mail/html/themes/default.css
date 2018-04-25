@@ -35,13 +35,14 @@ a {
 
 a img {
     border: none;
+    display: block;
 }
 
 /* Typography */
 
 h1 {
     color: #12243e;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 32px;
     font-weight: bold;
     margin-top: 0;
