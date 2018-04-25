@@ -91,7 +91,7 @@
         </div>
 
         <div class="form-group">
-            <label class="form-check-label" for="agree" style="font-weight:400;">
+            <label class="form-check-label" for="agree">
                 <input class="form-check-input" type="checkbox" name="agree" id="agree" value="1" data-msg-required="{{ trans('form.must_agree') }}" >
                 <span class="checkmark"></span>
                 <p>* {{ trans('form.agree') }}<br><a href="{{ trans('text.privacy-policy-link') }}" target="_blank">{{ trans('text.privacy-policy') }}</a></p>

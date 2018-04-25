@@ -25,6 +25,7 @@ body {
   &.signup-page {
     background: url('/images/background-signup.jpg') no-repeat top left;
     background-color: #000103;
+    background-size: cover;
   }
   &.dashboard {
     background-image: none;
@@ -60,7 +61,7 @@ img {
 
 #content {
   position: relative;
-  padding: 0 30px 50px;
+  padding: 0 30px;
 }
 
 h1,h2,h3,h4 {
@@ -68,6 +69,9 @@ h1,h2,h3,h4 {
   text-align: center;
 }
 
+label {
+  font-weight: 400;
+}
 
 .panel {
   margin-top: 70px;
@@ -95,12 +99,13 @@ h1,h2,h3,h4 {
 
 #header {
   position: absolute;
-  top: 36px;
-  right: 32px;
+  top: 30px;
+  right: 30px;
   z-index: 2;
   .locale{
     text-transform: uppercase;
     font-size: 19px;
+    line-height: 1;
     a,span {
       color: #FFF;
       padding: 0 2px;
@@ -115,51 +120,52 @@ h1,h2,h3,h4 {
 .brand {
   overflow: hidden;
   .logo {
-    max-width: 410px;
-    margin: 95px auto 50px;
+    max-width: 330px;
+    margin: 80px auto 40px;
   }
 }
 
 
 
 .gate-form-wrapper {
-  max-width: 722px;
+  max-width: 600px;
   padding: 0 60px;
-  min-height: 1079px;
-  margin: 20px auto;
+  min-height: 900px;
+  margin: 20px auto 0;
   background: url('/images/background-form-gate.png') no-repeat top left;
   background-attachment: scroll;
   background-size: contain;
   background-position: center top;
 
   h1 {
-    font-size: 75px;
-    margin-top: 64px;
+    font-size: 55px;
+    margin-top: 60px;
   }
+
   h2 {
-    font-size: 35px;
+    font-size: 27px;
     &.legal-age{
-      font-size: 38px;
-      padding: 0 10px;
+      font-size: 34px;
     }
     &.thankyou{
       text-transform: initial;
     }
   }
   h3 {
-    font-size: 31px;
+    font-size: 28px;
+    margin-top: 20px;
   }
 
   #month, #day{
     display: inline-block;
-    width: 94px;
+    width: 70px;
     text-align: center;
     margin: 0 5px;
   }
   #year {
     display: inline-block;
     text-align: center;
-    width: 120px;
+    width: 100px;
     margin: 0 5px;
   }
 
@@ -168,9 +174,7 @@ h1,h2,h3,h4 {
   }
 
   .selectdiv {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    max-width: 370px;
+    max-width: 340px;
   }
 
   .error {
@@ -179,14 +183,14 @@ h1,h2,h3,h4 {
     line-height: 1;
     width: 100%;
     left: 0;
-    top: 80px;
+    top: 60px;
     text-transform: uppercase;
   }
 
   .thankyou-social {
     width: 100%;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 60px;
     a{
       margin: 0 20px;
     }
@@ -205,15 +209,15 @@ h1,h2,h3,h4 {
     color: #FFF;
   }
   h2 {
-    font-size: 37px;
-    color: $brand-secondary;
-    margin-top: 25px;
-    margin-bottom: 65px;
+    font-size: 32px;
+    margin-top: 10px;
+    margin-bottom: 50px;
     line-height: 1.1;
+    color: $brand-secondary;
   }
   h3 {
     line-height: 1.1;
-    font-size: 35px;
+    font-size: 29px;
     color: #FFF;
     text-transform: initial;
     &:first-of-type {
@@ -224,11 +228,16 @@ h1,h2,h3,h4 {
   form.signup {
     width: 100%;
     max-width: 650px;
-    padding: 50px 10px 0;
+    padding: 30px 10px 0;
 
     .required-field {
       text-transform: uppercase;
       margin-left: -10px;
+      font-size: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
     }
 
     .form-control {
@@ -236,19 +245,21 @@ h1,h2,h3,h4 {
       color: #FFF;
       &::-webkit-input-placeholder{
         color: #FFF;
+        text-transform: uppercase;
       }
       &::-moz-placeholder{
         color: #FFF;
+        text-transform: uppercase;
       }
       &:-moz-placeholder{
         color: #FFF;
+        text-transform: uppercase;
       }
     }
   
     input, select{
       padding-left: 17px;
       background-color: rgba(225, 225, 225, 0.1);
-      text-transform: uppercase;
     }
 
     input:not(.is-invalid) {
@@ -277,8 +288,9 @@ h1,h2,h3,h4 {
     label.form-check-label {
       p {
         float: right;
-        width: calc(100% - 40px);
-        font-size: 25px;
+        width: calc(100% - 50px);
+        font-size: 18px;
+        font-weight: 400;
         cursor: pointer;
         a {
           color: #FFF;
@@ -374,7 +386,7 @@ h1,h2,h3,h4 {
   overflow: hidden;
 
   .form-group {
-    margin-bottom: 12px;
+    margin-bottom: 35px;
     position: relative;
   }
 
@@ -385,9 +397,13 @@ h1,h2,h3,h4 {
   input, select {
     z-index: 1;
     position: relative;
-    font-size: 35px;
-    text-transform: uppercase;
+    font-size: 26px;
     border-width: 2px;
+    height: 55px;
+  }
+
+  select {
+    text-transform: uppercase;
   }
 
   .selectdiv {
@@ -407,9 +423,9 @@ h1,h2,h3,h4 {
     top: 0;
     bottom: 0;
     right: 0;
-    height: 70px;
-    width: 70px;
-    line-height: 70px;
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
     border-left: 2px solid $brand-primary;
     background-color: rgba(12, 36, 64, 0.25);
     position: absolute;
@@ -440,7 +456,7 @@ h1,h2,h3,h4 {
 
     option {
       background-color: rgba(12, 36, 64, 0.15);
-      font-size: 70%;
+      font-size: 90%;
     }
   }
   
@@ -481,16 +497,16 @@ h1,h2,h3,h4 {
   }
 
   button {
-    width: 381px;
+    width: 340px;
     max-width: 100%;
-    height: 89px;
-    margin: 20px auto 100px;
+    height: 79px;
+    margin: 50px auto;
     display: block;
     background: url('/images/button-gate.png') no-repeat top left;
     background-size: contain;
     border: medium none;
     color: white;
-    font-size: 48px;
+    font-size: 38px;
     text-transform: uppercase;
     &:hover{
       color: $brand-secondary;
@@ -547,7 +563,7 @@ h1,h2,h3,h4 {
 
 .get-inspired {
   text-transform: initial;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 #video-wrapper {
