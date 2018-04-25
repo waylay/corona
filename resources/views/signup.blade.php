@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    
+
     <h2>{!! trans('text.signup-title') !!}</h2>
     <h3>{{ trans('text.signup-text-1') }}</h3>
     <h3>{{ trans('text.signup-text-2') }}</h3>
@@ -26,13 +26,13 @@
                 value="{{ old('firstname') }}"
                 placeholder="{{ trans('form.firstname') }} *"
                 data-msg-required="{{ trans('form.firstname_required') }}">
-        
+
             @if ($errors->has('firstname'))
             <span id="firstname-error" class="error text-danger">
                     {{ trans('form.firstname_required') }}
             </span>
             @endif
-          
+
         </div>
 
         <div class="form-group">
@@ -49,7 +49,7 @@
             @endif
 
         </div>
-        
+
         <div class="form-group">
 
             <input type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' :'' }}" maxlength="50"   id="email" name="email"
@@ -91,7 +91,7 @@
         </div>
 
         <div class="form-group">
-            <label class="form-check-label" for="agree">
+            <label class="form-check-label" for="agree" style="font-weight:400;">
                 <input class="form-check-input" type="checkbox" name="agree" id="agree" value="1" data-msg-required="{{ trans('form.must_agree') }}" >
                 <span class="checkmark"></span>
                 <p>* {{ trans('form.agree') }}<br><a href="{{ trans('text.privacy-policy-link') }}" target="_blank">{{ trans('text.privacy-policy') }}</a></p>
@@ -107,7 +107,7 @@
     </form>
 
 </div> <!-- END .signup-form -->
-    
+
 <h1 class="connecting">{{ trans('text.connecting') }}<br><a href="https://twitter.com/hashtag/coronasunsets" target="_blank">#CORONASUNSETS</a></h1>
 <h2 class="get-inspired">{{ trans('text.get_inspired') }}</h2>
 <div id="video-wrapper">
