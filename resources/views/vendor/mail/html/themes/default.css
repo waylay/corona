@@ -6,7 +6,7 @@ body, body *:not(html):not(style):not(br):not(tr):not(code) {
 }
 
 body {
-    background-color: #ccd3dc;
+    background-color: #f3f1ef;
     color: #74787E;
     height: 100%;
     hyphens: auto;
@@ -85,9 +85,9 @@ img {
 /* Layout */
 
 .wrapper {
-    background-color: #fff;
-    margin: 25px auto;
-    padding: 0;
+    background-color: #f3f1ef;
+    margin: 0 auto;
+    padding: 35px 0;
     width: 100%;
     max-width: 600px;
     -premailer-cellpadding: 0;
