@@ -6,7 +6,7 @@ body, body *:not(html):not(style):not(br):not(tr):not(code) {
 }
 
 body {
-    background-color: #f5f8fa;
+    background-color: #ccd3dc;
     color: #74787E;
     height: 100%;
     hyphens: auto;
@@ -15,7 +15,6 @@ body {
     -moz-hyphens: auto;
     -ms-word-break: break-all;
     width: 100% !important;
-    max-width: 600px;
     -webkit-hyphens: auto;
     -webkit-text-size-adjust: none;
     word-break: break-all;
@@ -87,9 +86,10 @@ img {
 
 .wrapper {
     background-color: #fff;
-    margin: 0;
+    margin: 25px auto;
     padding: 0;
     width: 100%;
+    max-width: 600px;
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
@@ -156,7 +156,7 @@ img {
 
 .footer {
     margin: 0;
-    padding: 0 0 35px;
+    padding: 0 0 25px;
     text-align: center;
     max-width: 100%;
     width: 600px;

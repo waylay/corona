@@ -6,13 +6,13 @@
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
                             <td>
-                                <img src="{{ url('/images/email_footer.png') }}" width="197px" height="129px" style="margin:35px;">
+                                <img src="{{ url('/images/email_footer.png') }}" width="197px" height="129px" style="margin:30px;">
                             </td>
                         </tr>
                     </table>
                 </td>
                 <td valign="top" width="60%" class="footer-text">
-                    <table border="0" cellpadding="35" cellspacing="0" width="100%">
+                    <table border="0" cellpadding="30" cellspacing="0" width="100%">
                         <tr>
                             <td>
                                 <p>
