@@ -34,9 +34,9 @@
 
                 <!-- Localization -->
                 <div class="locale">
-                    <a href="/language/en" class="{{ (app()->getLocale() == 'en') ? 'active' : null  }}">En</a>
+                    <a href="/language/en" class="{{ (app()->getLocale() == 'en') ? 'active' : null  }}" tabindex="-1">En</a>
                     <span>|</span>
-                    <a href="/language/fr" class="border-left-0 {{ (app()->getLocale() == 'fr') ? 'active' : null  }}">Fr</a>
+                    <a href="/language/fr" class="border-left-0 {{ (app()->getLocale() == 'fr') ? 'active' : null  }}" tabindex="-1">Fr</a>
                     @if( request()->is('dashboard') )
                     <span>|</span>
                     <a href="{{ url('/logout') }}"> logout </a>
