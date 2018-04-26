@@ -209,7 +209,7 @@ label {
     color: #FFF;
   }
   h2 {
-    font-size: 32px;
+    font-size: 30px;
     margin-top: 10px;
     margin-bottom: 50px;
     line-height: 1.1;
@@ -288,7 +288,7 @@ label {
     label.form-check-label {
       p {
         float: right;
-        width: calc(100% - 50px);
+        width: calc(100% - 40px);
         font-size: 18px;
         font-weight: 400;
         cursor: pointer;
@@ -524,10 +524,10 @@ label {
     border-top: 3px solid white;
   }
   p, a{
-    font-size: 19px;
+    font-size: 17px;
     color: white;
     margin-bottom: 0;
-    line-height: 30px;
+    line-height: 32px;
   }
   a {
     text-transform: uppercase;
@@ -540,7 +540,7 @@ label {
     justify-content: space-between;
     float: left;
     width: 100%;
-    max-width: 650px;
+    max-width: 687px;
   }
   .social {
     display: flex;
@@ -564,6 +564,7 @@ label {
 .get-inspired {
   text-transform: initial;
   margin-bottom: 20px;
+  font-size: 28px;
 }
 
 #video-wrapper {

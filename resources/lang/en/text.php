@@ -18,6 +18,7 @@ return [
     'signup-text-1'             => 'Don\'t miss the global Corona Sunsets Festival when it touches down in Canada this summer.',
     'signup-text-2'             => 'Stay in the know for updates, news and tickets sales.',
     'connecting'                => 'Connecting canadians coast-to-coast',
+    'hashtag'                   => '#CORONASUNSETS',
     'get_inspired'              => 'This August, our global festival series is coming to Canada. Get inspired by past events.',
     'privacy-policy'            => 'Privacy Policy',
     'privacy-policy-link'       => 'http://www.coronasunsets.com/privacy-policy/',

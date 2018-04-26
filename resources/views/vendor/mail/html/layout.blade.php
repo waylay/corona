@@ -20,7 +20,6 @@
             }
         }
         .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td {line-height: 100%;}
-        .ExternalClass {width: 100%;}
     </style>
 </head>
 <body>

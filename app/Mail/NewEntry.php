@@ -36,6 +36,6 @@ class NewEntry extends Mailable implements ShouldQueue
     {
         return $this->markdown('emails.entry.new')->with([
             'user'     => $this->entry
-        ])->subject(trans('email.subject'));
+        ])->subject(trans('email.subject'))->from(config('mail.from.address'), trans('text.site-title'));
     }
 }

@@ -86,7 +86,7 @@
                 </td>                 
             </tr>
             <tr>
-                <td width="100%" colspan="2" height="25" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                <td width="100%" colspan="2" height="35" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
             </tr>
             <tr>
                 <td width="100%" colspan="2">
