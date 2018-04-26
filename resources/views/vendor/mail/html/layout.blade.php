@@ -46,7 +46,7 @@
                     <!-- Email Body -->
                     <tr>
                         <td align="center" cellpadding="0" cellspacing="0">
-                            <table class="inner-body" align="center" width="100%" cellpadding="0" cellspacing="0">
+                            <table class="inner-body" align="center" width="480" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td width="100%" height="5" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
                                 </tr>
