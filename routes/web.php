@@ -60,8 +60,8 @@ Route::get('/migrate', function () {
     dd('Done');
 })->middleware('auth');
 
-Route::get('/mail', function () {
-    $entry = App\Entry::find(2);
+// Route::get('/mail', function () {
+//     $entry = App\Entry::find(2);
 
-    return new App\Mail\NewEntry($entry);
-});
+//     return new App\Mail\NewEntry($entry);
+// });
