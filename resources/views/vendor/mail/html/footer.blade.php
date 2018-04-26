@@ -14,7 +14,7 @@
 </tr>
 <tr>
     <td>
-        <table class="subcopy" width="100%" cellpadding="0" cellspacing="0">
+        <table class="subcopy" width="600" cellpadding="0" cellspacing="0">
             <tr>
                 <td align="center" valign="top" width="100%">
                     <table class="white-border" width="530" cellpadding="" cellspacing="0">
@@ -57,7 +57,7 @@
 </tr>
 <tr>
     <td>
-        <table class="footer" width="100%" cellpadding="0" cellspacing="0">
+        <table class="footer" width="600" cellpadding="0" cellspacing="0">
             <tr>
                 <td width="100%" colspan="2" height="25" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
             </tr>
