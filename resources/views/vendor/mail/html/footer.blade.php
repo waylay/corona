@@ -1,6 +1,6 @@
 <tr>
     <td>
-        <table width="100%" cellpadding="0" cellspacing="0">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td width="100%" height="35" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
             </tr>
@@ -14,7 +14,7 @@
 </tr>
 <tr>
     <td>
-        <table class="subcopy" width="600" cellpadding="0" cellspacing="0">
+        <table class="subcopy" width="600" border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td align="center" valign="top" width="100%">
                     <table class="white-border" width="530" cellpadding="" cellspacing="0">
@@ -35,7 +35,7 @@
                                             <img src="{{ url('/images/facebook_email.png') }}" width="8" height="17" alt="Facebook">
                                         </a>
                                     </td>
-                                    <td align="right" width="21">    
+                                    <td align="right" width="21">
                                         <a href="https://twitter.com/corona">
                                             <img src="{{ url('/images/twitter_email.png') }}" width="21" height="17" alt="Twitter">
                                         </a>
@@ -57,11 +57,11 @@
 </tr>
 <tr>
     <td>
-        <table class="footer" width="600" cellpadding="0" cellspacing="0">
+        <table class="footer" width="600" border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td width="100%" colspan="2" height="25" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
             </tr>
-            <tr>                
+            <tr>
                 <td align="center" valign="top" width="43%">
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
@@ -77,13 +77,12 @@
                             <td width="90%" align="left">
                                 <p>
                                     {{ trans('email.text-footer') }}
-                                    {!! trans('email.unsubscribe') !!}
                                 </p>
                             </td>
-                            <td width="10%" align="right" style="font-size:1px; line-height:1px;">&nbsp;</td>                              
+                            <td width="10%" align="right" style="font-size:1px; line-height:1px;">&nbsp;</td>
                         </tr>
                     </table>
-                </td>                 
+                </td>
             </tr>
             <tr>
                 <td width="100%" colspan="2" height="35" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>

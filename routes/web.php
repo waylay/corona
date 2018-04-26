@@ -48,17 +48,17 @@ Route::get('/api/entries/{entry}', 'EntryController@show')->middleware('auth');
 Route::post('/api/entries/{entry}', 'EntryController@update')->middleware('auth');
 
 // Deployment fast migrate
-Route::get('/migrate', function () {
-    \Artisan::call('migrate:fresh', [
-        '--force' => true,
-    ]);
-
-    \Artisan::call('db:seed', [
-        '--force' => true,
-    ]);
-
-    dd('Done');
-})->middleware('auth');
+// Route::get('/migrate', function () {
+//     \Artisan::call('migrate:fresh', [
+//         '--force' => true,
+//     ]);
+//
+//     \Artisan::call('db:seed', [
+//         '--force' => true,
+//     ]);
+//
+//     dd('Done');
+// })->middleware('auth');
 
 // Route::get('/mail', function () {
 //     $entry = App\Entry::find(2);
