@@ -1,36 +1,103 @@
 <tr>
     <td>
-        <table class="footer" width="600" cellpadding="0" cellspacing="0">
+        <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" height="35" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td align="center" valign="top" width="100%">
+                    <img src="{{ url('/images/email_above_footer.jpg') }}" style="margin: 0; border: 0; padding: 0; display: block;" width="100%" height="354">
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>
+        <table class="subcopy" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center" valign="top" width="100%">
+                    <table class="white-border" width="530" cellpadding="" cellspacing="0">
+                        <tr>
+                            <td width="100%" height="17" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                        <td align="right" valign="top" width="100%">
+                            <table border="0" width="135" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="left" width="18">
+                                        <a href="https://instagram.com/corona">
+                                            <img src="{{ url('/images/instagram_email.png') }}" width="18" height="18" alt="Instagram">
+                                        </a>
+                                    </td>
+                                    <td align="center" width="8">
+                                        <a href="https://www.facebook.com/Corona">
+                                            <img src="{{ url('/images/facebook_email.png') }}" width="8" height="17" alt="Facebook">
+                                        </a>
+                                    </td>
+                                    <td align="right" width="21">    
+                                        <a href="https://twitter.com/corona">
+                                            <img src="{{ url('/images/twitter_email.png') }}" width="21" height="17" alt="Twitter">
+                                        </a>
+                                    </td>
+                                    <td align="right" width="23">
+                                        <a href="https://www.youtube.com/corona">
+                                            <img src="{{ url('/images/youtube_email.png') }}" width="23" height="17" alt="Youtube">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>
+        <table class="footer" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="100%" colspan="2" height="25" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
+            </tr>
             <tr>                
-                <td valign="top" width="40%">
+                <td align="center" valign="top" width="43%">
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
-                            <td>
-                                <img src="{{ url('/images/email_footer.png') }}" width="197px" height="129px" style="margin:30px;">
+                            <td align="center">
+                                <img src="{{ url('/images/email_footer.png') }}" style="margin: 0; border: 0; padding: 0; display: block;" width="197" height="129">
                             </td>
                         </tr>
                     </table>
                 </td>
-                <td valign="top" width="60%" class="footer-text">
-                    <table border="0" cellpadding="30" cellspacing="0" width="100%">
+                <td align="center" valign="top" width="57%" class="footer-text">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
-                            <td>
+                            <td width="90%" align="left">
                                 <p>
                                     {{ trans('email.text-footer') }}
                                     {!! trans('email.unsubscribe') !!}
                                 </p>
-                            </td>                                    
+                            </td>
+                            <td width="10%" align="right" style="font-size:1px; line-height:1px;">&nbsp;</td>                              
                         </tr>
                     </table>
                 </td>                 
             </tr>
             <tr>
-                <td colspan="2">
+                <td width="100%" colspan="2" height="25" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td width="100%" colspan="2">
                     <p>{{ trans('email.address') }}</p>
                     <p>{{ trans('email.phone') }} - {{ trans('email.site') }}</p>
                     <p class="links"><a href="{{ trans('text.terms-link') }}" target="_blank">{{ trans('text.terms') }}</a>
                     <a href="{{ trans('text.privacy-policy-link') }}" target="_blank">{{ trans('text.privacy-policy') }}</a></p>
                 </td>
+            </tr>
+            <tr>
+                <td width="100%" colspan="2" height="45" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
             </tr>
         </table>
     </td>

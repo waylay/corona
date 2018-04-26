@@ -3,8 +3,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
     <style>
         @media only screen and (max-width: 600px) {
             .inner-body {
@@ -21,34 +19,67 @@
                 width: 100% !important;
             }
         }
+        .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td {line-height: 100%;}
+        .ExternalClass {width: 100%;}
     </style>
+</head>
+<body>
+    <!-- SPACER -->
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td align="center"><table width="100%" align="center" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+            <tr>
+                <td width="100%" height="10" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
+            </tr>
+            </tbody>
+        </table></td>
+    </tr>
+    </table>
+    <!-- END SPACER -->
 
     <table class="wrapper" width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td align="center">
-                <table class="content" width="100%" cellpadding="0" cellspacing="0">
+                <table class="body" width="100%" cellpadding="0" cellspacing="0">
                     {{ $header or '' }}
 
                     <!-- Email Body -->
                     <tr>
-                        <td class="body" width="100%" cellpadding="0" cellspacing="0">
-                            <table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0">
+                        <td align="center" cellpadding="0" cellspacing="0">
+                            <table class="inner-body" align="center" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="100%" height="5" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                                </tr>
                                 <!-- Body content -->
                                 <tr>
-                                    <td class="content-cell">
-                                        <div style="padding:20px 40px;">
-                                            {{ Illuminate\Mail\Markdown::parse($slot) }}
-                                        </div>
-                                            {{ $subcopy or '' }}
+                                    <td cellpadding="0" cellspacing="0">
+                                        {{ Illuminate\Mail\Markdown::parse($slot) }}
                                     </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
+                    {{ $subcopy or '' }}
                     {{ $footer or '' }}
                 </table>
             </td>
         </tr>
     </table>
+
+
+    <!-- SPACER -->
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td align="center"><table width="100%" align="center" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+            <tr>
+                <td width="100%" height="10" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>
+            </tr>
+            </tbody>
+        </table></td>
+    </tr>
+    </table>
+    <!-- END SPACER -->
 </body>
 </html>
