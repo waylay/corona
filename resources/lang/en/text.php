@@ -22,7 +22,7 @@ return [
     'get_inspired'              => 'This August, our global festival series is coming to Canada. Get inspired by past events.',
     'privacy-policy'            => 'Privacy Policy',
     'privacy-policy-link'       => 'http://www.labatt.com/legal/lbc_eng_privacy.html',
-    'terms'                     => 'TERMS AND CONDITIONS',
+    'terms'                     => 'Terms and Conditions',
     'terms-link'                => 'http://www.labatt.com/legal/lbc_eng_legal.html',
     'contact'                   => 'Contact Us',
     'contact-link'              => 'https://contactus.anheuser-busch.com/contactus/LABATTCA/contact_us.asp',
