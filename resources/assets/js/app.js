@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 $( document ).ready( function () {
+    
 
     // Responsive Video
     $("#video-wrapper").fitVids();
@@ -37,7 +38,6 @@ $( document ).ready( function () {
             },
             year: {
                 required: true,
-                minlength: 4,
                 digits: true,
             },
             province: "required",

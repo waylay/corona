@@ -120,17 +120,17 @@ label {
 .brand {
   overflow: hidden;
   .logo {
-    max-width: 330px;
-    margin: 80px auto 40px;
+    max-width: 205px;
+    margin: 70px auto 30px;
   }
 }
 
 
 
 .gate-form-wrapper {
-  max-width: 600px;
-  padding: 0 60px;
-  min-height: 900px;
+  max-width: 476px;
+  padding: 0 30px;
+  min-height: 830px;
   margin: 20px auto 0;
   background: url('/images/background-form-gate.png') no-repeat top left;
   background-attachment: scroll;
@@ -138,34 +138,34 @@ label {
   background-position: center top;
 
   h1 {
-    font-size: 55px;
-    margin-top: 60px;
+    font-size: 45px;
+    margin-top: 22px;
   }
 
   h2 {
     font-size: 27px;
     &.legal-age{
-      font-size: 34px;
+      font-size: 28px;
     }
     &.thankyou{
       text-transform: initial;
     }
   }
   h3 {
-    font-size: 28px;
-    margin-top: 20px;
+    font-size: 23px;
+    margin-top: 15px;
   }
 
   #month, #day{
     display: inline-block;
-    width: 70px;
+    width: 50px;
     text-align: center;
     margin: 0 5px;
   }
   #year {
     display: inline-block;
     text-align: center;
-    width: 100px;
+    width: 70px;
     margin: 0 5px;
   }
 
@@ -174,7 +174,7 @@ label {
   }
 
   .selectdiv {
-    max-width: 340px;
+    max-width: 260px;
   }
 
   .error {
@@ -183,7 +183,7 @@ label {
     line-height: 1;
     width: 100%;
     left: 0;
-    top: 60px;
+    top: 50px;
     text-transform: uppercase;
   }
 
@@ -201,23 +201,23 @@ label {
 
 
 .signup-form-wrapper {
-  max-width: 750px;
+  max-width: 440px;
   margin: 20px auto;
   color: #FFF;
   h1 {
-    font-size: 45px;
+    font-size: 36px;
     color: #FFF;
   }
   h2 {
-    font-size: 30px;
+    font-size: 21px;
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 32px;
     line-height: 1.1;
     color: $brand-secondary;
   }
   h3 {
     line-height: 1.1;
-    font-size: 29px;
+    font-size: 18px;
     color: #FFF;
     text-transform: initial;
     &:first-of-type {
@@ -227,13 +227,12 @@ label {
 
   form.signup {
     width: 100%;
-    max-width: 650px;
-    padding: 30px 10px 0;
+    padding: 10px 10px 0;
 
     .required-field {
       text-transform: uppercase;
       margin-left: -10px;
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .form-group {
@@ -263,7 +262,7 @@ label {
     }
 
     input:not(.is-invalid) {
-      margin-bottom: 25px;
+      margin-bottom: 18px;
     }
 
     select:not(.is-invalid) {
@@ -288,8 +287,8 @@ label {
     label.form-check-label {
       p {
         float: right;
-        width: calc(100% - 40px);
-        font-size: 18px;
+        width: calc(100% - 45px);
+        font-size: 16px;
         font-weight: 400;
         cursor: pointer;
         a {
@@ -364,6 +363,7 @@ label {
       background: url('/images/button-signup.png') no-repeat top left;
       background-size: contain;
       color: $brand-primary;
+      margin-top: 10px;
       margin-bottom: 20px;
       &:hover{
         color: #FFF;
@@ -373,7 +373,7 @@ label {
     .error {
       display: block;
       margin-top: 5px;
-      font-size: 18px;
+      font-size: 14px;
       text-transform: uppercase;
     }
   }  
@@ -397,9 +397,10 @@ label {
   input, select {
     z-index: 1;
     position: relative;
-    font-size: 26px;
+    font-size: 20px;
     border-width: 2px;
-    height: 55px;
+    height: 45px;
+    padding: 6px;
   }
 
   select {
@@ -419,13 +420,13 @@ label {
   
   .selectdiv:after {
     content: '\25BC';
-    font-size: 45px;
+    font-size: 30px;
     top: 0;
     bottom: 0;
     right: 0;
-    height: 55px;
-    width: 55px;
-    line-height: 55px;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
     border-left: 2px solid $brand-primary;
     background-color: rgba(12, 36, 64, 0.25);
     position: absolute;
@@ -497,16 +498,16 @@ label {
   }
 
   button {
-    width: 340px;
+    width: 260px;
     max-width: 100%;
-    height: 79px;
+    height: 60px;
     margin: 50px auto;
     display: block;
     background: url('/images/button-gate.png') no-repeat top left;
     background-size: contain;
     border: medium none;
     color: white;
-    font-size: 38px;
+    font-size: 28px;
     text-transform: uppercase;
     &:hover{
       color: $brand-secondary;
@@ -517,14 +518,14 @@ label {
 }
 
 #footer {
-  padding: 35px 50px;
+  padding: 25px 30px;
   clear: both;
   overflow: hidden;
   hr {
     border-top: 3px solid white;
   }
   p, a{
-    font-size: 17px;
+    font-size: 15px;
     color: white;
     margin-bottom: 0;
     line-height: 32px;
@@ -540,17 +541,17 @@ label {
     justify-content: space-between;
     float: left;
     width: 100%;
-    max-width: 687px;
+    max-width: 750px;
   }
   .social {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 220px;
+    max-width: 50px;
     float: right;
     img {
       width: auto;
-      height: 30px;
+      height: 20px;
     }
   }
 }
@@ -564,7 +565,7 @@ label {
 .get-inspired {
   text-transform: initial;
   margin-bottom: 20px;
-  font-size: 28px;
+  font-size: 21px;
 }
 
 #video-wrapper {
@@ -573,6 +574,35 @@ label {
   padding: 0;
   margin: 0 auto;
   overflow: hidden;
+}
+.tv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  
+  .screen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    margin: auto;
+
+    opacity: 0;
+    transition: opacity .5s;
+
+    &.active {
+      opacity: 1;
+    }
+  }
 }
 
 // Responsive

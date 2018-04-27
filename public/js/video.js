@@ -60,79 +60,75 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 41);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 39:
+/***/ 41:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(40);
+module.exports = __webpack_require__(42);
 
 
 /***/ }),
 
-/***/ 40:
+/***/ 42:
 /***/ (function(module, exports) {
 
-jQuery(document).ready(function ($) {
-    var $languages = {
-        'fr': '//cdn.datatables.net/plug-ins/1.10.16/i18n/French.json',
-        'en': ''
-    };
+var tag = document.createElement('script');
+tag.src = 'https://www.youtube.com/player_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    var table = $('#entries').DataTable({
-        language: {
-            "url": $languages[document.documentElement.lang]
-        },
-        ajax: '/api/entries',
-        processing: true,
-        columns: [{ 'data': 'id' }, { 'data': 'created_at' }, { 'data': 'firstname' }, { 'data': 'lastname' }, { 'data': 'email' }, { 'data': 'province' }, { 'data': 'birthday' }, { 'data': 'language' }],
-        iDisplayLength: 20,
-        lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
-        columnDefs: [{
-            "targets": 'invisible',
-            "visible": false
-        }],
-        order: [[0, "desc"]],
-        dom: 'Bfrtlip',
-        buttons: [{
-            extend: 'copy'
-        }, {
-            extend: 'csv'
+var tv,
+    playerDefaults = { autoplay: 0, autohide: 1, modestbranding: 0, rel: 0, showinfo: 0, controls: 0, disablekb: 1, enablejsapi: 0, iv_load_policy: 3 };
+var vid = [{ 'videoId': 'jwmvjJG_a34', 'startSeconds': 0, 'endSeconds': 15, 'suggestedQuality': 'hd720' }],
+    randomVid = Math.floor(Math.random() * vid.length),
+    currVid = randomVid;
 
-        }, {
-            extend: 'excel'
-        }, {
-            extend: 'print'
-        }],
-        responsive: {
-            details: {
-                display: $.fn.dataTable.Responsive.display.childRow,
-                type: ''
-            }
-        },
-        initComplete: function initComplete() {
-            this.api().columns('.select-filter').every(function () {
-                var column = this;
-                var select = $('<select><option value="">All</option><option value="Y">Yes</option><option value="N">No</option></select>').appendTo($(column.footer()).empty()).on('change', function () {
-                    var val = $.fn.dataTable.util.escapeRegex($(this).val());
+function onYouTubePlayerAPIReady() {
+    tv = new YT.Player('tv', { events: { 'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange }, playerVars: playerDefaults });
+    console.log(tv);
+}
 
-                    column.search(val ? '^' + val + '$' : '', true, false).draw();
-                });
-            });
+function onPlayerReady() {
+    tv.loadVideoById(vid[currVid]);
+    tv.mute();
+}
 
-            this.api().columns('.text-filter').every(function (index) {
-                var that = this;
-                var input = $('<input type="text" />').appendTo($(that.footer()).empty()).on('keyup change', function () {
-                    if (that.search() !== this.value) {
-                        that.search(this.value).draw();
-                    }
-                });
-            });
+function onPlayerStateChange(e) {
+    if (e.data === 1) {
+        $('#tv').addClass('active');
+        $('.hi em:nth-of-type(2)').html(currVid + 1);
+    } else if (e.data === 2) {
+        $('#tv').removeClass('active');
+        if (currVid === vid.length - 1) {
+            currVid = 0;
+        } else {
+            currVid++;
         }
-    });
+        tv.loadVideoById(vid[currVid]);
+        tv.seekTo(vid[currVid].startSeconds);
+    }
+}
+
+function vidRescale() {
+
+    var w = $(window).width() + 200,
+        h = $(window).height() + 200;
+
+    if (w / h > 16 / 9) {
+        tv.setSize(w, w / 16 * 9);
+        $('.tv .screen').css({ 'left': '0px' });
+    } else {
+        tv.setSize(h / 9 * 16, h);
+        $('.tv .screen').css({ 'left': -($('.tv .screen').outerWidth() - w) / 2 });
+    }
+}
+
+$(window).on('load resize', function () {
+    vidRescale();
 });
 
 /***/ })

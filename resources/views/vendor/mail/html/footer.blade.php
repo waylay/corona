@@ -13,7 +13,7 @@
     </td>
 </tr>
 <tr>
-    <td>
+    <td bgcolor="#13111E">
         <table class="subcopy" width="600" border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td align="center" valign="top" width="100%">
@@ -23,7 +23,7 @@
                         </tr>
                         <tr>
                         <td align="right" valign="top" width="100%">
-                            <table border="0" width="135" cellpadding="0" cellspacing="0">
+                            <table border="0" width="50" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td align="left" width="18">
                                         <a href="https://instagram.com/corona">
@@ -33,16 +33,6 @@
                                     <td align="center" width="8">
                                         <a href="https://www.facebook.com/Corona">
                                             <img src="{{ url('/images/facebook_email.png') }}" width="8" height="17" alt="Facebook">
-                                        </a>
-                                    </td>
-                                    <td align="right" width="21">
-                                        <a href="https://twitter.com/corona">
-                                            <img src="{{ url('/images/twitter_email.png') }}" width="21" height="17" alt="Twitter">
-                                        </a>
-                                    </td>
-                                    <td align="right" width="23">
-                                        <a href="https://www.youtube.com/corona">
-                                            <img src="{{ url('/images/youtube_email.png') }}" width="23" height="17" alt="Youtube">
                                         </a>
                                     </td>
                                 </tr>
@@ -56,7 +46,7 @@
     </td>
 </tr>
 <tr>
-    <td>
+    <td bgcolor="#13111E">
         <table class="footer" width="600" border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td width="100%" colspan="2" height="25" align="center" style="font-size:1px; line-height:1px;">&nbsp;</td>

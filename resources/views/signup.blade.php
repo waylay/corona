@@ -108,8 +108,8 @@
 
 </div> <!-- END .signup-form -->
 
-<h1 class="connecting">{{ trans('text.connecting') }}<br><a href="https://twitter.com/hashtag/coronasunsets" target="_blank">{{ trans('text.hashtag') }}</a></h1>
-<h2 class="get-inspired">{{ trans('text.get_inspired') }}</h2>
+<h2 class="connecting">{{ trans('text.connecting') }}<br><a href="https://twitter.com/hashtag/coronasunsets" target="_blank">{{ trans('text.hashtag') }}</a></h2>
+<h3 class="get-inspired">{{ trans('text.get_inspired') }}</h3>
 <div id="video-wrapper">
 <iframe width="1500" height="844" src="https://www.youtube.com/embed/u-Bz4QXwUqM?html5=1&amp;rel=0&amp;controls=1&amp;showinfo=0&amp;vq=hd1080&amp;modestbranding=1&amp;color=white&amp;iv_load_policy=3&amp;hl={{ app()->getLocale() }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>

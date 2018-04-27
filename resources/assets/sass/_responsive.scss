@@ -15,8 +15,8 @@
   }
 
   .brand .logo {
-    max-width: 205px;
-    margin: 8vw auto 3vw;
+    max-width: 180px;
+    margin: 10vw auto 3vw;
   }
 
   .signup {
@@ -161,7 +161,8 @@
       }
 
       label.form-check-label p {
-        font-size: 13px;
+        font-size: 12px;
+        width: calc(100% - 35px);
       }
 
       .required-field {
@@ -223,6 +224,9 @@
     
   }
   
+  #tv {
+    display: none !important;
+  }
 
 }
 

@@ -15,7 +15,7 @@
 
     <div class="thankyou-social">
 
-        <a href="https://www.facebook.com/Corona" target="_blank">
+        <a href="https://www.facebook.com/CoronaCanada/?ref=br_rs" target="_blank">
             <img src="/images/facebook_large.png" alt="Facebook">
         </a> 
 
