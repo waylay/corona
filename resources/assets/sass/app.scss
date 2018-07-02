@@ -48,15 +48,9 @@ img {
 }
 
 
-.border-left-0 {
-  border-left: 0 !important;
-}
-
-
 
 #content {
   position: relative;
-  padding: 0 30px;
 }
 
 h1,h2,h3,h4 {
@@ -67,83 +61,110 @@ label {
   font-weight: 400;
 }
 
-.panel {
-  margin-top: 70px;
-  &.panel-default {
-    margin-top: 30vh;
-    margin-bottom: 30vh;
-  }
-  .form-control {
-    height: auto;
-  }
-  button, button:hover {
-    color: #FFF;
-  }
-}
-
-.container {
-  max-width: 100%;
-}
-
-.signup-page {
-  h1,h2,h3,h4,p,a {
-    color: #FFF;
-  }
-}
 
 #header {
-  .locale{
-    text-transform: uppercase;
-    font-size: 19px;
-    line-height: 1;
-    a,span {
-      color: #FFF;
-      padding: 0 2px;
-      line-height: 1;
-      &.active {
-        color: $brand-secondary;
+  margin-top: 18px;
+  min-height: 300px;
+  .nav {
+    margin-top: 68px;
+    li {
+      font-size: 25px;
+      text-transform: uppercase;
+    }
+    .dropdown-menu {
+      top: 50px;
+      margin: 0;
+      padding-top: 0;
+      box-shadow: none;
+      li a{
+        padding: 0 19px;
+        font-size: 22.92px;
+        line-height: 29.17px;
       }
     }
+
+    .dropdown .dropdown-menu {
+        transition: all 0.3s;    
+        max-height: 0;
+        display: block;        
+        opacity: 0;
+    }
+    
+    .dropdown.open .dropdown-menu {
+        max-height: 300px;
+        opacity: 1;
+    }
+
+    .divider {
+      height: 3px;
+      margin: -5px 24px 10px 14px;
+    }
+
+    .menu-cities {
+      min-width: 181px;      
+      &.open {
+        min-height: 219px;
+        background: url('/images/background-submenu-cities.png') no-repeat top left;
+        background-attachment: scroll;
+        background-size: cover;
+      }
+    }
+
+  }
+
+  .navbar-brand-centered {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 240px;
+    height: 158px;
+    text-align: center;
+    padding: 0;
+    margin-left: -120px;
+  }
+  
+
+  .locale{
+    a {
+      color: #FFF;
+      position: relative;
+      line-height: 2em;
+      &.active {
+        color: $brand-primary;
+        &::after{
+          content: " ";
+          position: absolute;
+          width: 66px;
+          height: 51px;
+          top: -11px;
+          left: -20px;
+          z-index: -1;
+          background: url('/images/background-lang.png') no-repeat top left;
+          background-attachment: scroll;
+          background-size: cover;
+        }
+        
+      }
+    }
+    span {
+      color: transparent;
+      padding: 0 6px;
+    }
   }
 }
 
-.brand {
-  overflow: hidden;
-  .logo {
-    max-width: 205px;
-    margin: 70px auto 30px;
-  }
-}
 
 
 
-.gate-form-wrapper {
-  max-width: 476px;
-  padding: 0 30px;
-  min-height: 830px;
-  margin: 20px auto 0;
-  background: url('/images/background-form-gate.png') no-repeat top left;
-  background-attachment: scroll;
-  background-size: contain;
-  background-position: center top;
+#gate{
 
   h1 {
-    font-size: 45px;
-    margin-top: 22px;
-  }
-
-  h2 {
-    font-size: 27px;
-    &.legal-age{
-      font-size: 28px;
-    }
-    &.thankyou{
-      text-transform: initial;
-    }
-  }
-  h3 {
-    font-size: 23px;
-    margin-top: 15px;
+    text-align: center;
+    font-size: 58px;
+    text-align: center;
+    color: #fff;
+    line-height: 64px;
   }
 
   #month, #day{
@@ -177,47 +198,7 @@ label {
     text-transform: uppercase;
   }
 
-  .thankyou-social {
-    width: 100%;
-    text-align: center;
-    margin-top: 60px;
-    a{
-      margin: 0 20px;
-    }
-  }
 }
-
-
-
-
-.signup-form-wrapper {
-  max-width: 440px;
-  margin: 20px auto;
-  color: #FFF;
-  h1 {
-    font-size: 36px;
-    color: #FFF;
-  }
-  h2 {
-    font-size: 21px;
-    margin-top: 10px;
-    margin-bottom: 32px;
-    line-height: 1.1;
-    color: $brand-secondary;
-  }
-  h3 {
-    line-height: 1.1;
-    font-size: 18px;
-    color: #FFF;
-    text-transform: initial;
-    &:first-of-type {
-      padding: 0 20px;
-    }
-  }
-
-}
-
-
 
 
 #footer {
@@ -250,18 +231,6 @@ label {
       height: 25px;
     }
   }
-}
-
-.connecting {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  line-height: 1;
-}
-
-.get-inspired {
-  text-transform: initial;
-  margin-bottom: 20px;
-  font-size: 21px;
 }
 
 #video-wrapper {

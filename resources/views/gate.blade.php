@@ -2,12 +2,9 @@
 
 @section('content')
 
-<div class="gate-form-wrapper">
-
-
-
+<div class="container" id="gate">
     
-    <h2 class="legal-age">{!! trans('text.gate-age') !!}</h2>
+    <h1>{!! trans('text.gate-age') !!}</h1>
 
     <form class="signup" id="age" action="/gate" method="POST" enctype="multipart/form-data" novalidate >
         {{ csrf_field() }}

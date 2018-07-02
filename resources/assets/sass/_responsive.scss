@@ -1,14 +1,7 @@
 @media screen and (min-width: $screen-xs-max){
-  .navbar-brand-centered {
-    position: absolute;
-    left: 50%;
-    display: block;
-    width: 160px;
-    text-align: center;
-  }
-  .navbar>.container .navbar-brand-centered, 
-  .navbar>.container-fluid .navbar-brand-centered {
-    margin-left: -80px;
+  .container-fluid {
+    padding-left: 75px;
+    padding-right: 75px;
   }
 }
 

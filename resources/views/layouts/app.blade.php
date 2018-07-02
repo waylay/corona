@@ -33,8 +33,8 @@
 
         <div id="header">
 
-            <nav class="navbar" role="navigation">
-                <div class="container">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
@@ -43,32 +43,43 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="navbar-brand navbar-brand-centered">
-                        <img src="/images/logo-gate.png" alt="{!! trans('text.site-title') !!}">
-                    </div>
+                    <a class="navbar-brand navbar-brand-centered" href="{{ url('/') }}">
+                        <img class="logo" src="/images/logo.png" alt="{!! trans('text.site-title') !!}">
+                    </a>
                     </div>
 
                     <!-- Links -->
                     <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                        
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <!-- Localization -->
-                            <div class="locale">
-                                <a href="/language/en" class="{{ (app()->getLocale() == 'en') ? 'active' : null  }}" tabindex="-1">En</a>
-                                <span>|</span>
-                                <a href="/language/fr" class="border-left-0 {{ (app()->getLocale() == 'fr') ? 'active' : null  }}" tabindex="-1">Fr</a>
-                                @if( request()->is('dashboard') )
-                                <span>|</span>
-                                <a href="{{ url('/logout') }}"> logout </a>
-                                @endif
-                            </div> <!-- end .locale  -->
-                        </li>		        
-                    </ul>
+                            <li class="dropdown menu-cities">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cities</a>
+                                <ul class="dropdown-menu">
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Halifax</a></li>
+                                    <li><a href="#">MT. Tremblant</a></li>
+                                    <li><a href="#">Toronto</a></li>
+                                    <li><a href="#">Edmonton</a></li>
+                                    <li><a href="#">Whistler</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Stream Reminder</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <!-- Localization -->
+                                <div class="locale">
+                                    <a href="/language/en" class="{{ (app()->getLocale() == 'en') ? 'active' : null  }}" tabindex="-1">En</a>
+                                    <span>|</span>
+                                    <a href="/language/fr" class="border-left-0 {{ (app()->getLocale() == 'fr') ? 'active' : null  }}" tabindex="-1">Fr</a>
+                                    @if( request()->is('dashboard') )
+                                    <span>|</span>
+                                    <a href="{{ url('/logout') }}"> logout </a>
+                                    @endif
+                                </div> <!-- end .locale  -->
+                            </li>		        
+                        </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
@@ -84,7 +95,7 @@
 
 
         <div id="footer">
-            
+            <div class="container-fluid">
                 
                 <div class="copy">
                     <p>&copy; {{ date('Y') }} {{ trans('text.copy') }}</p>
@@ -114,7 +125,7 @@
 
                 </div>
                     
-
+            </div> <!-- end #footer  -->
         </div> <!-- end #footer  -->
 
     </div> <!-- end #app  -->

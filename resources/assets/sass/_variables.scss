@@ -16,6 +16,28 @@ $text-color: $brand-primary;
 $headings-color: $brand-primary;
 $state-danger-text: $brand-danger;
 
+
+// Navbar 
+
+
+$navbar-default-bg: transparent;
+$navbar-height: 50px;
+$navbar-default-link-color: #fff;
+$navbar-default-link-active-color: #fff;
+$navbar-default-link-hover-color: #fff;
+$navbar-padding-horizontal: 14px;
+$dropdown-divider-bg: #fff;
+$nav-link-padding: 10px 19px;
+
+// Dropdowns
+$dropdown-bg: transparent;
+$dropdown-border: transparent;
+$dropdown-link-color:  #fff;
+//** Hover color for dropdown links.
+$dropdown-link-hover-color:  $brand-primary;
+//** Hover background for dropdown links.
+$dropdown-link-hover-bg: transparent;
+
 // Buttons
 $btn-default-color: $text-color;
 $btn-primary-color: $text-color;

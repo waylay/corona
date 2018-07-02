@@ -11,7 +11,7 @@ return [
     */
 
     'site-title'                => 'CORONA SUNSETS FESTIVAL',
-    'gate-age'                  => 'YOU MUST BE OF LEGAL DRINKING AGE TO ENTER THIS SITE.',
+    'gate-age'                  => 'YOU MUST BE OF LEGAL DRINKING AGE TO ENTER THIS SITE',
     'sorry'                     => 'SORRY',
     'underage'                  => 'MUST BE LEGAL DRINKING AGE IN PROVINCE OR TERRITORY OF RESIDENCE.',
     'signup-title'              => 'ONE NATIONAL SUNSET.<br>ONE NATIONAL SUNSETS FESTIVAL.',

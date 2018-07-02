@@ -11,7 +11,7 @@ return [
     */
 
     'site-title'                => 'CORONA SUNSETS FESTIVAL',
-    'gate-age'                  => 'VOUS DEVEZ AVOIR L’ÂGE LÉGAL DE CONSOMMER DE L’ALCOOL POUR ACCÉDER À CE SITE.',
+    'gate-age'                  => 'VOUS DEVEZ AVOIR L’ÂGE LÉGAL DE CONSOMMER DE L’ALCOOL POUR ACCÉDER À CE SITE',
     'sorry'                     => 'DÉSOLÉ',
     'underage'                  => 'VOUS DEVEZ AVOIR L’ÂGE LÉGAL DE CONSOMMER DE L’ALCOOL DANS LA PROVINCE OU LE TERRITOIRE DE RÉSIDENCE.',
     'signup-title'              => 'UN COUCHER DE SOLEIL NATIONAL.<br>UN FESTIVAL NATIONAL CÉLÉBRANT LES COUCHERS DE SOLEIL.',
