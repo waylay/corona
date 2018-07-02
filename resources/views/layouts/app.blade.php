@@ -28,26 +28,50 @@
 </head>
 
 <body class="{{ Route::currentRouteName() }}" >
-@if( !request()->is('signup') && !request()->is('dashboard') )
-<div class="tv">
-        <div class="screen mute" id="tv"></div>
-</div>
-@endif
+
     <div id="app">
 
         <div id="header">
 
-                <!-- Localization -->
-                <div class="locale">
-                    <a href="/language/en" class="{{ (app()->getLocale() == 'en') ? 'active' : null  }}" tabindex="-1">En</a>
-                    <span>|</span>
-                    <a href="/language/fr" class="border-left-0 {{ (app()->getLocale() == 'fr') ? 'active' : null  }}" tabindex="-1">Fr</a>
-                    @if( request()->is('dashboard') )
-                    <span>|</span>
-                    <a href="{{ url('/logout') }}"> logout </a>
-                    @endif
-                </div> <!-- end .locale  -->
+            <nav class="navbar" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand navbar-brand-centered">
+                        <img src="/images/logo-gate.png" alt="{!! trans('text.site-title') !!}">
+                    </div>
+                    </div>
 
+                    <!-- Links -->
+                    <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <!-- Localization -->
+                            <div class="locale">
+                                <a href="/language/en" class="{{ (app()->getLocale() == 'en') ? 'active' : null  }}" tabindex="-1">En</a>
+                                <span>|</span>
+                                <a href="/language/fr" class="border-left-0 {{ (app()->getLocale() == 'fr') ? 'active' : null  }}" tabindex="-1">Fr</a>
+                                @if( request()->is('dashboard') )
+                                <span>|</span>
+                                <a href="{{ url('/logout') }}"> logout </a>
+                                @endif
+                            </div> <!-- end .locale  -->
+                        </li>		        
+                    </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
 
         </div> <!-- end .header  -->
 
@@ -61,7 +85,6 @@
 
         <div id="footer">
             
-                <hr>
                 
                 <div class="copy">
                     <p>&copy; {{ date('Y') }} {{ trans('text.copy') }}</p>
@@ -77,11 +100,18 @@
                         <img src="/images/instagram.png" alt="Instagram">
                     </a>
                     
-                    <a href="https://www.facebook.com/CoronaCanada/?ref=br_rs" target="_blank">
+                    <a href="https://www.facebook.com/Corona" target="_blank">
                         <img src="/images/facebook.png" alt="Facebook">
                     </a>
                     
+                    <a href="https://twitter.com/corona" target="_blank">
+                        <img src="/images/twitter.png" alt="Twitter">
                     </a>
+
+                    <a href="https://www.youtube.com/corona" target="_blank">
+                        <img src="/images/youtube.png" alt="Youtube">
+                    </a>
+
                 </div>
                     
 
@@ -102,63 +132,7 @@
     <script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
     <script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
     <script src="{{ asset('js/dashboard.js') }}"></script>
-
-    @elseif( !request()->is( 'signup' ) )
-    <script>
-        var tag = document.createElement('script');
-        tag.src = 'https://www.youtube.com/player_api';
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-            
-        var tv,
-                playerDefaults = {autoplay: 1, autohide: 1, modestbranding: 1, rel: 0, showinfo: 0, controls: 0, disablekb: 1, enablejsapi: 1, iv_load_policy: 3, loop: 1};
-        var vid = [
-                    {'videoId': 'jwmvjJG_a34', 'startSeconds': 0, 'endSeconds': 13, 'suggestedQuality': 'hd720'},
-                ],
-                randomVid = Math.floor(Math.random() * vid.length),
-            currVid = randomVid;
-
-
-        function onYouTubePlayerAPIReady(){
-            tv = new YT.Player('tv', {events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange}, playerVars: playerDefaults});
-            console.log(tv);
-        }
-
-        function onPlayerReady(){
-            tv.loadVideoById(vid[currVid]);
-            tv.mute();
-        }
-
-        function onPlayerStateChange(e) {
-            
-            if (e.data === 1){
-                $('#tv').addClass('active');
-            }
-
-            if (e.data === YT.PlayerState.ENDED){
-                tv.playVideo(); 
-            }
-        }
-
-        function vidRescale(){
-
-            var w = $(window).width()+200,
-                h = $(window).height()+200;
-
-            if (w/h > 16/9){
-                tv.setSize(w, w/16*9);
-                $('.tv .screen').css({'left': '0px'});
-            } else {
-                tv.setSize(h/9*16, h);
-                $('.tv .screen').css({'left': -($('.tv .screen').outerWidth()-w)/2});
-            }
-        }
-
-        $(window).on('load resize', function(){
-            vidRescale();
-        });
-    
-    </script>
+   
     @endif
 
 </body>

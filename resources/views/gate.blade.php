@@ -4,11 +4,7 @@
 
 <div class="gate-form-wrapper">
 
-    <div class="brand">
-        <div class="logo">
-            <img src="/images/logo-gate.png" alt="{!! trans('text.site-title') !!}">
-        </div>
-    </div>
+
 
     
     <h2 class="legal-age">{!! trans('text.gate-age') !!}</h2>

@@ -16,17 +16,12 @@
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 body {
-  background: url('/images/background-gate.jpg') no-repeat top left;
+  background: url('/images/background-image.jpg') no-repeat top left;
   background-attachment: scroll;
   background-size: cover;
   background-color: $brand-primary;
   overflow-y: scroll;
   min-height: 800px;
-  &.signup-page {
-    background: url('/images/background-signup.jpg') no-repeat top left;
-    background-color: #000103;
-    background-size: cover;
-  }
   &.dashboard {
     background-image: none;
     background-color: #000103;
@@ -66,7 +61,6 @@ img {
 
 h1,h2,h3,h4 {
   text-transform: uppercase;
-  text-align: center;
 }
 
 label {
@@ -98,10 +92,6 @@ label {
 }
 
 #header {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  z-index: 2;
   .locale{
     text-transform: uppercase;
     font-size: 19px;
@@ -225,311 +215,17 @@ label {
     }
   }
 
-  form.signup {
-    width: 100%;
-    padding: 10px 10px 0;
-
-    .required-field {
-      text-transform: uppercase;
-      margin-left: -10px;
-      font-size: 15px;
-    }
-
-    .form-group {
-      margin-bottom: 10px;
-    }
-
-    .form-control {
-      border: 2px solid #FFF;
-      color: #FFF;
-      &::-webkit-input-placeholder{
-        color: #FFF;
-        text-transform: uppercase;
-      }
-      &::-moz-placeholder{
-        color: #FFF;
-        text-transform: uppercase;
-      }
-      &:-moz-placeholder{
-        color: #FFF;
-        text-transform: uppercase;
-      }
-    }
-  
-    input, select{
-      padding-left: 17px;
-      background-color: rgba(225, 225, 225, 0.1);
-    }
-
-    input:not(.is-invalid) {
-      margin-bottom: 18px;
-    }
-
-    select:not(.is-invalid) {
-      margin-bottom: 6px;
-    }
-    
-    .selectdiv {
-      select {
-        option {
-          background-color: rgb(98, 98, 105);
-          font-size: 90%;  
-        }
-      }
-
-      &::after {
-        border-left: 2px solid #FFF;
-        background-color: rgba(225, 225, 225, 0.25);
-      }
-    }
-
-
-    label.form-check-label {
-      p {
-        float: right;
-        width: calc(100% - 45px);
-        font-size: 16px;
-        font-weight: 400;
-        cursor: pointer;
-        a {
-          color: #FFF;
-          text-decoration: underline;
-        }
-      }
-      .is-invalid + span + p{
-        color: $brand-danger;
-        a{
-          color: $brand-danger;
-        }
-      }
-    }
-
-    
-    /* Hide the browser's default checkbox */
-    .form-check-input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-    }
-
-    /* Create a custom checkbox */
-    .checkmark {
-      position: absolute;
-      top: 4px;
-      left: 0;
-      height: 25px;
-      width: 25px;
-      background-color: rgba(225, 225, 225, 0.1);
-      border: 2px solid #FFF;
-    }
-
-    .is-invalid + .checkmark {
-      border: 2px solid $brand-danger;
-      background-color: rgba(255, 0, 0, 0.25);
-    }
-
-    /* On mouse-over, add a grey background color */
-    .form-check-label:hover input ~ .checkmark {
-      background-color: rgba(225, 225, 225, 0.2);
-    }
-
-
-    /* Create the checkmark/indicator (hidden when not checked) */
-    .checkmark:after {
-      content: "";
-      position: absolute;
-      display: none;
-    }
-
-    /* Show the checkmark when checked */
-    .form-check-input:checked ~ .checkmark:after {
-      display: block;
-    }
-
-    /* Style the checkmark/indicator */
-    .form-check-label .checkmark:after {
-      left: 9px;
-      top: 5px;
-      width: 5px;
-      height: 10px;
-      border: solid white;
-      border-width: 0 3px 3px 0;
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      transform: rotate(45deg);
-    }
-
-    button {
-      background: url('/images/button-signup.png') no-repeat top left;
-      background-size: contain;
-      color: $brand-primary;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      &:hover{
-        color: #FFF;
-      }
-    }
-
-    .error {
-      display: block;
-      margin-top: 5px;
-      font-size: 14px;
-      text-transform: uppercase;
-    }
-  }  
 }
 
 
-.signup {
 
-  margin: 20px auto 0;
-  overflow: hidden;
-
-  .form-group {
-    margin-bottom: 35px;
-    position: relative;
-  }
-
-  .form-control:focus {
-    box-shadow: none;
-  }
-
-  input, select {
-    z-index: 1;
-    position: relative;
-    font-size: 20px;
-    border-width: 2px;
-    height: 45px;
-    padding: 6px;
-  }
-
-  select {
-    text-transform: uppercase;
-  }
-
-  .selectdiv {
-    position: relative;
-    width: 100%;
-    display: inline-block;
-  }
-   
-  /*To remove button from IE11, thank you Matt */
-  select::-ms-expand {
-       display: none;
-  }
-  
-  .selectdiv:after {
-    content: '\25BC';
-    font-size: 30px;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    height: 45px;
-    width: 45px;
-    line-height: 45px;
-    border-left: 2px solid $brand-primary;
-    background-color: rgba(12, 36, 64, 0.25);
-    position: absolute;
-    pointer-events: none;
-    text-align: center;
-  }
-  .selectdiv.is-invalid:after {
-    border-left: 2px solid $brand-danger !important;
-    background-color: rgba(255, 0, 0, 0.25);
-    color: $brand-danger;
-  }
-
-   
-  .selectdiv select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    /* Add some styling */
-    
-    display: block;
-    width: 100%;
-    padding-right: 68px;
-    padding-left: 20px;
-    background-color: rgba(12, 36, 64, 0.1);
-    background-image: none;
-    -ms-word-break: normal;
-    word-break: normal;
-
-    option {
-      background-color: rgba(12, 36, 64, 0.15);
-      font-size: 90%;
-    }
-  }
-  
-
-  input:focus::-webkit-input-placeholder{
-    color: transparent!important;
-  }
-  input:focus::-moz-placeholder{
-    color: transparent!important;
-  }
-  input:focus:-moz-placeholder{
-    color: transparent!important;
-  }
-
-
-  .form-control.is-invalid {
-    border-color: $brand-danger !important;
-    background-color: rgba(255,0,0,0.1) !important;
-    color: $brand-danger !important;
-
-    &:not(:focus)::-webkit-input-placeholder { /* WebKit browsers */
-      color: $brand-danger !important;
-    }
-    &:not(:focus):-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-      color: $brand-danger !important;
-    }
-    &:not(:focus)::-moz-placeholder { /* Mozilla Firefox 19+ */
-      color: $brand-danger !important;
-    }
-    &:not(:focus):-ms-input-placeholder { /* Internet Explorer 10+ */
-      color: $brand-danger !important;
-    }
-    
-  }
-  .is-valid + .error,
-  .error + .error {
-    display: none !important;
-  }
-
-  button {
-    width: 260px;
-    max-width: 100%;
-    height: 60px;
-    margin: 50px auto;
-    display: block;
-    background: url('/images/button-gate.png') no-repeat top left;
-    background-size: contain;
-    border: medium none;
-    color: white;
-    font-size: 28px;
-    text-transform: uppercase;
-    &:hover{
-      color: $brand-secondary;
-    }
-    transition: all .2s;
-  }
-
-}
 
 #footer {
   padding: 25px 30px;
   clear: both;
   overflow: hidden;
-  hr {
-    border-top: 3px solid white;
-  }
-  p, a{
-    font-size: 15px;
-    color: white;
-    margin-bottom: 0;
-    line-height: 32px;
-  }
+  background-color: #fff;
+
   a {
     text-transform: uppercase;
     &:hover {
@@ -541,17 +237,17 @@ label {
     justify-content: space-between;
     float: left;
     width: 100%;
-    max-width: 750px;
+    
   }
   .social {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 50px;
+    
     float: right;
     img {
-      width: auto;
-      height: 20px;
+      width: 25px;
+      height: 25px;
     }
   }
 }
@@ -575,35 +271,7 @@ label {
   margin: 0 auto;
   overflow: hidden;
 }
-.tv {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
 
-  width: 100%;
-  height: 100%;
-
-  overflow: hidden;
-  
-  .screen {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-
-    margin: auto;
-
-    opacity: 0;
-    transition: opacity .5s;
-
-    &.active {
-      opacity: 1;
-    }
-  }
-}
 
 // Responsive
 @import "responsive";
