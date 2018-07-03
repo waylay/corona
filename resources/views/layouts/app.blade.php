@@ -18,16 +18,13 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @if( request()->is('dashboard') )
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css" rel="stylesheet">
-    @endif
+    
 
 </head>
 
-<body class="{{ Route::currentRouteName() }}" >
+<body class="{{ Route::currentRouteName() }} lang-{{ app()->getLocale() }}" >
 
     <div id="app">
 
@@ -67,6 +64,7 @@
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
+                            <li class="learn-more"><a href="#">Learn More</a></li>
                             <li>
                                 <!-- Localization -->
                                 <div class="locale">
@@ -132,19 +130,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-
-    @if( request()->is( 'dashboard' ) )
-
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.flash.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
-    <script src="{{ asset('js/dashboard.js') }}"></script>
-   
-    @endif
-
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    
 </body>
 </html>

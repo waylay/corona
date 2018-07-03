@@ -8,6 +8,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Helvetica Neue Condensed';
+  src: url("/fonts/HelveticaNeue-Condensed.eot");
+  src: url("/fonts/HelveticaNeue-Condensed.ttf") format("truetype"), url("/fonts/HelveticaNeue-Condensed.woff") format("woff"), url("/fonts/HelveticaNeue-Condensed.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -1524,7 +1532,7 @@ h6,
   font-family: inherit;
   font-weight: 400;
   line-height: 1.2;
-  color: #0c2340;
+  color: #fff;
 }
 
 h1 small,
@@ -8421,47 +8429,19 @@ label {
   text-transform: uppercase;
 }
 
-#header .nav .dropdown-menu {
-  top: 50px;
-  margin: 0;
-  padding-top: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-#header .nav .dropdown-menu li a {
-  padding: 0 19px;
-  font-size: 22.92px;
-  line-height: 29.17px;
-}
-
-#header .nav .dropdown .dropdown-menu {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  max-height: 0;
-  display: block;
-  opacity: 0;
-}
-
-#header .nav .dropdown.open .dropdown-menu {
-  max-height: 300px;
-  opacity: 1;
-}
-
-#header .nav .divider {
-  height: 3px;
-  margin: -5px 24px 10px 14px;
-}
-
 #header .nav .menu-cities {
   min-width: 181px;
 }
 
 #header .nav .menu-cities.open {
   min-height: 219px;
-  background: url("/images/background-submenu-cities.png") no-repeat top left;
+  background: url("/images/background-submenu.png") no-repeat top left;
   background-attachment: scroll;
   background-size: cover;
+}
+
+#header .nav .learn-more {
+  min-width: 250px;
 }
 
 #header .navbar-brand-centered {
@@ -8504,36 +8484,59 @@ label {
   padding: 0 6px;
 }
 
-#gate h1 {
+.dropdown .dropdown-menu {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  max-height: 0;
+  opacity: 0;
+  display: block;
+  overflow: hidden;
+  top: 47px;
+  margin: 0;
+  padding-top: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.dropdown .dropdown-menu li a {
+  padding: 0 19px;
+  font-size: 22.92px;
+  line-height: 29.17px;
+}
+
+.dropdown .dropdown-menu .divider {
+  height: 3px;
+  margin: 0 0 7px 14px;
+  width: 80%;
+  float: left;
+}
+
+.dropdown.open .dropdown-menu {
+  max-height: 300px;
+  opacity: 1;
+}
+
+#gate {
   text-align: center;
+}
+
+#gate h1 {
   font-size: 58px;
   text-align: center;
-  color: #fff;
   line-height: 64px;
-}
-
-#gate #month,
-#gate #day {
   display: inline-block;
-  width: 50px;
-  text-align: center;
-  margin: 0 5px;
 }
 
-#gate #year {
-  display: inline-block;
-  text-align: center;
-  width: 70px;
-  margin: 0 5px;
+#gate h2 {
+  font-family: 'Helvetica Neue Condensed', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 29px;
+  margin-top: 15px;
 }
 
-#gate input,
-#gate select {
-  background-color: rgba(12, 36, 64, 0.1);
-}
-
-#gate .selectdiv {
-  max-width: 260px;
+#gate #birthday {
+  background: url("/images/background-date.png") no-repeat top left;
+  background-attachment: scroll;
+  background-size: cover;
 }
 
 #gate .error {
@@ -8544,6 +8547,56 @@ label {
   left: 0;
   top: 50px;
   text-transform: uppercase;
+}
+
+.ui-widget {
+  font-family: "Helvetica Neue Condensed Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.selectmenu .ui-selectmenu-button,
+.selectmenu .ui-selectmenu-button:hover,
+.selectmenu .ui-selectmenu-button:focus {
+  background-color: transparent;
+  border: none;
+  color: #0c2340;
+  font-size: 32px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.selectmenu .ui-selectmenu-icon.ui-icon {
+  display: none;
+}
+
+.ui-selectmenu-menu ul.ui-widget.ui-widget-content {
+  font-size: 23px;
+  border: none;
+  border-top: 3px solid #fff;
+  background: url(/images/background-date-submenu.png) no-repeat 0 -65px;
+  background-attachment: scroll;
+  background-size: cover;
+  color: #fff;
+  max-height: 249px;
+  max-width: 190px;
+  padding: 0;
+  margin-top: -5px;
+  margin-left: 20px;
+}
+
+.ui-selectmenu-menu ul.ui-widget.ui-widget-content::-webkit-scrollbar {
+  display: none;
+}
+
+.ui-selectmenu-menu ul.ui-widget.ui-widget-content .ui-menu-item-wrapper {
+  background-color: transparent;
+  border: none;
+  padding: 0 0 0 19px;
+  margin: 0;
+}
+
+.ui-selectmenu-menu ul.ui-widget.ui-widget-content .ui-menu-item-wrapper:hover,
+.ui-selectmenu-menu ul.ui-widget.ui-widget-content .ui-menu-item-wrapper.ui-state-active {
+  color: #0c2340;
 }
 
 #footer {
@@ -8594,6 +8647,10 @@ label {
   padding: 0;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.lang-en #gate h1 {
+  max-width: 920px;
 }
 
 @media screen and (min-width: 767px) {

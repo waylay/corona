@@ -2,29 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Entry;
-use App\Mail\NewEntry;
 use Validator;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Storage;
 
-class EntryController extends Controller
+class PagesController extends Controller
 {
     /**
-     * Display all the entries
+     * Display the gate
      *
-     * @return Illuminate\Support\Collection $data
      */
-    public function index()
+    public function gate()
     {
-        //
-        $data = [
-            'data' => Entry::all()
-        ];
-
-        return $data;
+        return view('gate', $this->viewData());
     }
 
     /**
@@ -32,7 +22,7 @@ class EntryController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      */
-    public function gate(Request $request)
+    public function checkAge(Request $request)
     {
         // Only allow dates in the last 100 years range
         $current_year          = Carbon::now()->year;
@@ -75,45 +65,6 @@ class EntryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $validEntry = $request->validate([
-            'firstname'  => 'required|alpha',
-            'lastname'   => 'required|alpha',
-            'email'      => 'required|email|unique:entries',
-            'province'   => 'required',
-            'agree'      => 'required'
-        ], [
-            'unique' => trans('form.email_unique')
-        ]);
-
-        unset($validEntry['agree']);
-
-        // Get the birthday from session
-        $validEntry['birthday'] = session('birthday');
-
-        // Get the province from session
-        $validEntry['province'] = session('province');
-
-        // Store the Language used when form was submitted
-        $validEntry['language'] = \App::getLocale();
-
-        // Store the entry
-        $entry = Entry::forceCreate($validEntry);
-
-        // Queue an email notification
-        Mail::to($entry->email)->send(new NewEntry($entry));
-
-        // Done, redirect visitor to thank you page
-        return redirect('/thankyou');
-    }
-
-    /**
      * Check if the date is valid
      *
      * @return bool
@@ -152,5 +103,26 @@ class EntryController extends Controller
         }
 
         return false;
+    }
+
+    public function viewData()
+    {
+        $viewData           = [];
+        $viewData['months'] = [
+            '1'  => trans('form.january'),
+            '2'  => trans('form.february'),
+            '3'  => trans('form.march'),
+            '4'  => trans('form.april'),
+            '5'  => trans('form.may'),
+            '6'  => trans('form.june'),
+            '7'  => trans('form.july'),
+            '8'  => trans('form.august'),
+            '9'  => trans('form.september'),
+            '10' => trans('form.october'),
+            '11' => trans('form.november'),
+            '12' => trans('form.december')
+        ];
+
+        return $viewData;
     }
 }

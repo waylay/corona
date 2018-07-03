@@ -8,6 +8,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Helvetica Neue Condensed';
+  src: url('/fonts/HelveticaNeue-Condensed.eot');
+  src: url('/fonts/HelveticaNeue-Condensed.ttf') format('truetype'),
+       url('/fonts/HelveticaNeue-Condensed.woff') format('woff'),       
+       url('/fonts/HelveticaNeue-Condensed.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 // Variables
 @import "variables";
@@ -71,43 +81,21 @@ label {
       font-size: 25px;
       text-transform: uppercase;
     }
-    .dropdown-menu {
-      top: 50px;
-      margin: 0;
-      padding-top: 0;
-      box-shadow: none;
-      li a{
-        padding: 0 19px;
-        font-size: 22.92px;
-        line-height: 29.17px;
-      }
-    }
 
-    .dropdown .dropdown-menu {
-        transition: all 0.3s;    
-        max-height: 0;
-        display: block;        
-        opacity: 0;
-    }
     
-    .dropdown.open .dropdown-menu {
-        max-height: 300px;
-        opacity: 1;
-    }
-
-    .divider {
-      height: 3px;
-      margin: -5px 24px 10px 14px;
-    }
 
     .menu-cities {
       min-width: 181px;      
       &.open {
         min-height: 219px;
-        background: url('/images/background-submenu-cities.png') no-repeat top left;
+        background: url('/images/background-submenu.png') no-repeat top left;
         background-attachment: scroll;
         background-size: cover;
       }
+    }
+
+    .learn-more {
+      min-width: 250px;
     }
 
   }
@@ -156,38 +144,59 @@ label {
 
 
 
+.dropdown {
+  .dropdown-menu {
+    transition: all 0.3s;    
+    max-height: 0;
+    opacity: 0;
+    display: block;
+    overflow: hidden;
+    top: 47px;
+    margin: 0;
+    padding-top: 0;
+    box-shadow: none;
+    li a{
+      padding: 0 19px;
+      font-size: 22.92px;
+      line-height: 29.17px;
+    }
+    .divider {
+      height: 3px;
+      margin: 0 0 7px 14px;
+      width: 80%;
+      float: left;
+    }
+  }
+
+  &.open .dropdown-menu {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+}
+
 
 #gate{
+  text-align: center;
 
   h1 {
-    text-align: center;
     font-size: 58px;
     text-align: center;
-    color: #fff;
     line-height: 64px;
-  }
-
-  #month, #day{
     display: inline-block;
-    width: 50px;
-    text-align: center;
-    margin: 0 5px;
-  }
-  #year {
-    display: inline-block;
-    text-align: center;
-    width: 70px;
-    margin: 0 5px;
   }
 
-  input, select{
-    background-color: rgba(12, 36, 64, 0.1);
+  h2 {
+    font-family: 'Helvetica Neue Condensed', 'Helvetica Neue', 'Helvetica', sans-serif;
+    font-size: 29px;
+    margin-top: 15px;
   }
 
-  .selectdiv {
-    max-width: 260px;
+  #birthday {
+    background: url('/images/background-date.png') no-repeat top left;
+    background-attachment: scroll;
+    background-size: cover;
   }
-
   .error {
     position: absolute;
     text-align: center;
@@ -198,6 +207,53 @@ label {
     text-transform: uppercase;
   }
 
+}
+
+
+.ui-widget {
+  font-family: $font-family-sans-serif;
+}
+
+.selectmenu {
+  .ui-selectmenu-button, .ui-selectmenu-button:hover, .ui-selectmenu-button:focus {
+    background-color: transparent;
+    border: none;
+    color: $brand-primary;
+    font-size: 32px;
+    max-width: 100%;
+    text-align: center;
+  }
+  .ui-selectmenu-icon.ui-icon {
+    display: none;
+  }
+}
+
+
+.ui-selectmenu-menu ul.ui-widget.ui-widget-content{
+  font-size: 23px;
+  border: none;
+  border-top: 3px solid #fff;
+  background: url(/images/background-date-submenu.png) no-repeat 0 -65px;
+  background-attachment: scroll;
+  background-size: cover;
+  color: #fff;
+  max-height: 249px;
+  max-width: 190px;
+  padding: 0;
+  margin-top: -5px;
+  margin-left: 20px;
+  &::-webkit-scrollbar { 
+    display: none; 
+  }
+  .ui-menu-item-wrapper {
+    background-color: transparent;
+    border: none;
+    padding: 0 0 0 19px;
+    margin: 0;
+    &:hover, &.ui-state-active {
+      color: $brand-primary;
+    }
+  }
 }
 
 
@@ -241,6 +297,17 @@ label {
   overflow: hidden;
 }
 
+
+// EN Version Only
+.lang-en {
+  #gate {
+    h1 {
+      max-width: 920px;
+    }
+  }
+}
+
+// FR Version Only
 
 // Responsive
 @import "responsive";
