@@ -94,36 +94,44 @@
 
         <div id="footer">
             <div class="container-fluid">
+                <div class="row">
+               
+                    <div class="col-md-3 copy">
+                        <p>&copy; {{ date('Y') }} {{ trans('text.copy') }}</p>
+                    </div>
+
+                    <div class="col-md-6 footer-menu">
+                        <a href="{{ trans('text.terms-link') }}" target="_blank">{{ trans('text.terms') }}</a>
+                        <a href="{{ trans('text.privacy-policy-link') }}" target="_blank">{{ trans('text.privacy-policy') }}</a>
+                        <a href="{{ trans('text.faq-link') }}" target="_blank">{{ trans('text.faq') }}</a>
+                        <a href="{{ trans('text.contact-link') }}" target="_blank">{{ trans('text.contact') }}</a>
+                    </div>
+
+                        
+                    <div class="col-md-3 social hidden-sm hidden-xs">
+                        
+                        <a href="https://instagram.com/corona" target="_blank" title="Instagram">
+                            <img src="/images/instagram.png" alt="Instagram">
+                        </a>
+                        
+                        <a href="https://www.facebook.com/Corona" target="_blank" title="Facebook">
+                            <img src="/images/facebook.png" alt="Facebook">
+                        </a>
+                        
+                        <a href="https://twitter.com/corona" target="_blank" title="Twitter">
+                            <img src="/images/twitter.png" alt="Twitter">
+                        </a>
+
+                        <a href="https://www.youtube.com/corona" target="_blank" title="Youtube">
+                            <img src="/images/youtube.png" alt="Youtube">
+                        </a>
+
+                    </div> 
                 
-                <div class="copy">
-                    <p>&copy; {{ date('Y') }} {{ trans('text.copy') }}</p>
-                    <a href="{{ trans('text.terms-link') }}" target="_blank">{{ trans('text.terms') }}</a>
-                    <a href="{{ trans('text.privacy-policy-link') }}" target="_blank">{{ trans('text.privacy-policy') }}</a>
-                    <a href="{{ trans('text.contact-link') }}" target="_blank">{{ trans('text.contact') }}</a>
-                </div>
+                </div> <!-- end .row  -->
 
+            </div> <!-- end .container-fluid  -->
                     
-                <div class="social hidden-sm hidden-xs">
-                    
-                    <a href="https://instagram.com/corona" target="_blank">
-                        <img src="/images/instagram.png" alt="Instagram">
-                    </a>
-                    
-                    <a href="https://www.facebook.com/Corona" target="_blank">
-                        <img src="/images/facebook.png" alt="Facebook">
-                    </a>
-                    
-                    <a href="https://twitter.com/corona" target="_blank">
-                        <img src="/images/twitter.png" alt="Twitter">
-                    </a>
-
-                    <a href="https://www.youtube.com/corona" target="_blank">
-                        <img src="/images/youtube.png" alt="Youtube">
-                    </a>
-
-                </div>
-                    
-            </div> <!-- end #footer  -->
         </div> <!-- end #footer  -->
 
     </div> <!-- end #app  -->

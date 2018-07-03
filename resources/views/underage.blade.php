@@ -2,19 +2,11 @@
 
 @section('content')
 
-<div class="gate-form-wrapper">
-
-    <div class="brand">
-        <div class="logo">
-            <img src="/images/logo-gate.png" alt="{!! trans('text.site-title') !!}">
-        </div>
-    </div>
-
-    <h1>{!! trans('text.sorry') !!},</h1>
-    <h2>{!! trans('text.underage') !!} </h2>
-
+<div class="container" id="underage">
     
-
-</div> <!-- END .signup-form -->
+    <h1>{!! trans('text.sorry') !!}</h1>
+    <h1 class="in-province">{!! trans('text.underage') !!} </h1>
+    
+</div> <!-- END #underage -->
 
 @endsection
