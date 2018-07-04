@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="container" id="underage">
+<div class="container message" id="underage">
     
     <h1>{!! trans('text.sorry') !!}</h1>
-    <h1 class="in-province">{!! trans('text.underage') !!} </h1>
+    <h1 class="secondary">{!! trans('text.underage') !!} </h1>
     
 </div> <!-- END #underage -->
 

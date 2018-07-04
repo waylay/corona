@@ -9,7 +9,7 @@
 
     
 
-    <form class="signup" id="age" action="/gate" method="POST" enctype="multipart/form-data" novalidate >
+    <form class="age" id="age" action="/gate" method="POST" enctype="multipart/form-data" novalidate >
         {{ csrf_field() }}
 
         <div class="row">
@@ -17,22 +17,44 @@
             <div class="col-md-8">
 
                 <div class="row" id="birthday">
+
                     <div class="col-md-4">
                         <div class="selectmenu select-month">
-                            {!! Form::select('month', $months, null, ['class' => 'hidden', 'id' => 'month', 'placeholder' => trans('form.month')]) !!}
+                            {!! Form::select('month', $months, null, [
+                                'class' => 'hidden', 
+                                'id' => 'month', 
+                                'placeholder' => trans('form.month'),
+                                'data-msg-required' => trans('form.required')
+                                ]) !!}
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="selectmenu select-day">
-                            {!! Form::selectRange('day', 1, 31, null, ['class' => 'hidden', 'id' => 'day', 'placeholder' => trans('form.day')]) !!}
+                            {!! Form::selectRange('day', 1, 31, null, [
+                                'class' => 'hidden',
+                                'id' => 'day',
+                                'placeholder' => trans('form.day'),
+                                'data-msg-required' => trans('form.required')
+                                ]) !!}
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="selectmenu select-year">
-                            {!! Form::selectYear('year', 2018, 1900, null, ['class' => 'hidden', 'id' => 'year', 'placeholder' => trans('form.year')]) !!}
+                            {!! Form::selectYear('year', 2018, 1900, null, [
+                                'class' => 'hidden',
+                                'id' => 'year',
+                                'placeholder' => trans('form.year'),
+                                'data-msg-required' => trans('form.required')
+                                ]) !!}
                         </div>
                     </div>
+                    
                 </div>
+                @if ($errors->has('day') || $errors->has('month') || $errors->has('year') || $errors->has('date'))
+                <span id="date-error" class="error text-danger">
+                        {{ trans('form.date-error') }}
+                </span>
+                @endif
 
             </div>
 
@@ -44,12 +66,6 @@
                     @endif
                 </div>
             </div>
-
-            @if ($errors->has('day') || $errors->has('month') || $errors->has('year') || $errors->has('date'))
-            <span id="date-error" class="error text-danger">
-                    {{ trans('form.date-error') }}
-            </span>
-            @endif
         </div>
 
         <div class="row">

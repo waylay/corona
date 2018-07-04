@@ -67,56 +67,23 @@ $( document ).ready( function () {
         },
         errorElement: "span",
         errorPlacement: function (error, element) {
-            // Add the `text-danger` class to the error element
-            error.addClass("text-danger");
+            
             if ( element.attr("name") == "day" || element.attr("name") == "month" || element.attr("name") == "year") {
-                error.insertAfter("#year");
+                error.insertAfter("#birthday");
             } else {
                 error.insertAfter(element);
             }
 
         },
         highlight: function (element, errorClass, validClass) {
-            $(element).parent('.selectdiv').addClass("is-invalid").removeClass("is-valid");
+            $(element).parent('.selectmenu').addClass("is-invalid").removeClass("is-valid");
             $(element).addClass("is-invalid").removeClass("is-valid");
         },
         unhighlight: function (element, errorClass, validClass) {
-            $(element).parent('.selectdiv').addClass("is-valid").removeClass("is-invalid");
+            $(element).parent('.selectmenu').addClass("is-valid").removeClass("is-invalid");
             $(element).addClass("is-valid").removeClass("is-invalid");
         }
     });
 
 
-    $("#signup").validate({
-        ignore: ".ignore",
-        rules: {
-            firstname: "required",
-            lastname: "required",
-            email: {
-                required: true,
-                email: true
-            },
-            province: "required",
-            agree: "required",
-        },
-        errorElement: "span",
-        errorPlacement: function (error, element) {
-            // Add the `text-danger` class to the error element
-            error.addClass("text-danger");
-            if ( element.attr("name") == "agree") {
-                error.insertAfter(".form-check-label p a");
-            } else {
-                error.insertAfter(element);
-            }
-
-        },
-        highlight: function (element, errorClass, validClass) {
-            $(element).parent('.selectdiv').addClass("is-invalid").removeClass("is-valid");
-            $(element).addClass("is-invalid").removeClass("is-valid");
-        },
-        unhighlight: function (element, errorClass, validClass) {
-            $(element).parent('.selectdiv').addClass("is-valid").removeClass("is-invalid");
-            $(element).addClass("is-valid").removeClass("is-invalid");
-        }
-    });
 });

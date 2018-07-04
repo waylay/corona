@@ -10,14 +10,14 @@ Route::get('/language/{locale}', function ($locale) {
 
 /* Pages */
 Route::get('/', 'PagesController@gate')->name('gate');;
-
-Route::get('/underage', function () {
-    return view('underage');
-})->name('underage');;
-
-Route::get('/thankyou', function () {
-    return view('thankyou');
-});
+Route::get('/underage', 'PagesController@underage')->name('underage');;
+Route::get('/festival', 'PagesController@main')->name('main');;
+Route::get('/festival/{city}', 'PagesController@festival')->name('festival');;
 
 /* Process Date Gage */
 Route::post('/gate', 'PagesController@checkAge');
+
+/* Thank you page */
+Route::get('/thankyou', function () {
+    return view('thankyou');
+});

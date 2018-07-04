@@ -18,6 +18,15 @@ class PagesController extends Controller
     }
 
     /**
+     * Display the gate
+     *
+     */
+    public function underage()
+    {
+        return view('underage', $this->viewData());
+    }
+
+    /**
      * Check for legal drinking age.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -49,16 +58,40 @@ class PagesController extends Controller
         }
 
         if ($this->isLegalDrinkingAge()) {
-            return redirect('signup');
+            return redirect('festival');
         } else {
             return redirect('underage');
         }
     }
 
-    public function signup(Request $request)
+    /**
+     * Main Festivals Page
+     *
+     * @return bool
+     */
+    public function main(Request $request)
     {
         if ($request->session()->has('birthday') && $request->session()->has('province')) {
-            return view('signup');
+            return view('main', $this->viewData());
+        }
+
+        return redirect('/');
+    }
+
+    /**
+     * Festival's City Page
+     *
+     * @return bool
+     */
+    public function festival($city)
+    {
+        if (request()->session()->has('birthday') && request()->session()->has('province')) {
+            $viewData = $this->viewData();
+            if (array_key_exists($city, $viewData['festivals'])) {
+                $viewData['festival'] = $viewData['festivals'][$city];
+
+                return view('festival', $viewData);
+            }
         }
 
         return redirect('/');
@@ -137,6 +170,78 @@ class PagesController extends Controller
             'Northwest Territories'     => 'NT',
             'Nunavut'                   => 'NU',
             'Yukon Territory'           => 'YT',
+        ];
+
+        $viewData['festivals'] = [
+            'halifax' => [
+                'id'       => '1',
+                'city'     => 'Halifax',
+                'location' => 'Sunnyside Pavilion',
+                'date'     => 'Aug 11th - 6PM-12AM EST',
+                'reminder' => 'Aug 11th - 6PM-12AM EST',
+                'artists'  => [
+                    ['Blue Rodeo', 'Matt Anderson'],
+                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
+                    ['Logan Staats', 'Kongos', 'Edward'],
+                ],
+                'tickets' => '#',
+            ],
+
+            'mont-tremblant' => [
+                'id'       => '2',
+                'city'     => 'MT. Tremblant',
+                'location' => 'Sunnyside Pavilion',
+                'date'     => 'Aug 11th - 6PM-12AM EST',
+                'reminder' => 'Aug 11th - 6PM-12AM EST',
+                'artists'  => [
+                    ['Blue Rodeo', 'Matt Anderson'],
+                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
+                    ['Logan Staats', 'Kongos', 'Edward'],
+                ],
+                'tickets' => '#',
+            ],
+
+            'toronto' => [
+                'id'       => '3',
+                'city'     => 'Toronto',
+                'location' => 'Sunnyside Pavilion',
+                'date'     => 'Aug 11th - 6PM-12AM EST',
+                'reminder' => 'Aug 11th - 6PM-12AM EST',
+                'artists'  => [
+                    ['Blue Rodeo', 'Matt Anderson'],
+                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
+                    ['Logan Staats', 'Kongos', 'Edward'],
+                ],
+                'tickets' => '#',
+            ],
+
+            'edmonton' => [
+                'id'       => '4',
+                'city'     => 'Edmonton',
+                'location' => 'Sunnyside Pavilion',
+                'date'     => 'Aug 11th - 6PM-12AM EST',
+                'reminder' => 'Aug 11th - 6PM-12AM EST',
+                'artists'  => [
+                    ['Blue Rodeo', 'Matt Anderson'],
+                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
+                    ['Logan Staats', 'Kongos', 'Edward'],
+                ],
+                'tickets' => '#',
+            ],
+
+            'whistler' => [
+                'id'       => '5',
+                'city'     => 'Whistler',
+                'location' => 'Sunnyside Pavilion',
+                'date'     => 'Aug 11th - 6PM-12AM EST',
+                'reminder' => 'Aug 11th - 6PM-12AM EST',
+                'artists'  => [
+                    ['Blue Rodeo', 'Matt Anderson'],
+                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
+                    ['Logan Staats', 'Kongos', 'Edward'],
+                ],
+                'tickets' => '#',
+            ],
         ];
 
         return $viewData;

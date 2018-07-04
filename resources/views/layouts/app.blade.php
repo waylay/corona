@@ -40,7 +40,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand navbar-brand-centered" href="{{ url('/') }}">
+                    <a class="navbar-brand navbar-brand-centered" href="{{ url('/festival') }}">
                         <img class="logo" src="/images/logo.png" alt="{!! trans('text.site-title') !!}">
                     </a>
                     </div>
@@ -53,18 +53,16 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cities</a>
                                 <ul class="dropdown-menu">
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Halifax</a></li>
-                                    <li><a href="#">MT. Tremblant</a></li>
-                                    <li><a href="#">Toronto</a></li>
-                                    <li><a href="#">Edmonton</a></li>
-                                    <li><a href="#">Whistler</a></li>
+                                    @foreach($festivals as $slug => $festival)
+                                    <li class="{{ $slug }}"><a href="/festival/{{ $slug }} ">{{ $festival['city'] }}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
-                            <li><a href="#">Stream Reminder</a></li>
+                            <li><a href="#">{{ trans('text.stream-reminder') }}</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="learn-more"><a href="#">Learn More</a></li>
+                            <li class="learn-more"><a href="/more">{{ trans('text.learn-more') }}</a></li>
                             <li>
                                 <!-- Localization -->
                                 <div class="locale">
@@ -138,6 +136,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/lightbox.js') }}"></script>
+    <script src="{{ asset('js/slider.js') }}"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     
 </body>
