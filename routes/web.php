@@ -11,6 +11,7 @@ Route::get('/language/{locale}', function ($locale) {
 /* Pages */
 Route::get('/', 'PagesController@gate')->name('gate');;
 Route::get('/underage', 'PagesController@underage')->name('underage');;
+Route::get('/more', 'PagesController@more')->name('more');;
 Route::get('/festival', 'PagesController@main')->name('main');;
 Route::get('/festival/{city}', 'PagesController@festival')->name('festival');;
 

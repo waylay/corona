@@ -11043,19 +11043,46 @@ $(document).ready(function () {
 
     $(".selectmenu select").selectmenu();
 
-    // Responsive Video
-    $("#video-wrapper").fitVids();
-
-    // Move to next date field
-    $("input").bind("input", function () {
-        var $this = $(this);
-        setTimeout(function () {
-            if ($this.val().length >= parseInt($this.attr("maxlength"), 10)) {
-                $this.next("input").focus();
+    // Slider
+    var slider = jQuery('#festival-slider').slippry({
+        // general elements & wrapper
+        slippryWrapper: '<div class="slider" />',
+        // options
+        elements: '.slide',
+        adaptiveHeight: true, // height of the sliders adapts to current 
+        captions: false,
+        useCSS: true,
+        autoHover: true,
+        transition: 'horizontal',
+        pager: false,
+        auto: false,
+        speed: 1200,
+        onSlideBefore: function onSlideBefore(el, index_old, index_new) {
+            jQuery('#festival-list a').removeClass('active');
+            if (index_new) {
+                jQuery(' #festival-list a[data-slide="' + (index_new + 1) + '"] ').addClass('active');
             }
-        }, 0);
+        }
     });
 
+    jQuery('#festival-list a').click(function () {
+        slider.goToSlide($(this).data('slide'));
+        return false;
+    });
+
+    // Move to next date field
+    // $("input").bind("input", function() {
+    //     var $this = $(this);
+    //     setTimeout(function() {
+    //         if ( $this.val().length >= parseInt($this.attr("maxlength"),10) ) {
+    //             $this.next("input").focus();
+    //         }
+
+    //     },0);
+    // });
+
+
+    // Form Validation
     $("#age").validate({
         ignore: ".ignore",
         rules: {

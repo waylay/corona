@@ -466,11 +466,10 @@
   color: #111;
   font-weight: 800;
   position: absolute;
-  background-color: #fff;
   width: 2.8em;
   height: 2.8em;
   left: 50%;
-  top: 50%;
+  top: 65%;
   margin-top: -1.4em;
   margin-left: -1.4em;
   border-radius: 50%;
@@ -8945,10 +8944,15 @@ button.close {
 body {
   background: url("/images/background-image.jpg") no-repeat top center;
   background-attachment: scroll;
-  background-size: cover;
-  background-color: #0c2340;
+  background-size: 1918px 1094px;
+  background-color: #fff;
   overflow-y: scroll;
   min-height: 800px;
+  padding-top: 280px;
+}
+
+body.more {
+  background: url("/images/background-texture.jpg") no-repeat top center;
 }
 
 body.dashboard {
@@ -8999,8 +9003,9 @@ label {
 }
 
 #header {
-  margin-top: 18px;
-  min-height: 300px;
+  position: absolute;
+  width: 100%;
+  top: 18px;
 }
 
 #header .nav {
@@ -9008,7 +9013,7 @@ label {
 }
 
 #header .nav li {
-  font-size: 25px;
+  font-size: 1.667em;
   text-transform: uppercase;
 }
 
@@ -9027,6 +9032,10 @@ label {
   min-width: 250px;
 }
 
+#header .nav .learn-more a:hover {
+  text-decoration: underline;
+}
+
 #header .navbar-brand-centered {
   position: absolute;
   top: 0;
@@ -9043,6 +9052,10 @@ label {
   color: #FFF;
   position: relative;
   line-height: 2em;
+}
+
+#header .locale a:hover {
+  text-decoration: underline;
 }
 
 #header .locale a.active {
@@ -9067,22 +9080,38 @@ label {
   padding: 0 6px;
 }
 
+.more {
+  color: #0c2340;
+}
+
+.more h1,
+.more h2,
+.more h3,
+.more h4 {
+  color: #fab52a;
+}
+
+.more #header .locale a,
+.more #header .navbar-default .navbar-nav > li > a {
+  color: #0c2340;
+}
+
 #gate {
   text-align: center;
 }
 
 #gate h1 {
-  font-size: 58px;
+  font-size: 3.8em;
+  margin-top: 2.5em;
   text-align: center;
-  line-height: 64px;
   display: inline-block;
 }
 
 #gate h2 {
-  font-family: 'Helvetica Neue Condensed', 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-size: 29px;
-  margin-top: 40px;
-  margin-bottom: 45px;
+  font-family: "Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  margin-top: .5em;
+  margin-bottom: 1.1em;
 }
 
 #gate #birthday {
@@ -9101,8 +9130,8 @@ label {
   position: absolute;
   right: 0;
   top: 0;
-  font-family: 'Helvetica Neue Condensed', 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-size: 40px;
+  font-family: "Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 3em;
 }
 
 #gate .select-province {
@@ -9140,10 +9169,11 @@ label {
   border: none;
   font-size: 43px;
   text-transform: uppercase;
-  background: url(/images/background-enter.png) no-repeat top left;
-  width: 174px;
-  height: 76px;
-  line-height: 76px;
+  padding: .5em 1em;
+  background-size: 100% 100%;
+  line-height: 1;
+  white-space: nowrap;
+  background: url(/images/background-enter.png) no-repeat center center;
   margin-top: 90px;
   margin-bottom: 90px;
 }
@@ -9164,6 +9194,15 @@ label {
   color: #fab52a;
 }
 
+#underage {
+  margin-bottom: 75px;
+}
+
+#underage h1 {
+  font-size: 75px;
+  line-height: 75px;
+}
+
 #main .festival-date {
   margin-top: 50px;
   font-size: 60px;
@@ -9175,19 +9214,20 @@ label {
   vertical-align: top;
 }
 
-#main .buy-tickets {
+.buy-tickets {
   background-attachment: scroll;
   background-size: contain;
   border: none;
   font-size: 43px;
   text-transform: uppercase;
-  background: url("/images/background-buy-tickets.png") no-repeat top left;
-  width: 274px;
-  height: 98px;
-  line-height: 98px;
+  padding: .5em 1em;
+  background-size: 100% 100%;
+  line-height: 1;
+  white-space: nowrap;
+  background: url("/images/background-buy-tickets.png") no-repeat center center;
 }
 
-#main .buy-tickets:hover {
+.buy-tickets:hover {
   color: #fff;
 }
 
@@ -9224,26 +9264,28 @@ label {
 }
 
 .message {
-  min-height: 20vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50vw;
+  max-height: calc(100vh - 480px);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 100px;
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
 
 .message h1 {
-  font-size: 65px;
-  line-height: 60px;
+  font-size: 90px;
+  line-height: 90px;
   margin-top: 0;
   margin-bottom: 10px;
   text-align: center;
@@ -9256,21 +9298,373 @@ label {
 .festival-list-wrapper {
   background: url("/images/background-festivals.png") no-repeat top center;
   background-attachment: scroll;
-  background-size: cover;
-  font-size: 34px;
+  background-size: 100%;
+  font-size: 3em;
   text-transform: uppercase;
   text-align: center;
-  padding: 50px 0 10px;
+  padding-top: 50px;
+}
+
+.festival-list-wrapper #festival-list {
+  background-color: #fff;
+  padding-bottom: 65px;
 }
 
 .festival-list-wrapper li {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: .5em;
+  margin-right: .5em;
+}
+
+.festival-list-wrapper li a {
+  padding: .2em .5em;
+}
+
+.festival-list-wrapper li a.active {
+  background: url("/images/background-active.png") no-repeat top center;
+  background-attachment: scroll;
+  background-size: 100% 100%;
+  color: #fff;
 }
 
 .slider-wrapper {
   background-color: #fff;
   text-align: center;
+  margin-top: -1px;
+}
+
+.slider-wrapper .artists {
+  background: url("/images/background-festival-artists.png") no-repeat bottom center;
+  background-attachment: scroll;
+  background-size: cover;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.slider-wrapper .slider-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-attachment: scroll;
+  background-size: cover;
+  height: 40vw;
+  max-height: 700px;
+  padding: 5vw 0;
+  position: relative;
+  z-index: -1;
+  margin-top: -24px;
+}
+
+.slider-wrapper .slider-image h1 {
+  font-size: 8.5em;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 30px;
+  opacity: .9;
+}
+
+.slider-wrapper .slider-image .read-more {
+  background-attachment: scroll;
+  background-size: contain;
+  border: none;
+  font-size: 43px;
+  text-transform: uppercase;
+  padding: .5em 1em;
+  background-size: 100% 100%;
+  line-height: 1;
+  white-space: nowrap;
+  background: url("/images/background-read-more.png") no-repeat center center;
+}
+
+.slider-wrapper .slider-image .read-more:hover {
+  color: #fff;
+}
+
+.reminder {
+  background: url("/images/background-festival-artists.png") no-repeat top center;
+  background-attachment: scroll;
+  background-size: 100% 100%;
+  padding: 100px 0;
+  margin-top: -35px;
+  position: relative;
+  z-index: 3;
+}
+
+.reminder h3 {
+  color: #0c2340;
+  text-transform: uppercase;
+  font-size: 2.3em;
+  margin-top: 10px;
+}
+
+.reminder .container-fluid {
+  max-width: 1500px;
+}
+
+.reminder .container-fluid .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.reminder .set-reminder {
+  background-attachment: scroll;
+  background-size: contain;
+  border: none;
+  font-size: 43px;
+  text-transform: uppercase;
+  padding: .5em 1em;
+  background-size: 100% 100%;
+  line-height: 1;
+  white-space: nowrap;
+  background: url("/images/background-set-reminder.png") no-repeat center center;
+}
+
+.reminder .set-reminder:hover {
+  color: #fff;
+}
+
+.shop {
+  margin-top: -20px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  clear: both;
+  overflow: hidden;
+}
+
+.shop h2 {
+  font-size: 4em;
+  margin-top: 1.5em;
+  margin-bottom: .5em;
+}
+
+.shop p {
+  font-size: 2em;
+  font-family: "Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto 1.2em;
+}
+
+.shop .tickets-wrapper {
+  background: url("/images/background-get-tickets-wrapper.png") no-repeat center center;
+  background-size: cover;
+}
+
+.shop .tickets-wrapper p {
+  color: #0c2340;
+}
+
+.shop .tickets-wrapper .get-tickets {
+  background-attachment: scroll;
+  background-size: contain;
+  border: none;
+  font-size: 43px;
+  text-transform: uppercase;
+  padding: .5em 1em;
+  background-size: 100% 100%;
+  line-height: 1;
+  white-space: nowrap;
+  background: url("/images/background-get-tickets.png") no-repeat center center;
+  color: #fab52a;
+  margin: .2em auto 1.5em;
+  display: block;
+}
+
+.shop .tickets-wrapper .get-tickets:hover {
+  color: #fff;
+}
+
+.shop .items-wrapper {
+  background: url("/images/background-get-items-wrapper.png") no-repeat center center;
+  background-size: cover;
+}
+
+.shop .items-wrapper p {
+  color: #fff;
+}
+
+.shop .items-wrapper .get-items {
+  background-attachment: scroll;
+  background-size: contain;
+  border: none;
+  font-size: 43px;
+  text-transform: uppercase;
+  padding: .5em 1em;
+  background-size: 100% 100%;
+  line-height: 1;
+  white-space: nowrap;
+  background: url("/images/background-get-items.png") no-repeat center center;
+  color: #0c2340;
+  margin: .2em auto 1.5em;
+  display: block;
+}
+
+.shop .items-wrapper .get-items:hover {
+  color: #fff;
+}
+
+.artists {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1em;
+}
+
+.artists .row {
+  margin-bottom: 10px;
+}
+
+.artists .row:nth-child(1) {
+  font-size: 3.6em;
+}
+
+.artists .row:nth-child(2) {
+  font-size: 3em;
+}
+
+.artists .row:nth-child(3) {
+  font-size: 2.6em;
+}
+
+.artists .row:nth-child(4) {
+  font-size: 2.6em;
+}
+
+.artists .list-inline li:not(:last-child) {
+  margin-right: 1em;
+  position: relative;
+}
+
+.artists .list-inline li:not(:last-child)::after {
+  content: "\B7";
+  color: #fab52a;
+  font-size: 1.8em;
+  position: absolute;
+  right: -.45em;
+  top: -0.42em;
+}
+
+.festival-wrapper {
+  max-width: 1600px;
+  padding: 0 25px;
+  margin: 0 auto 100px;
+  text-transform: uppercase;
+}
+
+.festival-wrapper .festival-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.festival-wrapper h1 {
+  font-size: 8.8em;
+  margin: 0 10px 0 0;
+  opacity: .95;
+}
+
+.festival-wrapper .festival-date-location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  line-height: 1;
+  margin-bottom: 1.7em;
+}
+
+.festival-wrapper .festival-date-location p {
+  font-size: 2.2em;
+  margin-bottom: 0;
+  color: #fab52a;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.festival-wrapper .description {
+  margin: 50px 0;
+  font-family: "Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  font-size: 1.67em;
+  line-height: 1.4;
+}
+
+.festival-wrapper .artists {
+  margin: 60px 0;
+  color: #fff;
+  font-size: .8em;
+}
+
+.festival-wrapper .artists .row {
+  margin-bottom: 0;
+}
+
+.festival-wrapper .buy-tickets {
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+.learn-more-wrapper {
+  max-width: 1600px;
+  padding: 0 25px;
+  margin: 0 auto 100px;
+}
+
+.learn-more-wrapper h1 {
+  font-size: 5.5em;
+}
+
+.learn-more-wrapper h2 {
+  font-size: 3.2em;
+  margin-top: 0;
+  margin-bottom: .5em;
+}
+
+.learn-more-wrapper p {
+  font-family: "Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  max-width: 1080px;
+  letter-spacing: 2px;
+}
+
+.learn-more-wrapper p strong {
+  font-family: "Helvetica Neue Condensed Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.learn-more-wrapper a {
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+
+.learn-more-wrapper .list-inline {
+  margin: 1.5em 0;
+  text-transform: uppercase;
+}
+
+.learn-more-wrapper .list-inline li {
+  padding-left: 0;
+  padding-right: 20px;
 }
 
 .dropdown .dropdown-menu {
@@ -9427,7 +9821,10 @@ label {
   background-color: #fff;
   background: url(/images/background-footer.png) no-repeat 0 0;
   background-attachment: scroll;
-  background-size: cover;
+  background-size: 100% 100%;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
 }
 
 #footer a {
@@ -9440,8 +9837,8 @@ label {
 }
 
 #footer .copy {
-  font-family: 'Helvetica Neue Condensed', 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-size: 17px;
+  font-family: "Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
 }
 
 #footer .footer-menu {

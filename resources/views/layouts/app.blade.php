@@ -24,7 +24,8 @@
 
 </head>
 
-<body class="{{ Route::currentRouteName() }} lang-{{ app()->getLocale() }}" >
+<body class="{{ Route::currentRouteName() }} lang-{{ app()->getLocale() }}" 
+ @isset($festival_background) {!! $festival_background !!} @endisset >
 
     <div id="app">
 
@@ -41,7 +42,12 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand navbar-brand-centered" href="{{ url('/festival') }}">
+                        
+                        @if ( Route::currentRouteName() == 'more' )
+                        <img class="logo" src="/images/logo-contrast.png" alt="{!! trans('text.site-title') !!}">
+                        @else
                         <img class="logo" src="/images/logo.png" alt="{!! trans('text.site-title') !!}">
+                        @endif
                     </a>
                     </div>
 
@@ -54,7 +60,7 @@
                                 <ul class="dropdown-menu">
                                     <li role="separator" class="divider"></li>
                                     @foreach($festivals as $slug => $festival)
-                                    <li class="{{ $slug }}"><a href="/festival/{{ $slug }} ">{{ $festival['city'] }}</a></li>
+                                    <li class="{{ $slug }}"><a href="/festival/{{ $slug }} ">{{ trans('festivals/'.$festival['slug'].'.city') }}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -112,7 +118,7 @@
                             <img src="/images/instagram.png" alt="Instagram">
                         </a>
                         
-                        <a href="https://www.facebook.com/Corona" target="_blank" title="Facebook">
+                        <a href="https://www.facebook.com/CoronaCanada" target="_blank" title="Facebook">
                             <img src="/images/facebook.png" alt="Facebook">
                         </a>
                         

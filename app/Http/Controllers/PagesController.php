@@ -79,6 +79,20 @@ class PagesController extends Controller
     }
 
     /**
+     * Learn More Page
+     *
+     * @return bool
+     */
+    public function more(Request $request)
+    {
+        if ($request->session()->has('birthday') && $request->session()->has('province')) {
+            return view('more', $this->viewData());
+        }
+
+        return redirect('/');
+    }
+
+    /**
      * Festival's City Page
      *
      * @return bool
@@ -88,7 +102,8 @@ class PagesController extends Controller
         if (request()->session()->has('birthday') && request()->session()->has('province')) {
             $viewData = $this->viewData();
             if (array_key_exists($city, $viewData['festivals'])) {
-                $viewData['festival'] = $viewData['festivals'][$city];
+                $viewData['festival']            = $viewData['festivals'][$city];
+                $viewData['festival_background'] = ' style="background: url(/images/slider-' . $city . '.jpg) no-repeat top center;"';
 
                 return view('festival', $viewData);
             }
@@ -175,9 +190,7 @@ class PagesController extends Controller
         $viewData['festivals'] = [
             'halifax' => [
                 'id'       => '1',
-                'city'     => 'Halifax',
-                'location' => 'Sunnyside Pavilion',
-                'date'     => 'Aug 11th - 6PM-12AM EST',
+                'slug'     => 'halifax',
                 'reminder' => 'Aug 11th - 6PM-12AM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
@@ -187,11 +200,9 @@ class PagesController extends Controller
                 'tickets' => '#',
             ],
 
-            'mont-tremblant' => [
+            'quebec' => [
                 'id'       => '2',
-                'city'     => 'MT. Tremblant',
-                'location' => 'Sunnyside Pavilion',
-                'date'     => 'Aug 11th - 6PM-12AM EST',
+                'slug'     => 'quebec',
                 'reminder' => 'Aug 11th - 6PM-12AM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
@@ -203,9 +214,7 @@ class PagesController extends Controller
 
             'toronto' => [
                 'id'       => '3',
-                'city'     => 'Toronto',
-                'location' => 'Sunnyside Pavilion',
-                'date'     => 'Aug 11th - 6PM-12AM EST',
+                'slug'     => 'toronto',
                 'reminder' => 'Aug 11th - 6PM-12AM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
@@ -215,11 +224,9 @@ class PagesController extends Controller
                 'tickets' => '#',
             ],
 
-            'edmonton' => [
+            'winnipeg' => [
                 'id'       => '4',
-                'city'     => 'Edmonton',
-                'location' => 'Sunnyside Pavilion',
-                'date'     => 'Aug 11th - 6PM-12AM EST',
+                'slug'     => 'winnipeg',
                 'reminder' => 'Aug 11th - 6PM-12AM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
@@ -231,9 +238,7 @@ class PagesController extends Controller
 
             'whistler' => [
                 'id'       => '5',
-                'city'     => 'Whistler',
-                'location' => 'Sunnyside Pavilion',
-                'date'     => 'Aug 11th - 6PM-12AM EST',
+                'slug'     => 'whistler',
                 'reminder' => 'Aug 11th - 6PM-12AM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],

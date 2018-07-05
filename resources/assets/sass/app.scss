@@ -32,10 +32,14 @@
 body {
   background: url('/images/background-image.jpg') no-repeat top center;
   background-attachment: scroll;
-  background-size: cover;
-  background-color: $brand-primary;
+  background-size: 1918px 1094px;
+  background-color: #fff;
   overflow-y: scroll;
   min-height: 800px;
+  padding-top: 280px;
+  &.more {
+    background: url('/images/background-texture.jpg') no-repeat top center;
+  }
   &.dashboard {
     background-image: none;
     background-color: #000103;
@@ -78,12 +82,22 @@ label {
   font-weight: 400;
 }
 
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin button {
   background-attachment: scroll;
   background-size: contain;
   border: none;
   font-size: 43px;
   text-transform: uppercase;
+  padding: .5em 1em;
+  background-size: 100% 100%;
+  line-height: 1;
+  white-space: nowrap;
   &:hover {
     color: #fff;
   }
@@ -93,12 +107,13 @@ label {
 // Header
 
 #header {
-  margin-top: 18px;
-  min-height: 300px;
+  position: absolute;
+  width: 100%;
+  top: 18px;
   .nav {
     margin-top: 68px;
     li {
-      font-size: 25px;
+      font-size: 1.667em;
       text-transform: uppercase;
     }
 
@@ -116,6 +131,9 @@ label {
 
     .learn-more {
       min-width: 250px;
+      a:hover {
+        text-decoration: underline;
+      }
     }
 
   }
@@ -138,6 +156,9 @@ label {
       color: #FFF;
       position: relative;
       line-height: 2em;
+      &:hover {
+        text-decoration: underline;
+      }
       &.active {
         color: $brand-primary;
         &::after{
@@ -162,21 +183,32 @@ label {
   }
 }
 
+.more {
+  color: $brand-primary;
+  h1, h2, h3, h4 {
+    color: $brand-secondary;
+  }
+  #header {
+    .locale a , .navbar-default .navbar-nav > li > a {
+      color: $brand-primary;
+    }
+  }
+}
 #gate{
   text-align: center;
 
   h1 {
-    font-size: 58px;
+    font-size: 3.8em;
+    margin-top: 2.5em;
     text-align: center;
-    line-height: 64px;
     display: inline-block;
   }
 
   h2 {
-    font-family: 'Helvetica Neue Condensed', 'Helvetica Neue', 'Helvetica', sans-serif;
-    font-size: 29px;
-    margin-top: 40px;
-    margin-bottom: 45px;
+    font-family: $font-family-light;
+    font-size: 2em;
+    margin-top: .5em;
+    margin-bottom: 1.1em;
   }
 
   #birthday {
@@ -193,8 +225,8 @@ label {
       position: absolute;
       right: 0;
       top: 0;
-      font-family: 'Helvetica Neue Condensed', 'Helvetica Neue', 'Helvetica', sans-serif;
-      font-size: 40px;
+      font-family: $font-family-light;
+      font-size: 3em;
     }
   }
 
@@ -229,10 +261,7 @@ label {
 
   .enter {
     @include button;
-    background: url(/images/background-enter.png) no-repeat top left;
-    width: 174px;
-    height: 76px;
-    line-height: 76px;
+    background: url(/images/background-enter.png) no-repeat center center;
     margin-top: 90px;
     margin-bottom: 90px;
   }
@@ -251,6 +280,13 @@ label {
 
 }
 
+#underage {
+  margin-bottom: 75px;
+  h1 {
+    font-size: 75px;
+    line-height: 75px;
+  }
+}
 #main{
 
   .festival-date {
@@ -263,14 +299,11 @@ label {
     }
   }
 
-  .buy-tickets {
-    @include button;
-    background: url('/images/background-buy-tickets.png') no-repeat top left;
-    width: 274px;
-    height: 98px;
-    line-height: 98px;
-  }
+}
 
+.buy-tickets {
+  @include button;
+  background: url('/images/background-buy-tickets.png') no-repeat center center;
 }
 
 .play-trailer {
@@ -297,16 +330,16 @@ label {
 }
 
 .message{
-  min-height: 20vw;
-  display: flex;
+  @include flex-center;
+  height: 50vw;
+  max-height: calc(100vh - 480px);
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 100px;
+  margin-top: 3em;
+  margin-bottom: 3em;
 
   h1 {
-    font-size: 65px;
-    line-height: 60px;
+    font-size: 90px;
+    line-height: 90px;
     margin-top: 0;
     margin-bottom: 10px;
     text-align: center;
@@ -321,21 +354,281 @@ label {
 .festival-list-wrapper {
   background: url('/images/background-festivals.png') no-repeat top center;
   background-attachment: scroll;
-  background-size: cover;
-  font-size: 34px;
+  background-size: 100%;
+  font-size: 3em;
   text-transform: uppercase;
   text-align: center;
-  padding: 50px 0 10px;
-  li {
-    margin-left: 10px;
-    margin-right: 10px;
+  padding-top: 50px;
+  #festival-list {
+    background-color: #fff;
+    padding-bottom: 65px;
   }
+  li {
+    margin-left: .5em;
+    margin-right: .5em;
+
+    a {
+      padding: .2em .5em;
+      &.active {
+        background: url('/images/background-active.png') no-repeat top center;
+        background-attachment: scroll;
+        background-size: 100% 100%;
+        color: #fff;        
+      }
+    }
+  }
+  
 }
 
 .slider-wrapper {
   background-color: #fff;
   text-align: center;
+  margin-top: -1px;
+  
+  .artists {
+    background: url('/images/background-festival-artists.png') no-repeat bottom center;
+    background-attachment: scroll;
+    background-size: cover;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .slider-image {
+    @include flex-center;
+    flex-direction: column;    
+    background-attachment: scroll;
+    background-size: cover;
+    height: 40vw;
+    max-height: 700px;
+    padding: 5vw 0;
+    position: relative;
+    z-index: -1;
+    margin-top: -24px;
+    h1 {
+      font-size: 8.5em;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 30px;
+      opacity: .9;
+    }
+    .read-more {
+      @include button;
+      background: url('/images/background-read-more.png') no-repeat center center;
+    }
+  }
 }
+
+.reminder {
+  background: url('/images/background-festival-artists.png') no-repeat top center;
+  background-attachment: scroll;
+  background-size: 100% 100%;
+  padding: 100px 0;
+  margin-top: -35px;
+  position: relative;
+  z-index: 3;
+  h3 {
+    color: $brand-primary;
+    text-transform: uppercase;
+    font-size: 2.3em;
+    margin-top: 10px;
+  }
+  .container-fluid {
+    max-width: 1500px;
+    .row {
+      @include flex-center;
+    }
+  }
+  .set-reminder {
+    @include button;
+    background: url('/images/background-set-reminder.png') no-repeat center center;
+  }
+}
+
+.shop {
+    margin-top: -20px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    clear: both;
+    overflow: hidden;
+    h2 {
+      font-size: 4em;
+      margin-top: 1.5em;
+      margin-bottom: .5em;
+    }
+    
+    p {
+      font-size: 2em;
+      font-family: $font-family-light;
+      max-width: 800px;
+      margin: 0 auto 1.2em;
+    }
+
+    .tickets-wrapper {
+      background: url('/images/background-get-tickets-wrapper.png') no-repeat center center;
+      background-size: cover;
+
+      p {
+        color: $brand-primary;
+      }
+
+      .get-tickets {
+        @include button;
+        background: url('/images/background-get-tickets.png') no-repeat center center;
+        color: $brand-secondary;
+        margin: .2em auto 1.5em;
+        display: block;
+      }
+
+    }
+    
+    .items-wrapper {
+      background: url('/images/background-get-items-wrapper.png') no-repeat center center;
+      background-size: cover;
+
+      p {
+        color: #fff;
+      }
+
+      .get-items {
+        @include button;
+        background: url('/images/background-get-items.png') no-repeat center center;
+        color: $brand-primary;
+        margin: .2em auto 1.5em;
+        display: block;
+      }
+    }
+    
+
+}
+
+.artists {
+
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1em;
+
+  .row {
+    margin-bottom: 10px;
+  }
+  .row:nth-child(1) {
+    font-size: 3.6em;
+  }
+  .row:nth-child(2) {
+    font-size: 3em;
+  }
+  .row:nth-child(3) {
+    font-size: 2.6em;
+  }
+  .row:nth-child(4) {
+    font-size: 2.6em;
+  }
+
+  .list-inline li:not(:last-child) {
+    margin-right: 1em;
+    position: relative;
+    &::after {
+      content: "\00B7";
+      color: $brand-secondary;
+      font-size: 1.8em;
+      position: absolute;
+      right: -.45em;
+      top: -0.42em;
+    }
+  }
+}
+
+.festival-wrapper {
+  max-width: 1600px;
+  padding: 0 25px;
+  margin: 0 auto 100px;
+  text-transform: uppercase;
+  .festival-header {
+    display: flex;
+  }
+  h1 {
+    font-size: 8.8em;
+    margin: 0 10px 0 0;
+    opacity: .95;
+  }
+  .festival-date-location {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    line-height: 1;
+    margin-bottom: 1.7em;
+    p {
+      font-size: 2.2em;
+      margin-bottom: 0;
+      color: $brand-secondary;
+      text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+    }
+  }
+
+  .description {
+    margin: 50px 0;
+    font-family: $font-family-light;
+    color: #fff;
+    font-size: 1.67em;
+    line-height: 1.4;
+  }
+  .artists {
+    margin: 60px 0;
+    color: #fff;
+    font-size: .8em;
+    .row {
+      margin-bottom: 0;
+    }
+  }
+
+  .buy-tickets {
+    display: inline-block;
+    margin-bottom: 50px;
+  }
+}
+
+
+.learn-more-wrapper {
+  max-width: 1600px;
+  padding: 0 25px;
+  margin: 0 auto 100px;
+
+  h1 {
+    font-size: 5.5em;
+  }
+  h2 {
+    font-size: 3.2em;
+    margin-top: 0;
+    margin-bottom: .5em;
+  }
+
+  p {
+    font-family: $font-family-light;
+    font-size: 2em;
+    max-width: 1080px;
+    letter-spacing: 2px;
+    strong {
+      font-family: $font-family-sans-serif;
+    }
+  }
+
+  a {
+    font-size: 2em;
+    letter-spacing: 2px;
+  }
+  
+  .list-inline {
+    margin: 1.5em 0;
+    text-transform: uppercase;
+    li {
+      padding-left: 0;
+      padding-right: 20px;
+    }
+  }
+}
+
 
 // Dropdowns
 
@@ -476,7 +769,10 @@ label {
   background-color: #fff;
   background: url(/images/background-footer.png) no-repeat 0 0;
   background-attachment: scroll;
-  background-size: cover;
+  background-size: 100% 100%;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
 
   a {
     text-transform: uppercase;
@@ -487,8 +783,8 @@ label {
   }
 
   .copy {
-    font-family: 'Helvetica Neue Condensed', 'Helvetica Neue', 'Helvetica', sans-serif;
-    font-size: 17px;
+    font-family: $font-family-light;
+    font-size: 1.1em;
   }
 
   .footer-menu {
