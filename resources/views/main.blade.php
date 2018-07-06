@@ -42,6 +42,9 @@
                                 value="{{ old('phone') }}"
                                 placeholder="{{ trans('form.phone') }} *"
                                 data-msg-required="{{ trans('form.phone_email_required') }}">
+                        @if ($errors->has('phone'))
+                            <span id="phone-error" class="error ">{{ trans('form.phone_correct') }}</span>
+                        @endif 
 
                         </div>
                     </div>
@@ -56,10 +59,8 @@
                                 placeholder="{{ trans('form.email') }} *"
                                 data-msg-required="{{ trans('form.phone_email_required') }}"
                                 data-msg-email="{{ trans('form.valid_email') }}">
-                               
-                            @if ($errors->has('phone'))
-                                <span id="phone-error" class="error ">{{ trans('form.phone_correct') }}</span>                                
-                            @elseif ($errors->has('email'))
+                                                     
+                            @if ($errors->has('email'))
                                 <span id="email-error" class="error ">{{ trans('form.email_unique') }}</span>                                
                             @endif
                         </div>
