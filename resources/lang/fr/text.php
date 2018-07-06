@@ -14,6 +14,7 @@ return [
     'home'                              => 'Home',
     'gate-age'                          => 'VOUS DEVEZ AVOIR L’ÂGE LÉGAL DE CONSOMMER DE L’ALCOOL POUR ACCÉDER À CE SITE',
     'proceed'                           => 'Veuillez entrer les détails suivants pour continuer',
+    'notified'                          => 'Recevez une notification lorsque la liste et les informations sur les tickets sont disponibles',
     'sorry'                             => 'DÉSOLÉ, VOUS DEVEZ AVOIR L’ÂGE LÉGAL DE CONSOMMER DE L’ALCOOL',
     'underage'                          => 'DANS LA PROVINCE OU LE TERRITOIRE DE RÉSIDENCE.',
     'festival'                          => 'LE PREMIER FESTIVAL DE MUSIQUE CANADIEN',
@@ -42,7 +43,7 @@ return [
     'contact'                           => 'CONTACTEZ-NOUS',
     'contact-link'                      => 'https://contactus.anheuser-busch.com/contactus/LABATTCAFrench/contact_us.asp',
     'allset'                            => 'VOUS ÊTES PRÊT',
-    'thankyou'                          => 'Merci pour votre inscription. En attendant, jetez un coup d’œil à nos pages Facebook et Instagram.',
+    'thankyou'                          => 'Merci pour votre inscription!',
     'copy'                              => 'La Brasserie Labatt Limitée',
     /**
      * Learn More

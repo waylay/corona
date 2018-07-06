@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Validator;
+use App\Entry;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -14,16 +15,31 @@ class PagesController extends Controller
      */
     public function gate()
     {
-        return view('gate', $this->viewData());
+        return view('gate');
     }
 
     /**
-     * Display the gate
+     * Display the underage message
      *
      */
     public function underage()
     {
-        return view('underage', $this->viewData());
+        return view('underage');
+    }
+
+    /**
+     * Display all the entries
+     *
+     * @return Illuminate\Support\Collection $data
+     */
+    public function index()
+    {
+        //
+        $data = [
+            'data' => Entry::all()
+        ];
+
+        return $data;
     }
 
     /**
@@ -72,7 +88,7 @@ class PagesController extends Controller
     public function main(Request $request)
     {
         if ($request->session()->has('birthday') && $request->session()->has('province')) {
-            return view('main', $this->viewData());
+            return view('main');
         }
 
         return redirect('/');
@@ -86,10 +102,11 @@ class PagesController extends Controller
     public function more(Request $request)
     {
         if ($request->session()->has('birthday') && $request->session()->has('province')) {
-            return view('more', $this->viewData());
+            return view('more');
         }
 
-        return redirect('/');
+        return redirect('/')->withErrors(['year' => ['required']]);
+        ;
     }
 
     /**
@@ -100,16 +117,54 @@ class PagesController extends Controller
     public function festival($city)
     {
         if (request()->session()->has('birthday') && request()->session()->has('province')) {
-            $viewData = $this->viewData();
-            if (array_key_exists($city, $viewData['festivals'])) {
-                $viewData['festival']            = $viewData['festivals'][$city];
-                $viewData['festival_background'] = ' style="background: url(/images/slider-' . $city . '.jpg) no-repeat top center;"';
+            $festivals = \View::shared('festivals');
+            if (array_key_exists($city, $festivals)) {
+                $viewData['festival']            = $festivals[$city];
+                $viewData['festival_background'] = ' style="background: url(/images/slider-' . $city . '.jpg) no-repeat top center/cover;"';
 
                 return view('festival', $viewData);
             }
         }
 
         return redirect('/');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $validEntry = $request->validate([
+            'name'       => 'required',
+            'email'      => 'required_without:phone',
+            'phone'      => 'required_without:email|regex:/^((([0-9]{1})*[- .(]*([0-9]{3})[- .)]*[0-9]{3}[- .]*[0-9]{4})+)*$/',
+            'agree'      => 'required'
+        ], [
+            'unique' => trans('form.email_unique')
+        ]);
+
+        unset($validEntry['agree']);
+
+        // Get the birthday from session
+        $validEntry['birthday'] = session('birthday');
+
+        // Get the province from session
+        $validEntry['province'] = session('province');
+
+        // Store the Language used when form was submitted
+        $validEntry['language'] = \App::getLocale();
+
+        // Store the entry
+        $entry = Entry::forceCreate($validEntry);
+
+        // Queue an email notification
+        // Mail::to($entry->email)->send(new NewEntry($entry));
+
+        // Done, redirect visitor to thank you page
+        return redirect('/thankyou');
     }
 
     /**
@@ -151,104 +206,5 @@ class PagesController extends Controller
         }
 
         return false;
-    }
-
-    public function viewData()
-    {
-        $viewData           = [];
-        $viewData['months'] = [
-            '1'  => trans('form.january'),
-            '2'  => trans('form.february'),
-            '3'  => trans('form.march'),
-            '4'  => trans('form.april'),
-            '5'  => trans('form.may'),
-            '6'  => trans('form.june'),
-            '7'  => trans('form.july'),
-            '8'  => trans('form.august'),
-            '9'  => trans('form.september'),
-            '10' => trans('form.october'),
-            '11' => trans('form.november'),
-            '12' => trans('form.december')
-        ];
-
-        $viewData['provinces'] = [
-            'British Columbia'          => 'BC',
-            'Ontario'                   => 'ON',
-            'Newfoundland and Labrador' => 'NL',
-            'Nova Scotia'               => 'NS',
-            'Prince Edward Island'      => 'PE',
-            'New Brunswick'             => 'NB',
-            'Quebec'                    => 'QC',
-            'Manitoba'                  => 'MB',
-            'Saskatchewan'              => 'SK',
-            'Alberta'                   => 'AB',
-            'Northwest Territories'     => 'NT',
-            'Nunavut'                   => 'NU',
-            'Yukon Territory'           => 'YT',
-        ];
-
-        $viewData['festivals'] = [
-            'halifax' => [
-                'id'       => '1',
-                'slug'     => 'halifax',
-                'reminder' => 'Aug 11th - 6PM-12AM EST',
-                'artists'  => [
-                    ['Blue Rodeo', 'Matt Anderson'],
-                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
-                    ['Logan Staats', 'Kongos', 'Edward'],
-                ],
-                'tickets' => '#',
-            ],
-
-            'quebec' => [
-                'id'       => '2',
-                'slug'     => 'quebec',
-                'reminder' => 'Aug 11th - 6PM-12AM EST',
-                'artists'  => [
-                    ['Blue Rodeo', 'Matt Anderson'],
-                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
-                    ['Logan Staats', 'Kongos', 'Edward'],
-                ],
-                'tickets' => '#',
-            ],
-
-            'toronto' => [
-                'id'       => '3',
-                'slug'     => 'toronto',
-                'reminder' => 'Aug 11th - 6PM-12AM EST',
-                'artists'  => [
-                    ['Blue Rodeo', 'Matt Anderson'],
-                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
-                    ['Logan Staats', 'Kongos', 'Edward'],
-                ],
-                'tickets' => '#',
-            ],
-
-            'winnipeg' => [
-                'id'       => '4',
-                'slug'     => 'winnipeg',
-                'reminder' => 'Aug 11th - 6PM-12AM EST',
-                'artists'  => [
-                    ['Blue Rodeo', 'Matt Anderson'],
-                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
-                    ['Logan Staats', 'Kongos', 'Edward'],
-                ],
-                'tickets' => '#',
-            ],
-
-            'whistler' => [
-                'id'       => '5',
-                'slug'     => 'whistler',
-                'reminder' => 'Aug 11th - 6PM-12AM EST',
-                'artists'  => [
-                    ['Blue Rodeo', 'Matt Anderson'],
-                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
-                    ['Logan Staats', 'Kongos', 'Edward'],
-                ],
-                'tickets' => '#',
-            ],
-        ];
-
-        return $viewData;
     }
 }

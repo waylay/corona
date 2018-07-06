@@ -18,9 +18,9 @@
                 <tr>
                     <th class="text-filter">ID</th>
                     <th>Signed Up</th>
-                    <th class="text-filter">First Name</th>
-                    <th class="text-filter">Last Name</th>
+                    <th class="text-filter">Name</th>
                     <th class="text-filter">Email</th>
+                    <th class="text-filter">Phone</th>
                     <th class="text-filter">Province</th>
                     <th>Birthday</th>
                     <th>Language</th>
@@ -30,9 +30,9 @@
                 <tr>
                     <th class="id-text-filter">ID</th>
                     <th></th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Name</th>
                     <th>Email</th>
+                    <th>Phone</th>
                     <th>Province</th>
                     <th></th>
                     <th></th>

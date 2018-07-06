@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="festival-wrapper">
+<div class="festival-wrapper"  @isset($festival_background) {!! $festival_background !!} @endisset >
 
     <div class="festival-header container-fluid">
         

@@ -14,6 +14,7 @@ return [
     'home'                              => 'Home',
     'gate-age'                          => 'YOU MUST BE OF LEGAL DRINKING AGE TO ENTER THIS SITE',
     'proceed'                           => 'Please enter the following details to proceed',
+    'notified'                          => 'Get notified when lineup & ticket info is available',
     'sorry'                             => 'SORRY, MUST BE LEGAL DRINKING AGE',
     'underage'                          => 'IN PROVINCE OR TERRITORY OF RESIDENCE.',
     'festival'                          => 'Canada\'s first music festival',
@@ -41,7 +42,7 @@ return [
     'contact'                           => 'Contact Us',
     'contact-link'                      => 'https://contactus.anheuser-busch.com/contactus/LABATTCA/contact_us.asp',
     'allset'                            => 'YOU\'RE ALL SET',
-    'thankyou'                          => 'Thank you for signing up. In the meantime, check us out on Facebook and Instagram.',
+    'thankyou'                          => 'Thank you for signing up!',
     'copy'                              => 'Labatt Brewing Company Limited',
     /**
      * Learn More

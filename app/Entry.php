@@ -7,7 +7,7 @@ use Illuminate\Support\Carbon;
 
 class Entry extends Model
 {
-    protected $fillable = ['firstname', 'lastname', 'email', 'province', 'birthday', 'language'];
+    protected $fillable = ['name', 'email', 'province', 'birthday', 'language'];
 
     public function getBirthdayAttribute($birdthday)
     {

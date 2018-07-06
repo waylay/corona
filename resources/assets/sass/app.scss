@@ -30,17 +30,19 @@
 
 // General
 body {
-  background: url('/images/background-image.jpg') no-repeat top center;
-  background-attachment: scroll;
-  background-size: 1918px 1094px;
-  background-color: #fff;
-  overflow-y: scroll;
+
   &.more {
     background: url('/images/background-texture.jpg') no-repeat top center;
   }
+
+  &.login {
+    background-color: $brand-primary;
+  }
+
+  background-color: #fff;
   &.dashboard {
     background-image: none;
-    background-color: #000103;
+    background-color: $brand-primary;
     #footer {
       display: none;
     }
@@ -80,8 +82,27 @@ label {
   font-weight: 400;
 }
 
+.panel {
+  margin-top: 70px;
+  &.panel-default {
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+  }
+  .form-control {
+    height: auto;
+  }
+  button, button:hover {
+    color: #FFF;
+  }
+}
+
+.container {
+  max-width: 100%;
+}
+
+
 @mixin flex-center {
-  @media screen and (min-width: $screen-lg-min){
+  @media screen and (min-width: $screen-lg){
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,10 +132,11 @@ label {
 
 #header {
   width: 100%;
-  margin-top: 18px;
-  min-height: 263px;
+  margin-top: 0;
+  position: absolute;
+  z-index: 1;
   .nav {
-    margin-top: 50px;
+    margin-top: 70px;
     li {
       font-size: 1.667em;
       text-transform: uppercase;
@@ -145,7 +167,7 @@ label {
 
   .navbar-brand-centered {
     position: absolute;
-    top: 0;
+    top: 18px;
     left: 50%;
     display: block;
     width: 240px;
@@ -182,13 +204,13 @@ label {
       }
     }
     span {
-      color: transparent;
+      color: #fff;
       padding: 0 6px;
     }
   }
 
-
 }
+
 
 .more {
   color: $brand-primary;
@@ -203,11 +225,14 @@ label {
 }
 #gate{
   text-align: center;
-
+  form {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   h1 {
-    @media screen and (min-width: $screen-lg-min){
+    margin-top: 1em;
+    @media screen and (min-width: $screen-lg){
       font-size: 3.8em;
-      margin-top: 1em;
     }
     
     text-align: center;
@@ -258,7 +283,7 @@ label {
       content: "\25BC";
       padding: 5px;
       position: absolute;
-      right: 1.5em;
+      right: 3.5em;
       top: 0;
       z-index: 1;
       text-align: center;
@@ -272,8 +297,8 @@ label {
   .enter {
     @include button;
     background: url(/images/background-enter.png) no-repeat center center/cover;
-    margin-top: 90px;
-    margin-bottom: 90px;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 
   .error {
@@ -291,25 +316,56 @@ label {
 }
 
 #underage {
-  @media screen and (min-width: $screen-lg-min){
-    margin-bottom: 75px;
+
+  @media screen and (min-width: $screen-lg){
+    padding-top: 500px;
     h1 {
       font-size: 75px;
       line-height: 75px;
     }
   }  
 }
-#main{
 
-  .festival-date {
-    margin-top: 50px;
-    font-size: 4em;
-    span{
-      font-size: .5em;
-      line-height: 1;
-      vertical-align: top;
+#main{
+  padding-bottom: 0;
+  @media screen and (min-width: $screen-lg){
+    padding-top: 240px;
+    h1 {
+      font-size: 5.6em;
+      margin-bottom: .3em;
+    }
+    h2 {
+      margin-bottom: .7em;
     }
   }
+  .festival-date {
+    h1 {
+      display: inline-block;
+      font-size: 2.3em;
+      span{
+        font-size: .5em;
+        line-height: 1;
+        vertical-align: top;
+      }
+    }
+
+    img {
+      display: inline-block;
+      width: 37px;
+      height: auto;
+      margin-bottom: 1em;
+      margin-right: .5em;
+      margin-left: .5em;
+    }
+    
+  }
+
+  .enter {
+    @include button;
+    background: url('/images/background-set-reminder.png') no-repeat center center / contain;
+    padding: .7em 1em;
+  }
+
 
 }
 
@@ -317,13 +373,16 @@ label {
   @include button;
   background: url('/images/background-buy-tickets.png') no-repeat center center / cover;
 }
-
+#play-trailer {
+  margin-top: 0;
+}
 .play-trailer {
   font-size: 18px;
   color: #fff;
   text-transform: uppercase;
   float: right;
   clear: both;
+  margin-top: 30px;
   margin-bottom: 30px;
   img {
     opacity: 1;
@@ -342,13 +401,16 @@ label {
 }
 
 .message{
-  @include flex-center;
-  flex-direction: column;
-  margin-bottom: 3em;
-  min-height: 480px;
+  background: url('/images/background-image.jpg') no-repeat top center;
+  background-attachment: scroll;
+  background-size: cover;
+  padding: 370px 25% 100px;
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
   h1 {
-    font-size: 90px;
-    line-height: 90px;
+    font-size: 6em;
+    line-height: 1.1;
     margin-top: 0;
     margin-bottom: 10px;
     text-align: center;
@@ -550,9 +612,8 @@ label {
 }
 
 .festival-wrapper {
-  max-width: 1600px;
-  padding: 0 25px;
-  margin: 0 auto 100px;
+  padding: 270px 150px 50px;
+  margin: 0 auto;
   text-transform: uppercase;
   .festival-header {
     display: flex;
@@ -602,7 +663,7 @@ label {
 
 .learn-more-wrapper {
   max-width: 1600px;
-  padding: 0 25px;
+  padding: 350px 25px 25px;
   margin: 0 auto 100px;
 
   h1 {
@@ -827,14 +888,29 @@ label {
 
 // EN Version Only
 .lang-en {
-  #gate {
+  #gate.message {
     h1 {
-      max-width: 920px;
+      max-width: 900px;
     }
   }
 }
 
 // FR Version Only
-
+.lang-fr {
+  #main {
+    @media screen and (min-width: $screen-lg){
+      h1 {
+        font-size: 4.2em;
+      }
+      h2 {
+        font-size: 1.6em;
+      }
+      .festival-date h1 {
+        font-size: 2.3em;
+      }
+    }
+    
+  }
+}
 // Responsive
 @import "responsive";

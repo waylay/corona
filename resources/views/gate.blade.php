@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container message" id="gate">
+<div class="container-fluid message" id="gate">
     
     <h1>{!! trans('text.gate-age') !!}</h1>
     <h2>{!! trans('text.proceed') !!}</h2>
@@ -52,7 +52,7 @@
                 </div>
                 @if ($errors->has('day') || $errors->has('month') || $errors->has('year') || $errors->has('date'))
                 <span id="date-error" class="error text-danger">
-                        {{ trans('form.date-error') }}
+                        {{ trans('form.required') }}
                 </span>
                 @endif
 

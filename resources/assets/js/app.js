@@ -32,31 +32,31 @@ $( document ).ready( function () {
 
 
     // Slider
-    var slider = jQuery('#festival-slider').slippry({
-        // general elements & wrapper
-        slippryWrapper: '<div class="slider" />',
-        // options
-        elements: '.slide',
-        adaptiveHeight: true, // height of the sliders adapts to current 
-        captions: false,
-        useCSS: true,
-        autoHover: true,
-        transition: 'horizontal',
-        pager: false,
-        auto: false,
-        speed: 1200,
-        onSlideBefore: function (el, index_old, index_new) {
-          jQuery('#festival-list a').removeClass('active');
-          if (index_new) {
-              jQuery(' #festival-list a[data-slide="'+ (index_new + 1) +'"] ').addClass('active');
-          }
-        }
-      });
+    // var slider = jQuery('#festival-slider').slippry({
+    //     // general elements & wrapper
+    //     slippryWrapper: '<div class="slider" />',
+    //     // options
+    //     elements: '.slide',
+    //     adaptiveHeight: true, // height of the sliders adapts to current 
+    //     captions: false,
+    //     useCSS: true,
+    //     autoHover: true,
+    //     transition: 'horizontal',
+    //     pager: false,
+    //     auto: false,
+    //     speed: 1200,
+    //     onSlideBefore: function (el, index_old, index_new) {
+    //       jQuery('#festival-list a').removeClass('active');
+    //       if (index_new) {
+    //           jQuery(' #festival-list a[data-slide="'+ (index_new + 1) +'"] ').addClass('active');
+    //       }
+    //     }
+    //   });
       
-    jQuery('#festival-list a').click(function () {
-        slider.goToSlide($(this).data('slide'));
-        return false;
-    });
+    // jQuery('#festival-list a').click(function () {
+    //     slider.goToSlide($(this).data('slide'));
+    //     return false;
+    // });
 
 
     // Move to next date field
@@ -108,6 +108,46 @@ $( document ).ready( function () {
         },
         unhighlight: function (element, errorClass, validClass) {
             $(element).parent('.selectmenu').addClass("is-valid").removeClass("is-invalid");
+            $(element).addClass("is-valid").removeClass("is-invalid");
+        }
+    });
+
+
+    $("#signup").validate({
+        ignore: ".ignore",
+        rules: {
+            name: {
+                required: true,            
+            },
+            phone: {
+                required: function(element) {
+                  return $("#email").val() == '';
+                },
+            },
+            email: {
+                required: function(element) {
+                  return $("#phone").val() == '';
+                }, 
+                email: true,
+            },
+            agree: {
+                required: true,            
+            },
+        },
+        errorElement: "span",
+        errorPlacement: function (error, element) {
+            // Add the `text-danger` class to the error element
+            if ( element.attr("name") != "agree") {
+                error.insertAfter(element);
+            }
+
+        },
+        highlight: function (element, errorClass, validClass) {
+            
+            $(element).addClass("is-invalid").removeClass("is-valid");
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            
             $(element).addClass("is-valid").removeClass("is-invalid");
         }
     });
