@@ -12,7 +12,7 @@
 </div> <!-- END #festival -->
 
 <div class="container-fluid" id="play-trailer">
-    <a class="play-trailer" href="https://www.youtube.com/watch?v=DvSVybGWoU8" data-lity>
+    <a class="play-trailer" href="https://www.facebook.com/v2.3/plugins/video.php?allowfullscreen=true&mute=0&autoplay=true&href=https%3A%2F%2Fwww.facebook.com%2FTribeSeries%2Fvideos%2F717065741663237&locale=en_US&sdk=joey" data-lity>
         <span>{!! trans('text.play-trailer') !!}&nbsp;</span>
         <img src="/images/play-trailer.png" alt="{!! trans('text.play-trailer') !!}">
     </a>
@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <div class="slider-image" style="background: url('/images/slider-static.jpg') no-repeat center center;">  
+            <div class="slider-image" style="background: url('/images/slider-static.jpg') no-repeat center center / cover;">  
                 <h1>{!! trans('text.slider-static-headline') !!}</h1>              
                 <a class="read-more" href="/more"> {{ trans('text.learn-more') }} </a>
             </div>
@@ -90,7 +90,7 @@
                 @endforeach
                     
             </div>
-            <div class="slider-image" style="background: url('/images/slider-{{ $slug }}.jpg') no-repeat center center;">
+            <div class="slider-image" style="background: url('/images/slider-{{ $slug }}.jpg') no-repeat center center / cover;">
                 <h1>{{ trans('festivals/'.$festival['slug'].'.city') }}</h1>
                 <a class="read-more" href="/festival/{{ $slug }}"> {{ trans('text.learn-more') }} </a>
             </div>
@@ -107,10 +107,10 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-xs-4">
                         <img src="/images/calendar-icon.png" alt="Set a reminder">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9 col-xs-8">
                         <h3>{{ trans('text.watch-live') }}</h3>
                     </div>
                 </div>

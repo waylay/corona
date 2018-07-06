@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -35,28 +35,28 @@
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand navbar-brand-centered" href="{{ url('/festival') }}">
-                        
-                        @if ( Route::currentRouteName() == 'more' )
-                        <img class="logo" src="/images/logo-contrast.png" alt="{!! trans('text.site-title') !!}">
-                        @else
-                        <img class="logo" src="/images/logo.png" alt="{!! trans('text.site-title') !!}">
-                        @endif
-                    </a>
+
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile">
+                            <span class="sr-only">Toggle navigation</span>
+                        </button>
+
+                        <a class="navbar-brand navbar-brand-centered" href="{{ url('/festival') }}">
+                            
+                            @if ( Route::currentRouteName() == 'more' )
+                            <img class="logo" src="/images/logo-contrast.png" alt="{!! trans('text.site-title') !!}">
+                            @else
+                            <img class="logo" src="/images/logo.png" alt="{!! trans('text.site-title') !!}">
+                            @endif
+                        </a>
+
                     </div>
 
                     <!-- Links -->
-                    <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                    <div id="navbar-desktop" class="hidden-sm hidden-xs">
                         
-                    <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav">
                             <li class="dropdown menu-cities">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cities</a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.cities') }}</a>
                                 <ul class="dropdown-menu">
                                     <li role="separator" class="divider"></li>
                                     @foreach($festivals as $slug => $festival)
@@ -82,12 +82,52 @@
                                 </div> <!-- end .locale  -->
                             </li>		        
                         </ul>
-                    </div><!-- /.navbar-collapse -->
+                    </div><!-- /#navbar-desktop -->
+
+
+                    
+
                 </div><!-- /.container-fluid -->
             </nav>
 
-        </div> <!-- end .header  -->
+        </div> <!-- end #header  -->
 
+        <div id="navbar-mobile" class="collapse hidden-lg hidden-md">
+                        
+            <ul class="nav navbar-nav">
+            <li class="home">
+                <a href="{{ url('/festival') }}">{{ trans('text.home') }}</a>
+            </li>
+            <li class="dropdown menu-cities">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.cities') }}</a>
+                <ul class="dropdown-menu">
+                    @foreach($festivals as $slug => $festival)
+                    <li class="{{ $slug }}"><a href="/festival/{{ $slug }} ">{{ trans('festivals/'.$festival['slug'].'.city') }}</a></li>
+                    @endforeach
+                </ul>
+            </li>
+            <li>
+                <a href="#">{{ trans('text.stream-reminder') }}</a>
+            </li>
+            <li class="learn-more">
+                <a href="/more">{{ trans('text.learn-more') }}</a>
+            </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                    <!-- Localization -->
+                    <a href="/language/en" class="{{ (app()->getLocale() == 'en') ? 'active' : null  }}" tabindex="-1">En</a>
+                </li>
+                <li>
+                    <a href="/language/fr" class="border-left-0 {{ (app()->getLocale() == 'fr') ? 'active' : null  }}" tabindex="-1">Fr</a>
+                </li>		        
+                @if( request()->is('dashboard') )
+                    <li><a href="{{ url('/logout') }}"> logout </a></li>
+                @endif
+            </ul>
+        </div><!-- /#navbar-mobile -->
 
         <div id="content">
 
@@ -100,15 +140,17 @@
             <div class="container-fluid">
                 <div class="row">
                
-                    <div class="col-md-3 copy">
-                        <p>&copy; {{ date('Y') }} {{ trans('text.copy') }}</p>
-                    </div>
+                    
 
-                    <div class="col-md-6 footer-menu">
+                    <div class="col-md-6 col-md-push-3 footer-menu">
                         <a href="{{ trans('text.terms-link') }}" target="_blank">{{ trans('text.terms') }}</a>
                         <a href="{{ trans('text.privacy-policy-link') }}" target="_blank">{{ trans('text.privacy-policy') }}</a>
                         <a href="{{ trans('text.faq-link') }}" target="_blank">{{ trans('text.faq') }}</a>
                         <a href="{{ trans('text.contact-link') }}" target="_blank">{{ trans('text.contact') }}</a>
+                    </div>
+
+                    <div class="col-md-3 col-md-pull-6 copy">
+                        <p>&copy; {{ date('Y') }} {{ trans('text.copy') }}</p>
                     </div>
 
                         

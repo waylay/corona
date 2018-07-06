@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container" id="gate">
+<div class="container message" id="gate">
     
     <h1>{!! trans('text.gate-age') !!}</h1>
     <h2>{!! trans('text.proceed') !!}</h2>
@@ -18,7 +18,7 @@
 
                 <div class="row" id="birthday">
 
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-12">
                         <div class="selectmenu select-month">
                             {!! Form::select('month', $months, null, [
                                 'class' => 'hidden', 
@@ -28,7 +28,7 @@
                                 ]) !!}
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-12">
                         <div class="selectmenu select-day">
                             {!! Form::selectRange('day', 1, 31, null, [
                                 'class' => 'hidden',
@@ -38,7 +38,7 @@
                                 ]) !!}
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-12">
                         <div class="selectmenu select-year">
                             {!! Form::selectYear('year', 2018, 1900, null, [
                                 'class' => 'hidden',
@@ -58,11 +58,11 @@
 
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 col-xs-12">
                 <div class="selectmenu select-province">
-                    {!! Form::select('province', $provinces, null, ['class' => 'hidden', 'id' => 'province', 'placeholder' => trans('form.province')]) !!}
+                    {!! Form::select('province', $provinces, null, ['class' => 'hidden', 'id' => 'province', 'placeholder' => trans('form.province'), 'data-msg-required' => trans('form.required')]) !!}
                     @if ($errors->has('province'))
-                    <span id="province-error" class="error form-text text-danger">{{ trans('form.province_required') }}</span>
+                    <span id="province-error" class="error form-text text-danger">{{ trans('form.required') }}</span>
                     @endif
                 </div>
             </div>

@@ -11,6 +11,7 @@ return [
     */
 
     'site-title'                        => 'CORONA SUNSETS FESTIVAL',
+    'home'                              => 'Home',
     'gate-age'                          => 'YOU MUST BE OF LEGAL DRINKING AGE TO ENTER THIS SITE',
     'proceed'                           => 'Please enter the following details to proceed',
     'sorry'                             => 'SORRY, MUST BE LEGAL DRINKING AGE',
@@ -20,7 +21,7 @@ return [
     'festival-date'                     => 'august 11<span>th</span>',
     'play-trailer'                      => 'Play the trailer',
     'watch-live'                        => 'Watch the national sunset live Aug 11th. right here or on Facebook & Youtube.',
-    'privacy-policy'                    => 'Privacy Policy',
+    'cities'                            => 'Cities',
     'set-reminder'                      => 'Set a Reminder',
     'festival-tickets'                  => 'Festival Tickets',
     'festival-tickets-description'      => 'Catch a piece of the connected national sunset.<br>Check out your closest party.',
@@ -31,6 +32,7 @@ return [
     'learn-more'                        => 'Learn More',
     'slider-static-headline'            => '5 cities<br>5 stages<br>1 FESTIVAL',
     'stream-reminder'                   => 'Stream Reminder',
+    'privacy-policy'                    => 'Privacy Policy',
     'privacy-policy-link'               => 'http://www.labatt.com/legal/lbc_eng_privacy.html',
     'terms'                             => 'T&C\'S',
     'terms-link'                        => 'http://www.labatt.com/legal/lbc_eng_legal.html',

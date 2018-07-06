@@ -19,13 +19,7 @@
     <div class="festival-body container-fluid">
         <div class="row ">
 
-            <div class="col-md-6">
-                <div class="description">
-                    <p>{!! trans('festivals/'.$festival['slug'].'.description') !!}</p>
-                </div>
-            </div>
-
-            <div class="col-md-6">
+            <div class="col-sm-6 col-sm-push-6">
                 <div class="artists">                
                     @foreach($festival['artists'] as $artists)
                     <div class="row">
@@ -36,6 +30,13 @@
                         </ul>
                     </div>
                     @endforeach                    
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-sm-pull-6">
+                <div class="description">
+                    <p>{!! trans('festivals/'.$festival['slug'].'.description') !!}</p>
                 </div>
             </div>
 
@@ -58,10 +59,10 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-xs-4 text-center">
                         <img src="/images/calendar-icon.png" alt="Set a reminder">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9 col-xs-8">
                         <h3>{{ trans('text.watch-live') }}</h3>
                     </div>
                 </div>

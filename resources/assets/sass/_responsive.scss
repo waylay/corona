@@ -1,9 +1,382 @@
-@media screen and (min-width: $screen-xs-max){
+@media screen and (min-width: $screen-lg){
   .container-fluid {
     padding-left: 75px;
     padding-right: 75px;
   }
 }
+
+// Smaller Screens
+@media screen and (max-width: $screen-lg){
+  .container-fluid {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  #header {
+
+    .nav {
+      li {
+        font-size: 1.3em;
+      }
+      &>li {
+        margin: 0 .5em;
+      }
+
+      .menu-cities {
+        min-width: 155px;
+      }
+    } 
+
+    .navbar-brand-centered {
+      width: 170px;
+      height: auto;
+      margin-left: -85px;
+    }
+
+    .navbar-toggle {
+      &.collapsed {
+        background: url('/images/background-mobile-menu-open.png') no-repeat center center;
+        background-size: contain;
+      }
+      background: url('/images/background-mobile-menu-close.png') no-repeat center center;
+      background-size: contain;
+      margin-top: 20px;
+      width: 27px;
+      height: 20px;
+      border: none;
+      z-index: 104;
+      transition: all .1s cubic-bezier(.42,0,.58,1);
+    }
+  
+
+    
+  }
+
+
+
+  #navbar-mobile {
+    background: url('/images/background-mobile-menu.png') no-repeat center center;
+    background-size: cover;
+    width: 85%;
+    position: absolute;
+    top: -19px;
+    min-height: 100vh !important;
+    right: -87%;
+    transition: all .2s cubic-bezier(.42,0,.58,1);
+    z-index: 103;
+    padding: 25px 0;
+    text-transform: uppercase;
+    &.in {      
+      right: -1px;
+    }
+
+    .navbar-nav {
+      margin: 25px 0 0;
+      li {
+        font-size: 1.8em;
+        a {
+          color: #fff;
+          padding: 10px 25px;
+          &.active {
+            color: $brand-primary;
+          }
+          &:hover, &:focus {
+            background-color: transparent;
+            color: $brand-primary;
+          }
+        }
+        .dropdown-menu{
+          font-size: .5em;
+          li a {
+            padding: 7px 30px;
+          }
+        }
+      }
+
+    }
+  }
+
+
+  .message {
+    margin-top: 100px;
+    h1 {
+      font-size: 3.2em;
+      line-height: 1;
+      text-align: left;
+      margin-bottom: 0;
+    }
+
+    .buy-tickets {
+      margin-left: -.5em;
+    }
+    
+  }
+  #main {
+    min-height: 335px;
+    margin-top: 80px;
+    .festival-date {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+  }
+
+  .play-trailer {
+    float: none;
+    margin: 10px auto 30px;
+    display: block;
+    max-width: 60px;
+
+    span {
+      display: none;
+    }
+  }
+
+  .festival-list-wrapper {
+    padding-top: 25px;
+    #festival-list {
+      padding-bottom: 25px;
+    }
+  }
+
+  .slider-wrapper {
+    &>img{
+      height: 30px;
+      padding: 0 25px;
+      width: 100%;
+    }
+    .artists {
+      padding: 35px 25px;
+      font-size: 9px;
+    }
+    .slider-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        font-size: 3em;
+      }
+    } 
+  }
+
+  .reminder {
+    background-size: cover;
+    padding: 50px 0 25px;
+    h3 {
+      font-size: 1.3em;
+      margin-top: 0;
+    }
+    img {
+      max-width: 90px;
+    }
+    .col-md-4 {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .set-reminder {
+      margin: 10px auto;
+      font-size: 28px;
+    }
+  }
+
+  .shop {
+
+    .tickets-wrapper, .items-wrapper{
+      padding: 25px;
+      p {
+        font-size: 1.2em;
+      }
+    }
+    h2 {
+      font-size: 2.7em;
+      margin-top: 15px;
+    }
+
+  }
+
+  #gate {
+    margin-top: 50px;
+    
+    h1 {
+      font-size: 1.5em;
+      line-height: 1.4;
+    }
+    h2 {
+      font-size: 1em;
+    }
+    #birthday {
+      background: none;
+      line-height: 1;
+      .col-md-4:not(:last-child)::after {
+        display: none;
+      }
+      .col-md-4 {
+        margin-bottom: 10px;
+      }
+      .selectmenu .ui-selectmenu-button, .selectmenu .ui-selectmenu-button:hover, .selectmenu .ui-selectmenu-button:focus {
+        font-size: 24px;
+      }
+      .selectmenu .ui-selectmenu-button-open::after {
+        display: none;
+      }
+      
+    }
+    .select-month {
+      background: url(/images/background-month.png) no-repeat center center / 100% 100%;      
+    }
+    .select-day {
+      background: url(/images/background-day.png) no-repeat center center / 100% 100%;
+    }
+    .select-year {
+      background: url(/images/background-year.png) no-repeat center center / 100% 100%;
+    }
+    .select-province {
+      background: url(/images/background-province.png) no-repeat center center / 100% 100%;
+      margin-top: 20px;
+      height: auto;
+      line-height: 1;
+    }
+    .enter {
+      margin-top: 35px;
+      margin-bottom: 0;
+    }
+  }
+
+  .selectmenu .ui-selectmenu-button, .selectmenu .ui-selectmenu-button:hover, .selectmenu .ui-selectmenu-button:focus {
+    font-size: 24px;
+  }
+
+  .ui-selectmenu-menu ul.ui-widget.ui-widget-content {
+    margin-left: 0 !important;
+    max-width: 100%;
+    text-align: center;
+    .ui-menu-item-wrapper {
+      padding-left: 0 !important;
+    }
+  }
+  .ui-selectmenu-open {
+    z-index: 101;
+  }
+
+  .select-province::after {
+    display: none;
+  }
+
+  #footer {
+    padding: 25px 0;
+    .copy {
+      text-align: center;
+      margin-top: 7px;
+    }
+    .footer-menu {
+      a {
+        font-size: .8em;
+        margin-left: 7px;
+        margin-right: 7px;
+        white-space: nowrap;
+      }
+    }
+  }
+  .festival-wrapper {
+    h1 {
+      font-size: 7em
+    }
+    .festival-date-location {
+      margin-bottom: 1em;
+      p{
+        font-size: 1.5em;
+      }
+    }
+    .description {
+      font-size: 1.2em;
+    }
+    .artists {
+      font-size: .4em;
+    }
+  }
+
+  .learn-more-wrapper {
+    padding: 0;
+    h1 {
+      font-size: 3em;
+    }
+    h2 {
+      font-size: 1.8em;
+    }
+    p {
+      font-size: 1.1em;
+    }
+    .list-inline li, a {
+      display: block;
+      font-size: 18px;
+    }
+  }
+}
+
+
+// Tablets 
+
+@media screen and (max-width: $screen-lg) and (min-width: $screen-sm){
+  #gate {
+    margin-top: 150px;
+    .age {
+      margin-top: 50px;
+      .select-province {
+        margin-top: 0;
+      }
+    }    
+  }
+}
+
+// Phones 
+@media screen and (max-width: $screen-md){
+  #header {
+    min-height: 100px;
+  }
+  body:not(#gate) {
+    #header {
+      .navbar-brand-centered {
+        width: 85px;
+        height: auto;
+        margin-left: 0;
+        left: 25px;
+        top: 5px;
+      }
+    }
+  }
+
+  #gate #date-error {
+    position: relative;
+    top: 0;
+  }
+
+  .festival-wrapper {
+    padding: 0;
+    .festival-header {
+      display: block;
+      h1 {
+        font-size: 4em;
+      }
+      .festival-date-location p {
+        font-size: 1.5em;
+      }
+    }
+    .artists {
+      font-size: .37em;
+      margin: 0 0 0 15px;
+      text-align: left;
+    }
+    .description {
+      margin: 25px 0;
+      font-size: 1em;
+    }
+    .col-md-12 {
+      text-align: center;
+      .buy-tickets {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 
 @media screen and (max-width: 374px){
   
