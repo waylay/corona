@@ -169,3 +169,11 @@
   text-transform: uppercase;
 }
 
+.main #play-trailer {
+  height: 30px;
+}
+
+.main #play-trailer .play-trailer {
+  display: none !important;
+}
+
