@@ -45,14 +45,14 @@ Route::get('/thankyou', function () {
 });
 
 // Deployment fast migrate
-Route::get('/migrate', function () {
-    \Artisan::call('migrate:fresh', [
-        '--force' => true,
-    ]);
+// Route::get('/migrate', function () {
+//     \Artisan::call('migrate:fresh', [
+//         '--force' => true,
+//     ]);
 
-    \Artisan::call('db:seed', [
-        '--force' => true,
-    ]);
+//     \Artisan::call('db:seed', [
+//         '--force' => true,
+//     ]);
 
-    dd('Done');
-})->middleware('auth');
+//     dd('Done');
+// })->middleware('auth');
