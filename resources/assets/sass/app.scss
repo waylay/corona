@@ -82,6 +82,10 @@ label {
   font-weight: 400;
 }
 
+.form-group {
+  margin-bottom: 20px;
+}
+
 .panel {
   margin-top: 70px;
   &.panel-default {
@@ -331,11 +335,12 @@ label {
   @media screen and (min-width: $screen-lg){
     padding-top: 240px;
     h1 {
-      font-size: 5.6em;
-      margin-bottom: .3em;
+      font-size: 5.4em;
+      margin-bottom: .1em;
     }
     h2 {
-      margin-bottom: .7em;
+      margin-top: 0;
+      margin-bottom: .5em;
     }
   }
   .festival-date {
@@ -362,7 +367,7 @@ label {
 
   .enter {
     @include button;
-    background: url('/images/background-set-reminder.png') no-repeat center center / contain;
+    background: url('/images/background-set-reminder.png') no-repeat center center / 100% 100%;
     padding: .7em 1em;
   }
 
@@ -400,7 +405,7 @@ label {
 }
 
 .message{
-  background: url('/images/background-image.jpg') no-repeat top center;
+  background: url('/images/background-image.jpg') no-repeat bottom center;
   background-attachment: scroll;
   background-size: cover;
   padding: 370px 25% 100px;
@@ -413,9 +418,9 @@ label {
     margin-top: 0;
     margin-bottom: 10px;
     text-align: center;
-    &.secondary {
-      color: $brand-secondary;
-    }
+  }
+  .secondary {
+    color: $brand-secondary;
   }
 
 }
@@ -897,9 +902,14 @@ label {
 // FR Version Only
 .lang-fr {
   #main {
+    
+    .enter {
+      font-size: 28px;
+    }
     @media screen and (min-width: $screen-lg){
       h1 {
-        font-size: 4.2em;
+        margin-top: .1em;
+        font-size: 4.26em;
       }
       h2 {
         font-size: 1.6em;
@@ -907,8 +917,11 @@ label {
       .festival-date h1 {
         font-size: 2.3em;
       }
-    }
-    
+      .enter {
+        font-size: 38px;
+      }
+    }   
+
   }
 }
 // Responsive

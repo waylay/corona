@@ -32,7 +32,7 @@
                             <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' :'' }}" maxlength="30" tabindex="1" id="name" name="name"
                                 value="{{ old('name') }}"
                                 placeholder="{{ trans('form.name') }} *"
-                                data-msg-required="{{ trans('form.required') }}">
+                                data-msg-required="{{ trans('form.name_required') }}">
 
                         </div>
                     </div>
@@ -92,7 +92,7 @@
 
 
     <div class="container-fluid" id="play-trailer">
-        <a class="play-trailer" href="https://www.facebook.com/v2.3/plugins/video.php?allowfullscreen=true&mute=0&autoplay=true&href=https%3A%2F%2Fwww.facebook.com%2FTribeSeries%2Fvideos%2F717065741663237&locale=en_US&sdk=joey" data-lity>
+        <a class="play-trailer" href="{!! trans('text.trailer') !!}" data-lity>
             <span>{!! trans('text.play-trailer') !!}&nbsp;</span>
             <img src="/images/play-trailer.png" alt="{!! trans('text.play-trailer') !!}">
         </a>

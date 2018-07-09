@@ -131,6 +131,19 @@
                 <li><a href="{{ url('/logout') }}"> logout </a></li>
             @endif
         </ul>
+
+        <ul class="social list-inline">
+            <li>                    
+                <a href="https://instagram.com/corona" target="_blank" title="Instagram">
+                    <img src="/images/instagram_white.png" alt="Instagram">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/CoronaCanada" target="_blank" title="Facebook">
+                    <img src="/images/facebook_white.png" alt="Facebook">
+                </a>
+            </li>
+         </ul>
     </div><!-- /#navbar-mobile -->
 
     <div id="content">
@@ -166,7 +179,6 @@
                     <a href="https://www.facebook.com/CoronaCanada" target="_blank" title="Facebook">
                         <img src="/images/facebook.png" alt="Facebook">
                     </a>
-
 
                 </div> 
             

@@ -14,14 +14,15 @@ return [
     'home'                              => 'Home',
     'gate-age'                          => 'VOUS DEVEZ AVOIR L’ÂGE LÉGAL DE CONSOMMER DE L’ALCOOL POUR ACCÉDER À CE SITE',
     'proceed'                           => 'Veuillez entrer les détails suivants pour continuer',
-    'notified'                          => 'Recevez une notification lorsque la liste et les informations sur les tickets sont disponibles',
+    'notified'                          => 'SOYEZ INFORMÉ LORS DU DÉVOILEMENT DE LA PROGRAMMATION ET DE LA MISE EN VENTE DES BILLETS',
     'sorry'                             => 'DÉSOLÉ, VOUS DEVEZ AVOIR L’ÂGE LÉGAL DE CONSOMMER DE L’ALCOOL',
     'underage'                          => 'DANS LA PROVINCE OU LE TERRITOIRE DE RÉSIDENCE.',
     'festival'                          => 'LE PREMIER FESTIVAL DE MUSIQUE CANADIEN',
     'connected'                         => 'QUI NOUS UNIT SOUS LE COUCHER DU
     SOLEIL',
-    'festival-date'                     => '11 août',
+    'festival-date'                     => 'LE 11 août',
     'play-trailer'                      => 'jouer la bande-annonce',
+    'trailer'                           => 'https://www.facebook.com/v2.3/plugins/video.php?allowfullscreen=true&mute=0&autoplay=true&href=https%3A%2F%2Fwww.facebook.com%2FCoronaCanada%2Fvideos%2F1858819447494462&locale=fr_CA&sdk=joey',
     'watch-live'                        => 'LE 11 AOÛT PROCHAIN, REGARDEZ LE FESTIVAL NATIONAL DES COUCHERS DE SOLEIL PAR DIFFUSION CONTINUE EN DIRECT ICI OU ENCORE, SUR FACEBOOK, YOUTUBE OU TWITTER.',
     'cities'                            => 'VILLES',
     'set-reminder'                      => 'CONFIGUREZ UN RAPPEL',
@@ -42,8 +43,8 @@ return [
     'faq-link'                          => 'http://www.labatt.com/legal/lbc_fr_legal.html',
     'contact'                           => 'CONTACTEZ-NOUS',
     'contact-link'                      => 'https://contactus.anheuser-busch.com/contactus/LABATTCAFrench/contact_us.asp',
-    'allset'                            => 'VOUS ÊTES PRÊT',
-    'thankyou'                          => 'Merci pour votre inscription!',
+    'allset'                            => 'NOUS VOUS AVISERONS QUAND LES ARTISTES SERONT DÉVOILÉS ET QUE LES BILLETS SERONT MIS EN VENTE.',
+    'thankyou'                          => 'MERCI!',
     'copy'                              => 'La Brasserie Labatt Limitée',
     /**
      * Learn More
