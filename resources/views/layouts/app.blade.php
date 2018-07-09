@@ -19,10 +19,10 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/nocontent.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/nocontent.css') }}" rel="stylesheet">
     @if( request()->is('dashboard') )
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/dashboard.css') }}" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css" rel="stylesheet">
     @endif
@@ -185,9 +185,9 @@
     </div> <!-- end #footer  -->
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/lightbox.js') }}"></script>
-    <script src="{{ asset('js/slider.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/lightbox.js') }}"></script>
+    <script src="{{ mix('js/slider.js') }}"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     @if( request()->is( 'dashboard' ) )
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -197,7 +197,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
     <script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
-    <script src="{{ asset('js/dashboard.js') }}"></script>
+    <script src="{{ mix('js/dashboard.js') }}"></script>
     @endif
     
 </body>

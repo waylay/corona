@@ -38,10 +38,11 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control {{ $errors->has('phone') ? 'is-invalid' :'' }}" maxlength="30"  id="phone" name="phone"
+                            <input type="text" class="form-control {{ $errors->has('phone') ? 'is-invalid' :'' }}" maxlength="11"  id="phone" name="phone"
                                 value="{{ old('phone') }}"
                                 placeholder="{{ trans('form.phone') }} *"
-                                data-msg-required="{{ trans('form.phone_email_required') }}">
+                                data-msg-required="{{ trans('form.phone_email_required') }}"
+                                pattern="\d*">
                         @if ($errors->has('phone'))
                             <span id="phone-error" class="error ">{{ trans('form.phone_correct') }}</span>
                         @endif 

@@ -140,7 +140,7 @@ class PagesController extends Controller
         $validEntry = $request->validate([
             'name'       => 'required',
             'email'      => 'required_without:phone',
-            'phone'      => 'required_without:email|regex:/^((([0-9]{1})*[- .(]*([0-9]{3})[- .)]*[0-9]{3}[- .]*[0-9]{4})+)*$/',
+            'phone'      => 'required_without:email|digits_between:10,11',
             'agree'      => 'required'
         ], [
             'unique' => trans('form.email_unique')
