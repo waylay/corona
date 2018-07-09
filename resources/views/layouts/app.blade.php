@@ -149,7 +149,6 @@
                 <div class="col-md-6 col-md-push-3 footer-menu">
                     <a href="{{ trans('text.terms-link') }}" target="_blank">{{ trans('text.terms') }}</a>
                     <a href="{{ trans('text.privacy-policy-link') }}" target="_blank">{{ trans('text.privacy-policy') }}</a>
-                    <a href="{{ trans('text.faq-link') }}" target="_blank">{{ trans('text.faq') }}</a>
                     <a href="{{ trans('text.contact-link') }}" target="_blank">{{ trans('text.contact') }}</a>
                 </div>
 
@@ -167,14 +166,7 @@
                     <a href="https://www.facebook.com/CoronaCanada" target="_blank" title="Facebook">
                         <img src="/images/facebook.png" alt="Facebook">
                     </a>
-                    
-                    <a href="https://twitter.com/corona" target="_blank" title="Twitter">
-                        <img src="/images/twitter.png" alt="Twitter">
-                    </a>
 
-                    <a href="https://www.youtube.com/corona" target="_blank" title="Youtube">
-                        <img src="/images/youtube.png" alt="Youtube">
-                    </a>
 
                 </div> 
             
