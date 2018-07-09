@@ -42,7 +42,7 @@
                                 value="{{ old('phone') }}"
                                 placeholder="{{ trans('form.phone') }} *"
                                 data-msg-required="{{ trans('form.phone_email_required') }}"
-                                pattern="\d*">
+                                data-msg-rangelength="{{ trans('form.phone_correct') }}">
                         @if ($errors->has('phone'))
                             <span id="phone-error" class="error ">{{ trans('form.phone_correct') }}</span>
                         @endif 

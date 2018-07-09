@@ -153,6 +153,7 @@ $( document ).ready( function () {
                 required: true,            
             },
             phone: {
+                rangelength: [10, 11],
                 required: function(element) {
                   return $("#email").val() == '';
                 },
