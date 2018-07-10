@@ -379,9 +379,10 @@ label {
   background: url('/images/background-buy-tickets.png') no-repeat center center / cover;
 }
 #play-trailer {
-  margin-top: 0;
+  height: 30px;
 }
 .play-trailer {
+  display: none;
   font-size: 18px;
   color: #fff;
   text-transform: uppercase;
