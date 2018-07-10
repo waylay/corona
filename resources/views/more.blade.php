@@ -9,7 +9,7 @@
         <p>{!! trans('text.learn-more-text') !!} </p>
         <ul class="list-inline">
             @foreach($festivals as $slug => $festival)
-            <li><a href="/festival/{{ $festival['slug'] }}">{{ trans('festivals/'.$festival['slug'].'.city') }}</a></li>
+            <li>{{ trans('festivals/'.$festival['slug'].'.city') }}</li>
             @endforeach
         </ul>
         <a href="https://twitter.com/hashtag/coronasunsets" target="_blank">#CORONASUNSETS</a>
