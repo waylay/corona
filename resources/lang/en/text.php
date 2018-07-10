@@ -21,7 +21,7 @@ return [
     'connected'                         => 'connected by the sunset',
     'festival-date'                     => 'august 11<span>th</span>',
     'play-trailer'                      => 'Play the trailer',
-    'trailer'                           => 'https://www.youtube.com/watch?v=kIDKCiqGq80',
+    'trailer'                           => 'https://www.youtube.com/watch?v=kIDKCiqGq80&autoplay=1&rel=0',
     'watch-live'                        => 'Watch the national sunset live Aug 11th. right here or on Facebook & Youtube.',
     'cities'                            => 'Cities',
     'set-reminder'                      => 'Set a Reminder',

@@ -22,7 +22,7 @@ return [
     SOLEIL',
     'festival-date'                     => 'LE 11 août',
     'play-trailer'                      => 'jouer la bande-annonce',
-    'trailer'                           => 'https://www.youtube.com/watch?v=GKnwvbA8f1c',
+    'trailer'                           => 'https://www.youtube.com/watch?v=GKnwvbA8f1c&autoplay=1&rel=0',
     'watch-live'                        => 'LE 11 AOÛT PROCHAIN, REGARDEZ LE FESTIVAL NATIONAL DES COUCHERS DE SOLEIL PAR DIFFUSION CONTINUE EN DIRECT ICI OU ENCORE, SUR FACEBOOK, YOUTUBE OU TWITTER.',
     'cities'                            => 'VILLES',
     'set-reminder'                      => 'CONFIGUREZ UN RAPPEL',
