@@ -21,7 +21,7 @@ return [
     'connected'                         => 'connected by the sunset',
     'festival-date'                     => 'august 11<span>th</span>',
     'play-trailer'                      => 'Play the trailer',
-    'trailer'                           => 'https://www.facebook.com/v2.3/plugins/video.php?allowfullscreen=true&mute=0&autoplay=true&href=https%3A%2F%2Fwww.facebook.com%2FCoronaCanada%2Fvideos%2F1858819447494462&locale=en_US&sdk=joey',
+    'trailer'                           => 'https://www.facebook.com/v2.3/plugins/video.php?allowfullscreen=true&mute=0&autoplay=true&href=https%3A%2F%2Fwww.facebook.com%2FCoronaCanada%2Fvideos%2F1858812800828460&locale=en_US&sdk=joey',
     'watch-live'                        => 'Watch the national sunset live Aug 11th. right here or on Facebook & Youtube.',
     'cities'                            => 'Cities',
     'set-reminder'                      => 'Set a Reminder',
