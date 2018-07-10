@@ -22,7 +22,7 @@ return [
     SOLEIL',
     'festival-date'                     => 'LE 11 août',
     'play-trailer'                      => 'jouer la bande-annonce',
-    'trailer'                           => 'https://www.facebook.com/v2.3/plugins/video.php?allowfullscreen=true&mute=0&autoplay=true&href=https%3A%2F%2Fwww.facebook.com%2FCoronaCanada%2Fvideos%2F1858819447494462&locale=fr_CA&sdk=joey',
+    'trailer'                           => 'https://www.youtube.com/watch?v=GKnwvbA8f1c',
     'watch-live'                        => 'LE 11 AOÛT PROCHAIN, REGARDEZ LE FESTIVAL NATIONAL DES COUCHERS DE SOLEIL PAR DIFFUSION CONTINUE EN DIRECT ICI OU ENCORE, SUR FACEBOOK, YOUTUBE OU TWITTER.',
     'cities'                            => 'VILLES',
     'set-reminder'                      => 'CONFIGUREZ UN RAPPEL',
