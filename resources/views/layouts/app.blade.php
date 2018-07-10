@@ -21,6 +21,9 @@
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/nocontent.css') }}" rel="stylesheet">
+    <meta property="og:title" content="{{ trans('text.site-title') }}" />
+    <meta property="og:description" content="Canada’s First Music Festival Connected by the Sunset | Aug 11, 2018" />
+    <meta property="og:image" content="/images/coronasunsets_social.jpg" />
     @if( request()->is('dashboard') )
     <link href="{{ mix('css/dashboard.css') }}" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
