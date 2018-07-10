@@ -382,7 +382,7 @@ label {
   height: 30px;
 }
 .play-trailer {
-  display: none;
+  display: none !important;
   font-size: 18px;
   color: #fff;
   text-transform: uppercase;
