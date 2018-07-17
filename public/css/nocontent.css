@@ -1,1 +1,174 @@
-#navbar-mobile .menu-cities,#navbar-mobile .menu-reminder,.buy-tickets,.navbar-left .menu-cities,.navbar-left .menu-reminder,.navbar-right .learn-more,.reminder,.shop,.slider-wrapper{display:none}.festival-list-wrapper li a:active,.festival-list-wrapper li a:focus,.festival-list-wrapper li a:hover{color:#0c2340;cursor:text}@media screen and (max-width:992px){.main #main{padding-top:100px}}.main form{max-width:910px;margin:10px auto}.main form p{color:#fff;text-align:left}.main form input[type=text],.main form input[type=text]:focus,.main form p{font-family:Helvetica Neue Condensed,Helvetica Neue,Helvetica,Arial,sans-serif}.main form input[type=text],.main form input[type=text]:focus{border:none;font-size:1.4em;text-transform:uppercase;text-indent:1em;color:#0c2340;-webkit-box-shadow:none;box-shadow:none}.main form #name,.main form #phone{background:url("/images/background-form-small.png") no-repeat 50%/100% 100%}.main form #email{background:url("/images/background-form-large.png") no-repeat 50%/100% 100%;margin-top:10px}@media screen and (max-width:992px){.main form #email,.main form #name,.main form #phone{height:50px;margin-top:0;text-indent:.2em}.main form .form-group{margin-bottom:32px}.main form label.form-check-label p{font-size:16px}}.main form .form-check-label{position:relative;margin-top:5px;margin-bottom:0}.main form .form-check-label p{float:right;width:calc(100% - 45px);font-size:20px;font-weight:400;cursor:pointer;margin-bottom:0}.main form .form-check-label p a{color:#fff;text-decoration:underline}.main form .form-check-label .is-invalid+span+p,.main form .form-check-label .is-invalid+span+p a{color:#fab52a}.main form .form-check-input{position:absolute;opacity:0;cursor:pointer}.main form .checkmark{position:absolute;top:4px;left:4px;height:25px;width:25px;background-color:hsla(0,0%,88%,.1);border:2px solid #fff}.main form .is-invalid+.checkmark{border:2px solid #fab52a;background-color:rgba(255,0,0,.25)}.main form .form-check-label:hover input~.checkmark{background-color:hsla(0,0%,88%,.2)}.main form .checkmark:after{content:"";position:absolute;display:none}.main form .form-check-input:checked~.checkmark:after{display:block}.main form .form-check-label .checkmark:after{left:9px;top:5px;width:5px;height:10px;border:solid #fff;border-width:0 3px 3px 0;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.main form .error{display:block;position:absolute;width:95%;text-align:center;font-size:15px;line-height:1.1;color:#fab52a;text-transform:uppercase;text-shadow:1px 1px 1px rgba(0,0,0,.5)}
+.navbar-left .menu-cities,
+.navbar-left .menu-reminder,
+#navbar-mobile .menu-cities,
+#navbar-mobile .menu-reminder {
+  display: none;
+}
+
+.navbar-right .learn-more {
+  display: none;
+}
+
+.slider-wrapper,
+.reminder,
+.shop,
+.buy-tickets {
+  display: none;
+}
+
+.festival-list-wrapper li a:hover,
+.festival-list-wrapper li a:active,
+.festival-list-wrapper li a:focus {
+  color: #0c2340;
+  cursor: text;
+}
+
+@media screen and (max-width: 992px) {
+  .main #main {
+    padding-top: 100px;
+  }
+}
+
+.main form {
+  max-width: 910px;
+  margin: 10px auto;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add a grey background color */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+
+.main form p {
+  font-family: "Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  text-align: left;
+}
+
+.main form input[type=text],
+.main form input[type=text]:focus {
+  border: none;
+  font-family: "Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  text-indent: 1em;
+  color: #0c2340;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.main form #name,
+.main form #phone {
+  background: url("/images/background-form-small.png") no-repeat center center/100% 100%;
+}
+
+.main form #email {
+  background: url("/images/background-form-large.png") no-repeat center center/100% 100%;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .main form #name,
+  .main form #phone,
+  .main form #email {
+    height: 50px;
+    margin-top: 0;
+    text-indent: .2em;
+  }
+
+  .main form .form-group {
+    margin-bottom: 32px;
+  }
+
+  .main form label.form-check-label p {
+    font-size: 16px;
+  }
+}
+
+.main form .form-check-label {
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.main form .form-check-label p {
+  float: right;
+  width: calc(100% - 45px);
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.main form .form-check-label p a {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.main form .form-check-label .is-invalid + span + p {
+  color: #fab52a;
+}
+
+.main form .form-check-label .is-invalid + span + p a {
+  color: #fab52a;
+}
+
+.main form .form-check-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.main form .checkmark {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: 25px;
+  width: 25px;
+  background-color: rgba(225, 225, 225, 0.1);
+  border: 2px solid #FFF;
+}
+
+.main form .is-invalid + .checkmark {
+  border: 2px solid #fab52a;
+  background-color: rgba(255, 0, 0, 0.25);
+}
+
+.main form .form-check-label:hover input ~ .checkmark {
+  background-color: rgba(225, 225, 225, 0.2);
+}
+
+.main form .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.main form .form-check-input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.main form .form-check-label .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.main form .error {
+  display: block;
+  position: absolute;
+  width: 95%;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.1;
+  color: #fab52a;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
