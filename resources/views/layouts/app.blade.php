@@ -25,6 +25,7 @@
     <meta property="og:title" content="{{ trans('text.site-title') }}" />
     <meta property="og:description" content="Canada’s First Music Festival Connected by the Sunset | Aug 11, 2018" />
     <meta property="og:image" content="{{ url('/images/coronasunsets_social.jpg') }}" />
+
     @if( request()->is('dashboard') )
     <link href="{{ mix('css/dashboard.css') }}" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -65,13 +66,22 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.cities') }}</a>
                             <ul class="dropdown-menu">
                                 <li role="separator" class="divider"></li>
-                                @foreach($festivals as $slug => $festival)
-                                <li class="{{ $slug }}"><a href="/festival/{{ $slug }} ">{{ trans('festivals/'.$festival['slug'].'.city') }}</a></li>
+                                @foreach($festivals as $slug => $city)
+                                <li class="{{ $slug }}"><a href="/festival/{{ $slug }} ">{{ trans('festivals/'.$city['slug'].'.city') }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
+
                         @if( request()->is('festival/*') )
-                        <li class="menu-reminder"><a href="#">{{ trans('text.stream-reminder') }}</a></li>
+                        <li class="dropdown menu-reminder"
+                            data-title="{{ trans('text.stream-reminder-title',['city' => trans('festivals/'.$festival['slug'].'.city') ]) }} "
+                            data-description="{!! trans('festivals/'.$festival['slug'].'.description') !!}"
+                            data-start="{{ $festival['start'] }}"
+                            data-end="{{ $festival['end'] }}"
+                            data-address="{{ trans('festivals/'.$festival['slug'].'.location') }}, {{ trans('festivals/'.$festival['slug'].'.city') }}"
+                            >
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.stream-reminder') }}</a>
+                        </li>
                         @endif
                     </ul>
 
@@ -191,10 +201,12 @@
     </div> <!-- end #footer  -->
 
     <!-- Scripts -->
+
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ mix('js/bootstrap-dropdownhover.js') }}"></script>
     <script src="{{ mix('js/lightbox.js') }}"></script>
     <script src="{{ mix('js/slider.js') }}"></script>
+
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     @if( request()->is( 'dashboard' ) )
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>

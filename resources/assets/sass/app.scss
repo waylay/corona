@@ -23,6 +23,7 @@
 @import "variables";
 @import "lightbox";
 @import "slider";
+@import "calendar";
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
@@ -146,7 +147,7 @@ label {
       text-transform: uppercase;
     }
     &>li {
-      margin: 0 1em;
+      margin: 0 .75em;
     }
 
     
@@ -158,6 +159,19 @@ label {
         background: url('/images/background-submenu.png') no-repeat top left;
         background-attachment: scroll;
         background-size: contain;
+      }
+    }
+
+    .menu-reminder {
+      min-width: 175px;      
+      &.open {
+        min-height: 185px;
+        background: url('/images/background-submenu.png') no-repeat top left;
+        background-attachment: scroll;
+        background-size: 100% 100%;
+      }
+      li {
+        text-transform: initial;
       }
     }
 
@@ -521,7 +535,30 @@ label {
   }
   .set-reminder {
     @include button;
-    background: url('/images/background-set-reminder.png') no-repeat center center / cover;
+    background: url('/images/background-set-reminder.png') no-repeat center center / 100% 100%;
+    font-size: 2.5em;
+    text-align: center;
+    a:hover, a:focus {
+      color: $brand-primary;
+    }
+  }
+  .dropdown-reminder {
+    min-width: 200px;
+    list-style: none;
+    position: relative;
+    &.open ul {
+      min-height: 185px;
+      background: url('/images/background-submenu.png') no-repeat center -10px;
+      background-attachment: scroll;
+      background-size: 100% 100%;
+      left: 2%;
+      top:130%;
+    }
+    ul li {
+      text-transform: initial;
+      font-size: 2.2em;
+      padding-left: .2em;
+    }
   }
 }
 
@@ -532,6 +569,7 @@ label {
     text-transform: uppercase;
     clear: both;
     overflow: hidden;
+    display: flex;
     h2 {
       font-size: 4em;
       margin-top: 1.5em;
@@ -557,6 +595,13 @@ label {
         @include button;
         background: url('/images/background-get-tickets.png') no-repeat center center / cover;
         color: $brand-secondary;
+        margin: .2em auto 1.5em;
+        display: inline-block;
+      }
+
+      h3 {
+        color: $brand-primary;
+        font-size: 2.3em;
         margin: .2em auto 1.5em;
         display: inline-block;
       }

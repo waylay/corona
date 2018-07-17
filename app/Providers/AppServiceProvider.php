@@ -51,7 +51,8 @@ class AppServiceProvider extends ServiceProvider
             'halifax' => [
                 'id'       => '1',
                 'slug'     => 'halifax',
-                'reminder' => 'Aug 11th - 6PM-12AM ADT',
+                'start'    => 'Aug 11th - 6PM-12AM ADT',
+                'end'      => 'Aug 11th - 6PM-12AM ADT',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
@@ -64,7 +65,8 @@ class AppServiceProvider extends ServiceProvider
             'quebec' => [
                 'id'       => '2',
                 'slug'     => 'quebec',
-                'reminder' => 'Aug 11th - 6PM-11PM EST',
+                'start'    => 'Aug 11th - 6PM-11PM EST',
+                'end'      => 'Aug 11th - 6PM-11PM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
@@ -77,7 +79,8 @@ class AppServiceProvider extends ServiceProvider
             'toronto' => [
                 'id'       => '3',
                 'slug'     => 'toronto',
-                'reminder' => 'Aug 11th - 6PM-11PM EST',
+                'start'    => 'August 11, 2018 18:00 EST',
+                'end'      => 'August 11, 2018 23:00 EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
@@ -90,7 +93,8 @@ class AppServiceProvider extends ServiceProvider
             'winnipeg' => [
                 'id'       => '4',
                 'slug'     => 'winnipeg',
-                'reminder' => 'Aug 11th - 6PM-11PM EST',
+                'start'    => 'Aug 11th - 6PM-11PM EST',
+                'end'      => 'Aug 11th - 6PM-11PM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
@@ -103,7 +107,8 @@ class AppServiceProvider extends ServiceProvider
             'whistler' => [
                 'id'       => '5',
                 'slug'     => 'whistler',
-                'reminder' => 'Aug 11th - 6PM-11PM EST',
+                'start'    => 'Aug 11th - 6PM-11PM EST',
+                'end'      => 'Aug 11th - 6PM-11PM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],

@@ -50,12 +50,6 @@
 
 
 
-
-
-
-
-
-
 <div class="slider-wrapper">
     <img src="/images/border-festivals.png">
     <ul id="festival-slider">

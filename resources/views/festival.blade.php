@@ -71,7 +71,17 @@
                 </div>
             </div>
             <div class="col-md-4">
-                    <a href="#" class="set-reminder">{{ trans('text.set-reminder') }}</a>
+                <ul class="set-reminder">                    
+                    <li class="dropdown menu-reminder dropdown-reminder"
+                        data-title="{{ trans('text.stream-reminder-title',['city' => trans('festivals/'.$festival['slug'].'.city') ]) }} "
+                        data-description="{!! trans('festivals/'.$festival['slug'].'.description') !!}"
+                        data-start="{{ $festival['start'] }}"
+                        data-end="{{ $festival['end'] }}"
+                        data-address="{{ trans('festivals/'.$festival['slug'].'.location') }}, {{ trans('festivals/'.$festival['slug'].'.city') }}"
+                        >
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.set-reminder') }}</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -84,6 +94,8 @@
         <p>{!! trans('text.festival-tickets-description') !!}</p>
         @if($festival['tickets'])
         <a href="#" class="get-tickets">{{ trans('text.festival-tickets-button') }}</a>
+        @else
+        <h3>{{ trans('text.festival-tickets-door') }}</h3>
         @endif
     </div>
     <div class="col-md-6 items-wrapper">

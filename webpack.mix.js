@@ -16,6 +16,7 @@ mix.js('resources/assets/js/app.js', 'public/js').version()
     .js('resources/assets/js/lightbox.js', 'public/js')
     .js('resources/assets/js/slider.js', 'public/js')
     .js('resources/assets/js/bootstrap-dropdownhover.js', 'public/js')
+    .js('resources/assets/js/ouical.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css').version()
     .sass('resources/assets/sass/dashboard.scss', 'public/css')
     .disableSuccessNotifications();

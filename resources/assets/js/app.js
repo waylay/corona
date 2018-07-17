@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+var createCalendar = require('./ouical').createCalendar;
 
 // forceNumeric() plug-in implementation
 jQuery.fn.forceNumeric = function () {
@@ -38,23 +39,24 @@ jQuery.fn.forceNumeric = function () {
 
 $( document ).ready( function () {
     
+    // Event reminder dropdown
+    var festival = $('.menu-reminder');
+    
+    if(festival.length){
+        var reminder = createCalendar({
+            data: {
+                title: festival.data('title'),
+                start: new Date(festival.data('start')),   // 'June 15, 2013 19:00'
+                end: new Date(festival.data('end')),     // 'June 15, 2013 23:00'
+                address: festival.data('address'),
+                description: festival.data('description')
+            }
+        });
+        
+        $('.menu-reminder').append(reminder);
+    }
 
-    // Dropdown Hover
-    // $(document).ready(function() { 
-    //     var navbarToggle = '.navbar-toggle';
-    //     $('.dropdown, .dropup').each(function() {
-    //       var dropdown = $(this),
-    //         dropdownToggle = $('[data-toggle="dropdown"]', dropdown);
-          
-    //       // Mouseover
-    //       dropdown.hover(function(){
-    //         var notMobileMenu = $(navbarToggle).length > 0 && $(navbarToggle).css('display') === 'none';
-    //         if (notMobileMenu) { 
-    //           dropdownToggle.trigger('click');
-    //         }
-    //       })
-    //     });
-    // });
+
 
     // Select Dropdown
     $(".selectmenu select").selectmenu();
