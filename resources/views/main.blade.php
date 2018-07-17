@@ -4,88 +4,21 @@
 
 <div class="container-fluid message" id="main">
     
-    <div class="festival-date">
-        <img src="/images/background-date-before.png" alt="">    
-        <h1>{!! trans('text.festival-date') !!}</h1>
-        <img src="/images/background-date-after.png" alt="">    
-    </div>
-
+    
     <div class="container">
         <div class="row">
         
-            <h1 class="secondary">{!! trans('text.festival') !!} {!! trans('text.connected') !!}</h1>
-            <h2>{{ trans('text.notified') }}</h2>
+            <h1>{!! trans('text.festival') !!} <span class="secondary">{!! trans('text.connected') !!}</span></h1>
+            
+            <div class="festival-date">
+                <img src="/images/background-date-before.png" alt="">    
+                <h1>{!! trans('text.festival-date') !!}</h1>
+                <img src="/images/background-date-after.png" alt="">    
+            </div>
+
 
             <a  href="#" class="buy-tickets">{{ trans('text.festival-tickets-button') }}</a>
-
-
-        
-
-        
-            <form class="signup" id="signup" action="/process" method="POST" enctype="multipart/form-data" novalidate >
-                {{ csrf_field() }}
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-
-                            <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' :'' }}" maxlength="30" tabindex="1" id="name" name="name"
-                                value="{{ old('name') }}"
-                                placeholder="{{ trans('form.name') }} *"
-                                data-msg-required="{{ trans('form.name_required') }}">
-
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control {{ $errors->has('phone') ? 'is-invalid' :'' }}" maxlength="11"  id="phone" name="phone"
-                                value="{{ old('phone') }}"
-                                placeholder="{{ trans('form.phone') }} *"
-                                data-msg-required="{{ trans('form.phone_email_required') }}"
-                                data-msg-rangelength="{{ trans('form.phone_correct') }}">
-                        @if ($errors->has('phone'))
-                            <span id="phone-error" class="error ">{{ trans('form.phone_correct') }}</span>
-                        @endif 
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group">
-
-                            <input type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' :'' }}" maxlength="50"   id="email" name="email"
-                                value="{{ old('email') }}"
-                                placeholder="{{ trans('form.email') }} *"
-                                data-msg-required="{{ trans('form.phone_email_required') }}"
-                                data-msg-email="{{ trans('form.valid_email') }}">
-                                                     
-                            @if ($errors->has('email'))
-                                <span id="email-error" class="error ">{{ trans('form.email_unique') }}</span>                                
-                            @endif
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label class="form-check-label" for="agree">
-                                <input class="form-check-input" type="checkbox" name="agree" id="agree" value="1" data-msg-required="{{ trans('form.must_agree') }}" >
-                                <span class="checkmark"></span>
-                                <p>* {{ trans('form.agree') }} <a href="{{ trans('text.privacy-policy-link') }}" target="_blank">{{ trans('text.privacy-policy') }}</a></p>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <button class="enter text-uppercase" type="submit">{{ trans('form.signup') }}</button>
-                </div>
-            </form>
+            
         </div>
     </div> <!-- END .row -->
 
@@ -115,6 +48,14 @@
     </div>  <!-- END #festival-list -->
 </div>
 
+
+
+
+
+
+
+
+
 <div class="slider-wrapper">
     <img src="/images/border-festivals.png">
     <ul id="festival-slider">
@@ -122,33 +63,24 @@
             <div class="artists">
                 <div class="row">
                     <ul class="list-inline">
-                        <li>Rudimental</li>
-                        <li>SBTRKT</li>
-                        <li>Clapone</li>
-                        <li>Hot CHip</li>
+                        <li>KIDNAP</li>
+                        <li>CLAPTONE</li>
+                        <li>HOT CHIP DJ</li>                        
                     </ul>
                 </div>
                 <div class="row">
                     <ul class="list-inline">
-                        <li>Crooked Colours</li>
-                        <li>Christian Martin</li>
-                        <li>Guy J</li>
-                        <li>Kidnap</li>
+                        <li>CROOKED COLOURS</li>
+                        <li>CHRISTIAN MARTIN</li>
+                        <li>NITIN</li>
                     </ul>
                 </div>
                 <div class="row">
                     <ul class="list-inline">
-                        <li>Slavash</li>
-                        <li>Niki Sadeki</li>
-                        <li>Night Vision</li>
-                        <li>Nitin</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-inline">
-                        <li>The Kount</li>
-                        <li>Ostrich</li>
-                        <li>Sean Keating</li>
+                        
+                        <li>THOMAS JACK</li>
+                        <li>CHRISTIAN LOFFLER</li>
+                        <li>DJ THREE</li>
                     </ul>
                 </div>
             </div>
@@ -189,21 +121,16 @@
 
 <div class="reminder">
     <div class="container-fluid">
+        
         <div class="row">
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-3 col-xs-4">
-                        <img src="/images/calendar-icon.png" alt="Set a reminder">
-                    </div>
-                    <div class="col-md-9 col-xs-8">
-                        <h3>{{ trans('text.watch-live') }}</h3>
-                    </div>
-                </div>
+            <div class="col-md-3 col-xs-4">
+                <img src="/images/calendar-icon.png" alt="Set a reminder">
             </div>
-            <div class="col-md-4">
-                    <a href="#" class="set-reminder">{{ trans('text.set-reminder') }}</a>
+            <div class="col-md-9 col-xs-8">
+                <h3>{{ trans('text.watch-live') }}</h3>
             </div>
         </div>
+            
     </div>
 </div>
 
@@ -217,7 +144,7 @@
     <div class="col-md-6 items-wrapper">
         <h2>{{ trans('text.festival-items') }}</h2>
         <p>{!! trans('text.festival-items-description') !!}</p>
-        <a href="#" class="get-items">{{ trans('text.festival-items-button') }}</a>
+        <a href="https://www.shopbeergear.ca/pages/Corona?ls={{ app()->getLocale() }}" target="_blank" class="get-items">{{ trans('text.festival-items-button') }}</a>
     </div>
 
 </div>

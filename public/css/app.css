@@ -9259,6 +9259,7 @@ label {
 
   #main h1 {
     font-size: 5.4em;
+    margin-top: 2em;
     margin-bottom: .1em;
   }
 
@@ -9266,6 +9267,10 @@ label {
     margin-top: 0;
     margin-bottom: .5em;
   }
+}
+
+#main .festival-date {
+  margin: 3em 0 1em;
 }
 
 #main .festival-date h1 {
@@ -9322,6 +9327,7 @@ label {
   background-size: 100% 100%;
   line-height: 1;
   white-space: nowrap;
+  display: inline-block;
   background: url("/images/background-buy-tickets.png") no-repeat center center/cover;
 }
 
@@ -9415,7 +9421,7 @@ label {
 }
 
 .festival-list-wrapper li a {
-  padding: .2em .5em;
+  padding: .2em .3em;
 }
 
 .festival-list-wrapper li a.active {
@@ -9693,6 +9699,7 @@ label {
 .festival-wrapper {
   padding: 270px 150px 50px;
   margin: 0 auto;
+  min-height: 100vh;
   text-transform: uppercase;
 }
 
@@ -9721,7 +9728,7 @@ label {
       -ms-flex-pack: end;
           justify-content: flex-end;
   line-height: 1;
-  margin-bottom: 1.7em;
+  margin-bottom: 1em;
 }
 
 .festival-wrapper .festival-date-location p {
@@ -9729,6 +9736,10 @@ label {
   margin-bottom: 0;
   color: #fab52a;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.festival-wrapper .festival-date-location a:hover p {
+  color: #ffffff;
 }
 
 .festival-wrapper .description {
@@ -10008,7 +10019,6 @@ label {
 
 @media screen and (min-width: 1200px) {
   .lang-fr #main h1 {
-    margin-top: .1em;
     font-size: 4.26em;
   }
 
@@ -10164,12 +10174,11 @@ label {
 
   #main .festival-date {
     font-size: .7em;
-    margin-bottom: 20px;
   }
 
   .play-trailer {
     float: none;
-    margin: 10px auto 30px;
+    margin: 30px auto;
     display: block;
     max-width: 60px;
   }

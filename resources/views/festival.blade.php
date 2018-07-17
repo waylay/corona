@@ -10,8 +10,10 @@
             <h1>{{ trans('festivals/'.$festival['slug'].'.city') }}</h1>
         </div>
         <div class="festival-date-location">
+        @if($festival['link']) <a href="{{ $festival['link'] }}" target="_blank"> @endif
             <p>{{ trans('festivals/'.$festival['slug'].'.location') }}</p>
             <p>{{ trans('festivals/'.$festival['slug'].'.date') }}</p>
+        @if($festival['link']) </a>  @endif
         </div>
     
     </div>
@@ -43,14 +45,15 @@
         </div>        
     </div>
 
+    @if($festival['tickets'])
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-            <a  href="#" class="buy-tickets">{{ trans('text.festival-tickets-button') }}</a>
+                <a href="{{ $festival['tickets'] }}" class="buy-tickets" target="_blank">{{ trans('text.festival-tickets-button') }}</a>
             </div>
         </div>
     </div>
-    
+    @endif
 </div> <!-- END .festival-wrapper -->
 
 
@@ -79,12 +82,14 @@
     <div class="col-md-6 tickets-wrapper">
         <h2>{{ trans('text.festival-tickets') }}</h2>
         <p>{!! trans('text.festival-tickets-description') !!}</p>
+        @if($festival['tickets'])
         <a href="#" class="get-tickets">{{ trans('text.festival-tickets-button') }}</a>
+        @endif
     </div>
     <div class="col-md-6 items-wrapper">
         <h2>{{ trans('text.festival-items') }}</h2>
         <p>{!! trans('text.festival-items-description') !!}</p>
-        <a href="#" class="get-items">{{ trans('text.festival-items-button') }}</a>
+        <a href="https://www.shopbeergear.ca/pages/Corona?ls={{ app()->getLocale() }}" target="_blank" class="get-items">{{ trans('text.festival-items-button') }}</a>
     </div>
 
 </div>

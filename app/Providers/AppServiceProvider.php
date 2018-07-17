@@ -51,61 +51,66 @@ class AppServiceProvider extends ServiceProvider
             'halifax' => [
                 'id'       => '1',
                 'slug'     => 'halifax',
-                'reminder' => 'Aug 11th - 6PM-12AM EST',
+                'reminder' => 'Aug 11th - 6PM-12AM ADT',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
                     ['Logan Staats', 'Kongos', 'Edward'],
                 ],
-                'tickets' => '#',
+                'tickets' => false,
+                'link' => false,
             ],
 
             'quebec' => [
                 'id'       => '2',
                 'slug'     => 'quebec',
-                'reminder' => 'Aug 11th - 6PM-12AM EST',
+                'reminder' => 'Aug 11th - 6PM-11PM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
                     ['Logan Staats', 'Kongos', 'Edward'],
                 ],
-                'tickets' => '#',
+                'tickets' => false,
+                'link' => 'https://www.sunnysidepavilion.com',
             ],
 
             'toronto' => [
                 'id'       => '3',
                 'slug'     => 'toronto',
-                'reminder' => 'Aug 11th - 6PM-12AM EST',
+                'reminder' => 'Aug 11th - 6PM-11PM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
                     ['Logan Staats', 'Kongos', 'Edward'],
                 ],
-                'tickets' => '#',
+                'tickets' => 'https://www.eventbrite.ca/coronasunsets/toronto',
+                'link' => 'https://www.sunnysidepavilion.com',
             ],
 
             'winnipeg' => [
                 'id'       => '4',
                 'slug'     => 'winnipeg',
-                'reminder' => 'Aug 11th - 6PM-12AM EST',
+                'reminder' => 'Aug 11th - 6PM-11PM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
                     ['Logan Staats', 'Kongos', 'Edward'],
                 ],
-                'tickets' => '#',
+                'tickets' => false,
+                'link' => 'https://www.sunnysidepavilion.com',
             ],
 
             'whistler' => [
                 'id'       => '5',
                 'slug'     => 'whistler',
-                'reminder' => 'Aug 11th - 6PM-12AM EST',
+                'reminder' => 'Aug 11th - 6PM-11PM EST',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
                     ['Logan Staats', 'Kongos', 'Edward'],
                 ],
-                'tickets' => '#',
+                'tickets' => 'https://www.eventbrite.ca/coronasunsets/whistler',
+                'link' => 'https://www.sunnysidepavilion.com',
             ],
         ];
 

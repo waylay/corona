@@ -40,21 +40,21 @@ $( document ).ready( function () {
     
 
     // Dropdown Hover
-    $(document).ready(function() { 
-        var navbarToggle = '.navbar-toggle';
-        $('.dropdown, .dropup').each(function() {
-          var dropdown = $(this),
-            dropdownToggle = $('[data-toggle="dropdown"]', dropdown);
+    // $(document).ready(function() { 
+    //     var navbarToggle = '.navbar-toggle';
+    //     $('.dropdown, .dropup').each(function() {
+    //       var dropdown = $(this),
+    //         dropdownToggle = $('[data-toggle="dropdown"]', dropdown);
           
-          // Mouseover
-          dropdown.hover(function(){
-            var notMobileMenu = $(navbarToggle).length > 0 && $(navbarToggle).css('display') === 'none';
-            if (notMobileMenu) { 
-              dropdownToggle.trigger('click');
-            }
-          })
-        });
-    });
+    //       // Mouseover
+    //       dropdown.hover(function(){
+    //         var notMobileMenu = $(navbarToggle).length > 0 && $(navbarToggle).css('display') === 'none';
+    //         if (notMobileMenu) { 
+    //           dropdownToggle.trigger('click');
+    //         }
+    //       })
+    //     });
+    // });
 
     // Select Dropdown
     $(".selectmenu select").selectmenu();
@@ -64,32 +64,32 @@ $( document ).ready( function () {
 
 
 
-    // Slider
-    // var slider = jQuery('#festival-slider').slippry({
-    //     // general elements & wrapper
-    //     slippryWrapper: '<div class="slider" />',
-    //     // options
-    //     elements: '.slide',
-    //     adaptiveHeight: true, // height of the sliders adapts to current 
-    //     captions: false,
-    //     useCSS: true,
-    //     autoHover: true,
-    //     transition: 'horizontal',
-    //     pager: false,
-    //     auto: false,
-    //     speed: 1200,
-    //     onSlideBefore: function (el, index_old, index_new) {
-    //       jQuery('#festival-list a').removeClass('active');
-    //       if (index_new) {
-    //           jQuery(' #festival-list a[data-slide="'+ (index_new + 1) +'"] ').addClass('active');
-    //       }
-    //     }
-    //   });
+    //Slider
+    var slider = jQuery('#festival-slider').slippry({
+        // general elements & wrapper
+        slippryWrapper: '<div class="slider" />',
+        // options
+        elements: '.slide',
+        adaptiveHeight: true, // height of the sliders adapts to current 
+        captions: false,
+        useCSS: true,
+        autoHover: true,
+        transition: 'horizontal',
+        pager: false,
+        auto: false,
+        speed: 1200,
+        onSlideBefore: function (el, index_old, index_new) {
+          jQuery('#festival-list a').removeClass('active');
+          if (index_new) {
+              jQuery(' #festival-list a[data-slide="'+ (index_new + 1) +'"] ').addClass('active');
+          }
+        }
+      });
       
-    // jQuery('#festival-list a').click(function () {
-    //     slider.goToSlide($(this).data('slide'));
-    //     return false;
-    // });
+    jQuery('#festival-list a').click(function () {
+        slider.goToSlide($(this).data('slide'));
+        return false;
+    });
 
 
     // Move to next date field

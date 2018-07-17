@@ -336,6 +336,7 @@ label {
     padding-top: 240px;
     h1 {
       font-size: 5.4em;
+      margin-top: 2em;
       margin-bottom: .1em;
     }
     h2 {
@@ -344,6 +345,7 @@ label {
     }
   }
   .festival-date {
+    margin: 3em 0 1em;
     h1 {
       display: inline-block;
       font-size: 2.3em;
@@ -376,6 +378,7 @@ label {
 
 .buy-tickets {
   @include button;
+  display: inline-block;
   background: url('/images/background-buy-tickets.png') no-repeat center center / cover;
 }
 #play-trailer {
@@ -444,7 +447,7 @@ label {
     margin-right: .5em;
 
     a {
-      padding: .2em .5em;
+      padding: .2em .3em;
       &.active {
         background: url('/images/background-active.png') no-repeat top center;
         background-attachment: scroll;
@@ -618,6 +621,7 @@ label {
 .festival-wrapper {
   padding: 270px 150px 50px;
   margin: 0 auto;
+  min-height: 100vh;
   text-transform: uppercase;
   .festival-header {
     display: flex;
@@ -633,13 +637,17 @@ label {
     flex-direction: column;
     justify-content: flex-end;
     line-height: 1;
-    margin-bottom: 1.7em;
+    margin-bottom: 1em;
     p {
       font-size: 2.2em;
       margin-bottom: 0;
       color: $brand-secondary;
       text-shadow: 1px 1px 1px rgba(0,0,0,.2);
     }
+    a:hover p{
+      color: #ffffff;
+    }
+
   }
 
   .description {
@@ -908,7 +916,6 @@ label {
     }
     @media screen and (min-width: $screen-lg){
       h1 {
-        margin-top: .1em;
         font-size: 4.26em;
       }
       h2 {

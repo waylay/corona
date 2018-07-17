@@ -8,8 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ trans('text.site-title') }}</title>
-
+    <title>@if( request()->is('festival/*') ) {{ strtoupper(trans('festivals/'.$festival['slug'].'.city')) }} - @endif {{ trans('text.site-title') }}</title>
+    
     <!-- Styles -->
     <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -20,7 +20,6 @@
     <meta name="theme-color" content="#ffffff">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link href="{{ mix('css/nocontent.css') }}" rel="stylesheet">
     <meta property="og:url" content="{{ url('') }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ trans('text.site-title') }}" />
@@ -43,10 +42,9 @@
 
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
+
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-
-
 
                     <a class="navbar-brand navbar-brand-centered" href="{{ url('/festival') }}">
                         
@@ -64,7 +62,7 @@
                     
                     <ul class="nav navbar-nav navbar-left">
                         <li class="dropdown menu-cities">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.cities') }}</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.cities') }}</a>
                             <ul class="dropdown-menu">
                                 <li role="separator" class="divider"></li>
                                 @foreach($festivals as $slug => $festival)
@@ -72,8 +70,9 @@
                                 @endforeach
                             </ul>
                         </li>
+                        @if( request()->is('festival/*') )
                         <li class="menu-reminder"><a href="#">{{ trans('text.stream-reminder') }}</a></li>
-                        <li class="learn-more"><a href="/more">{{ trans('text.learn-more') }}</a></li>
+                        @endif
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -92,8 +91,6 @@
                         </li>		        
                     </ul>
                 </div><!-- /#navbar-desktop -->
-
-
                 
 
             </div><!-- /.container-fluid -->
@@ -108,16 +105,18 @@
             <a href="{{ url('/festival') }}">{{ trans('text.home') }}</a>
         </li>
         <li class="dropdown menu-cities">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.cities') }}</a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.cities') }}</a>
             <ul class="dropdown-menu">
                 @foreach($festivals as $slug => $festival)
                 <li class="{{ $slug }}"><a href="/festival/{{ $slug }} ">{{ trans('festivals/'.$festival['slug'].'.city') }}</a></li>
                 @endforeach
             </ul>
         </li>
+        @if( request()->is('festival/*') )
         <li class="menu-reminder">
             <a href="#">{{ trans('text.stream-reminder') }}</a>
         </li>
+        @endif
         <li class="learn-more">
             <a href="/more">{{ trans('text.learn-more') }}</a>
         </li>
@@ -160,9 +159,7 @@
 
     <div id="footer">
         <div class="container-fluid">
-            <div class="row">
-            
-                
+            <div class="row">         
 
                 <div class="col-md-6 col-md-push-3 footer-menu">
                     <a href="{{ trans('text.terms-link') }}" target="_blank">{{ trans('text.terms') }}</a>
@@ -195,6 +192,7 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/bootstrap-dropdownhover.js') }}"></script>
     <script src="{{ mix('js/lightbox.js') }}"></script>
     <script src="{{ mix('js/slider.js') }}"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
