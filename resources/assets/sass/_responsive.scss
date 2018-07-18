@@ -16,6 +16,10 @@
     padding-right: 75px;
   }
 
+  .artists .list-inline li:last-child::after {
+    content:'';
+  }
+
 }
 
 // Smaller Screens
