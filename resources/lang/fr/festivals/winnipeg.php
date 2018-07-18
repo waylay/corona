@@ -2,7 +2,7 @@
 
 return [
     'city'        => 'Winnipeg',
-    'location'    => 'PAVILION SUNNYSIDE',
-    'date'        => 'LE 11 AOÛT, DE 17 H À 23 H (HNE)',
-    'description' => 'Rendez-vous au cœur de l’action pour célébrer le festival national des couchers de soleil! Rejoignez-nous à Toronto pour passer la soirée avec quelques- uns des meilleurs artistes du monde qui se produiront sur de magnifiques scènes intimes du centre-ville.<br>Le 11 août, venez assister aux performances en direct sur le plus beau site en plein air de la ville : le Pavilion Sunnyside.',
+    'location'    => 'TAVERN UNITED DOWNTOWN',
+    'date'        => 'AUGUST 11TH – 6PM-12AM CDT',
+    'description' => 'As we celebrate the setting sun  and our performances cascade Coast to Coast, we’ll be partying in the prairies to take in the Winnipeg vista views.<br><br>Catch the sunset  live August 11th from the heart of the city – Tavern United Downtown.',
 ];

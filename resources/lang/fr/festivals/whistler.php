@@ -2,7 +2,7 @@
 
 return [
     'city'        => 'Whistler',
-    'location'    => 'PAVILION SUNNYSIDE',
-    'date'        => 'LE 11 AOÛT, DE 17 H À 23 H (HNE)',
-    'description' => 'Rendez-vous au cœur de l’action pour célébrer le festival national des couchers de soleil! Rejoignez-nous à Toronto pour passer la soirée avec quelques- uns des meilleurs artistes du monde qui se produiront sur de magnifiques scènes intimes du centre-ville.<br>Le 11 août, venez assister aux performances en direct sur le plus beau site en plein air de la ville : le Pavilion Sunnyside.',
+    'location'    => 'ROUNDHOUSE LODGE',
+    'date'        => 'AUGUST 11TH – 7PM-12AM PDT',
+    'description' => 'Our pinnacle location on the national Canada Sunsets Festival. Catch the final performance of our connected festival from the breathtaking mountaintop in Whistler, BC.<br><br>See the action live August 11th from the best   sunset view on the West Coast – The Whistler Roundhouse Lodge. ',
 ];

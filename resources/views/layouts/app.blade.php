@@ -31,6 +31,24 @@
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css" rel="stylesheet">
     @endif
+
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '620806521630752');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=620806521630752&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
     
 
 </head>
@@ -123,8 +141,14 @@
             </ul>
         </li>
         @if( request()->is('festival/*') )
-        <li class="menu-reminder">
-            <a href="#">{{ trans('text.stream-reminder') }}</a>
+        <li class="dropdown menu-reminder"
+            data-title="{{ trans('text.stream-reminder-title',['city' => trans('festivals/'.$festival['slug'].'.city') ]) }} "
+            data-description="{!! trans('festivals/'.$festival['slug'].'.description') !!}"
+            data-start="{{ $festival['start'] }}"
+            data-end="{{ $festival['end'] }}"
+            data-address="{{ trans('festivals/'.$festival['slug'].'.location') }}, {{ trans('festivals/'.$festival['slug'].'.city') }}"
+            >
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.stream-reminder') }}</a>
         </li>
         @endif
         <li class="learn-more">

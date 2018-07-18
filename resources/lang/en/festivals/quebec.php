@@ -2,7 +2,7 @@
 
 return [
     'city'        => 'Quebec City',
-    'location'    => 'Sunnyside Pavilion',
-    'date'        => 'Aug 11th - 6PM-12AM EST',
-    'description' => 'Celebrate the national sunsets festival from its centre – join us in Toronto as we usher in the night with some of the world’s best artists performing amazing intimate sets from the waterfront downtown.<br>Catch the action live Aug 11 th from the city’s most stunning open air venue – Sunnyside Pavilion.',
+    'location'    => 'LEVIS, QUEBEC DELICE',
+    'date'        => 'Aug 11th - 6PM-11PM EDT',
+    'description' => 'Take in the beautiful sunset scenes as they crest Château Frontenac from the middle of our nationally-connected Corona Sunsets Festival.<br><br>We\'ll be live from Québec City August 11th at the perfectly sun-situated patio of Delice Nightclub.',
 ];

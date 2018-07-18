@@ -93,7 +93,7 @@
         <h2>{{ trans('text.festival-tickets') }}</h2>
         <p>{!! trans('text.festival-tickets-description') !!}</p>
         @if($festival['tickets'])
-        <a href="#" class="get-tickets">{{ trans('text.festival-tickets-button') }}</a>
+        <a href="{{ $festival['tickets'] }}" class="get-tickets"  target="_blank">{{ trans('text.festival-tickets-button') }}</a>
         @else
         <h3>{{ trans('text.festival-tickets-door') }}</h3>
         @endif

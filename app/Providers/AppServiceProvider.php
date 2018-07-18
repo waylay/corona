@@ -51,8 +51,8 @@ class AppServiceProvider extends ServiceProvider
             'halifax' => [
                 'id'       => '1',
                 'slug'     => 'halifax',
-                'start'    => 'Aug 11th - 6PM-12AM ADT',
-                'end'      => 'Aug 11th - 6PM-12AM ADT',
+                'start'    => 'August 11, 2018 16:00 CDT',
+                'end'      => 'August 11, 2018 22:00 CDT',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
@@ -65,22 +65,22 @@ class AppServiceProvider extends ServiceProvider
             'quebec' => [
                 'id'       => '2',
                 'slug'     => 'quebec',
-                'start'    => 'Aug 11th - 6PM-11PM EST',
-                'end'      => 'Aug 11th - 6PM-11PM EST',
+                'start'    => 'August 11, 2018 18:00 EDT',
+                'end'      => 'August 11, 2018 23:00 EDT',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
                     ['Logan Staats', 'Kongos', 'Edward'],
                 ],
                 'tickets' => false,
-                'link' => 'https://www.sunnysidepavilion.com',
+                'link' => 'http://restodelice.com',
             ],
 
             'toronto' => [
                 'id'       => '3',
                 'slug'     => 'toronto',
-                'start'    => 'August 11, 2018 18:00 EST',
-                'end'      => 'August 11, 2018 23:00 EST',
+                'start'    => 'August 11, 2018 18:00 EDT',
+                'end'      => 'August 11, 2018 23:00 EDT',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
@@ -93,29 +93,29 @@ class AppServiceProvider extends ServiceProvider
             'winnipeg' => [
                 'id'       => '4',
                 'slug'     => 'winnipeg',
-                'start'    => 'Aug 11th - 6PM-11PM EST',
-                'end'      => 'Aug 11th - 6PM-11PM EST',
+                'start'    => 'August 11, 2018 18:00 CDT',
+                'end'      => 'August 11, 2018 24:00 CDT',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
                     ['Logan Staats', 'Kongos', 'Edward'],
                 ],
                 'tickets' => false,
-                'link' => 'https://www.sunnysidepavilion.com',
+                'link' => 'http://www.tavernunited.com',
             ],
 
             'whistler' => [
                 'id'       => '5',
                 'slug'     => 'whistler',
-                'start'    => 'Aug 11th - 6PM-11PM EST',
-                'end'      => 'Aug 11th - 6PM-11PM EST',
+                'start'    => 'August 11, 2018 19:00 PDT',
+                'end'      => 'August 11, 2018 24:00 PDT',
                 'artists'  => [
                     ['Blue Rodeo', 'Matt Anderson'],
                     ['The Zolas', 'Barney Bentall', 'Kip Moore'],
                     ['Logan Staats', 'Kongos', 'Edward'],
                 ],
                 'tickets' => 'https://www.eventbrite.ca/coronasunsets/whistler',
-                'link' => 'https://www.sunnysidepavilion.com',
+                'link' => 'https://www.whistlerblackcomb.com/the-mountain/more-options/on-mountain-dining.aspx?page=viewall',
             ],
         ];
 

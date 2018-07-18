@@ -17,7 +17,7 @@
             </div>
 
 
-            <a  href="#" class="buy-tickets">{{ trans('text.festival-tickets-button') }}</a>
+            <a  href="https://www.eventbrite.ca/coronasunsets/all" class="buy-tickets" target="_blank">{{ trans('text.festival-tickets-button') }}</a>
             
         </div>
     </div> <!-- END .row -->
@@ -133,7 +133,7 @@
     <div class="col-md-6 tickets-wrapper">
         <h2>{{ trans('text.festival-tickets') }}</h2>
         <p>{!! trans('text.festival-tickets-description') !!}</p>
-        <a href="#" class="get-tickets">{{ trans('text.festival-tickets-button') }}</a>
+        <a href="https://www.eventbrite.ca/coronasunsets/all" target="_blank" class="get-tickets">{{ trans('text.festival-tickets-button') }}</a>
     </div>
     <div class="col-md-6 items-wrapper">
         <h2>{{ trans('text.festival-items') }}</h2>

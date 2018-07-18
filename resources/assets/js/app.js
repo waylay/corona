@@ -41,7 +41,7 @@ $( document ).ready( function () {
     
     // Event reminder dropdown
     var festival = $('.menu-reminder');
-    
+
     if(festival.length){
         var reminder = createCalendar({
             data: {
@@ -92,6 +92,8 @@ $( document ).ready( function () {
         slider.goToSlide($(this).data('slide'));
         return false;
     });
+
+
 
 
     // Move to next date field

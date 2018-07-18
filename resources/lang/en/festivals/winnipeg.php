@@ -2,7 +2,7 @@
 
 return [
     'city'        => 'Winnipeg',
-    'location'    => 'Sunnyside Pavilion',
-    'date'        => 'Aug 11th - 6PM-12AM EST',
-    'description' => 'Celebrate the national sunsets festival from its centre – join us in Toronto as we usher in the night with some of the world’s best artists performing amazing intimate sets from the waterfront downtown.<br>Catch the action live Aug 11 th from the city’s most stunning open air venue – Sunnyside Pavilion.',
+    'location'    => 'TAVERN UNITED DOWNTOWN',
+    'date'        => 'AUGUST 11TH – 6PM-12AM CDT',
+    'description' => 'As we celebrate the setting sun  and our performances cascade Coast to Coast, we’ll be partying in the prairies to take in the Winnipeg vista views.<br><br>Catch the sunset  live August 11th from the heart of the city – Tavern United Downtown.',
 ];

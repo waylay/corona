@@ -106,7 +106,6 @@ class PagesController extends Controller
         }
 
         return redirect('/')->withErrors(['year' => ['required']]);
-        ;
     }
 
     /**
@@ -126,7 +125,7 @@ class PagesController extends Controller
             }
         }
 
-        return redirect('/');
+        return redirect('/')->withErrors(['year' => ['required']]);
     }
 
     /**
