@@ -17,7 +17,7 @@
             </div>
 
 
-            <a  href="https://www.eventbrite.ca/coronasunsets/all" class="buy-tickets" target="_blank">{{ trans('text.festival-tickets-button') }}</a>
+            <a href="https://www.eventbrite.ca/o/corona-sunsets-festival-17577225280" class="buy-tickets" target="_blank">{{ trans('text.festival-tickets-button') }}</a>
             
         </div>
     </div> <!-- END .row -->
@@ -59,7 +59,7 @@
                     <ul class="list-inline">
                         <li>KIDNAP</li>
                         <li>CLAPTONE</li>
-                        <li>HOT CHIP DJ</li>                        
+                        <li>HOT CHIP DJ SET</li>                        
                     </ul>
                 </div>
                 <div class="row">
@@ -73,7 +73,7 @@
                     <ul class="list-inline">
                         
                         <li>THOMAS JACK</li>
-                        <li>CHRISTIAN LOFFLER</li>
+                        <li>Christian Löffler</li>
                         <li>DJ THREE</li>
                     </ul>
                 </div>
@@ -113,32 +113,17 @@
 
 </div>  <!-- END .slider-wrapper -->
 
-<div class="reminder">
-    <div class="container-fluid">
-        
-        <div class="row">
-            <div class="col-md-3 col-xs-4">
-                <img src="/images/calendar-icon.png" alt="Set a reminder">
-            </div>
-            <div class="col-md-9 col-xs-8">
-                <h3>{{ trans('text.watch-live') }}</h3>
-            </div>
-        </div>
-            
-    </div>
-</div>
 
-<div class="shop">
+<div class="boxes">
 
     <div class="col-md-6 tickets-wrapper">
         <h2>{{ trans('text.festival-tickets') }}</h2>
         <p>{!! trans('text.festival-tickets-description') !!}</p>
-        <a href="https://www.eventbrite.ca/coronasunsets/all" target="_blank" class="get-tickets">{{ trans('text.festival-tickets-button') }}</a>
+        <a href="https://www.eventbrite.ca/o/corona-sunsets-festival-17577225280" target="_blank" class="get-tickets">{{ trans('text.festival-tickets-button') }}</a>
     </div>
-    <div class="col-md-6 items-wrapper">
-        <h2>{{ trans('text.festival-items') }}</h2>
-        <p>{!! trans('text.festival-items-description') !!}</p>
-        <a href="https://www.shopbeergear.ca/pages/Corona?ls={{ app()->getLocale() }}" target="_blank" class="get-items">{{ trans('text.festival-items-button') }}</a>
+    <div class="col-md-6 watch-wrapper">
+        <h2>{{ trans('text.festival-reminder') }}</h2>
+        <p>{{ trans('text.festival-reminder-description') }}</p>
     </div>
 
 </div>

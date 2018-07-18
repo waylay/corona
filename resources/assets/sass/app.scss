@@ -513,62 +513,12 @@ label {
   }
 }
 
-.reminder {
-  background: url('/images/background-festival-artists.png') no-repeat top center;
-  background-attachment: scroll;
-  background-size: 100% 100%;
-  padding: 100px 0;
-  margin-top: -35px;
-  position: relative;
-  z-index: 3;
-  h3 {
-    color: $brand-primary;
-    text-transform: uppercase;
-    font-size: 2.3em;
-    margin-top: 10px;
-  }
-  .container-fluid {
-    max-width: 1500px;
-    .row {
-      @include flex-center;
-    }
-  }
-  .set-reminder {
-    @include button;
-    background: url('/images/background-set-reminder.png') no-repeat center center / 100% 100%;
-    font-size: 2.5em;
-    text-align: center;
-    a:hover, a:focus {
-      color: $brand-primary;
-    }
-  }
-  .dropdown-reminder {
-    min-width: 200px;
-    list-style: none;
-    position: relative;
-    &.open ul {
-      min-height: 185px;
-      background: url('/images/background-submenu.png') no-repeat center -10px;
-      background-attachment: scroll;
-      background-size: 100% 100%;
-      left: 2%;
-      top:130%;
-    }
-    ul li {
-      text-transform: initial;
-      font-size: 2.2em;
-      padding-left: .2em;
-    }
-  }
-}
 
-.shop {
-    margin-top: -20px;
+.boxes {
     text-align: center;
     color: #fff;
     text-transform: uppercase;
     clear: both;
-    overflow: hidden;
     display: flex;
     h2 {
       font-size: 4em;
@@ -581,7 +531,6 @@ label {
       font-family: $font-family-light;
       max-width: 800px;
       margin: 0 auto 1.2em;
-      min-height: 5em;
     }
 
     .tickets-wrapper {
@@ -608,20 +557,46 @@ label {
 
     }
     
-    .items-wrapper {
+    .watch-wrapper {
       background: url('/images/background-get-items-wrapper.png') no-repeat center center / cover;
 
       p {
         color: #fff;
       }
 
-      .get-items {
+      .set-reminder {
         @include button;
-        background: url('/images/background-get-items.png') no-repeat center center / cover;
+        background: url('/images/background-set-reminder.png') no-repeat center center / 100% 100%;
+        font-size: 2.5em;
+        text-align: center;
         color: $brand-primary;
-        margin: .2em auto 1.5em;
+        margin: .2em auto 1.75em;
         display: inline-block;
+        a:hover, a:focus {
+          color: $brand-primary;
+        }
       }
+
+      .dropdown-reminder {
+        min-width: 200px;
+        list-style: none;
+        position: relative;
+        &.open ul {
+          min-height: 180px;
+          background: url('/images/background-submenu.png') no-repeat center -10px;
+          background-attachment: scroll;
+          background-size: 100% 100%;
+        }
+        ul li {
+          text-transform: initial;
+          font-size: 2.2em;
+          padding-left: .2em;
+        }
+        .dropdownhover-top .divider {
+          display: none;
+        }
+      }
+
     }
     
 
@@ -707,6 +682,16 @@ label {
     font-size: 1.67em;
     line-height: 1.4;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    
+  }
+  .address{
+    color: #fff;
+    font-family: $font-family-light;
+    font-size: 1.35em;
+    line-height: 1.4;
+    margin-left: 7px;
+    margin-top: 0;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   }
   .artists {
     margin: 60px 0;
@@ -746,7 +731,7 @@ label {
   }
 
   li, a {
-    font-size: 2em;
+    font-size: 25px;
     letter-spacing: 2px;
   }
   
@@ -895,7 +880,7 @@ label {
 
 
 #footer {
-  padding: 55px 0 40px;
+  padding: 60px 0 45px;
   clear: both;
   overflow: hidden;
   background-color: #fff;

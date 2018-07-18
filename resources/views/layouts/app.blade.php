@@ -93,12 +93,12 @@
                         @if( request()->is('festival/*') )
                         <li class="dropdown menu-reminder"
                             data-title="{{ trans('text.stream-reminder-title',['city' => trans('festivals/'.$festival['slug'].'.city') ]) }} "
-                            data-description="{!! trans('festivals/'.$festival['slug'].'.description') !!}"
+                            data-description="{{ trans('text.stream-reminder-text') }}"
                             data-start="{{ $festival['start'] }}"
                             data-end="{{ $festival['end'] }}"
-                            data-address="{{ trans('festivals/'.$festival['slug'].'.location') }}, {{ trans('festivals/'.$festival['slug'].'.city') }}"
+                            data-address="{{ trans('text.stream-reminder-text') }}"
                             >
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.stream-reminder') }}</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.set-reminder') }}</a>
                         </li>
                         @endif
                     </ul>
@@ -143,12 +143,12 @@
         @if( request()->is('festival/*') )
         <li class="dropdown menu-reminder"
             data-title="{{ trans('text.stream-reminder-title',['city' => trans('festivals/'.$festival['slug'].'.city') ]) }} "
-            data-description="{!! trans('festivals/'.$festival['slug'].'.description') !!}"
+            data-description="{{ trans('text.stream-reminder-text') }}"
             data-start="{{ $festival['start'] }}"
             data-end="{{ $festival['end'] }}"
-            data-address="{{ trans('festivals/'.$festival['slug'].'.location') }}, {{ trans('festivals/'.$festival['slug'].'.city') }}"
+            data-address="{{ trans('text.stream-reminder-text') }}"
             >
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.stream-reminder') }}</a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.set-reminder') }}</a>
         </li>
         @endif
         <li class="learn-more">

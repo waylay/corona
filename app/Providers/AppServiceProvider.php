@@ -16,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
         \Schema::defaultStringLength(191);
 
         $viewData           = [];
+        
         $viewData['months'] = [
             '1'  => trans('form.january'),
             '2'  => trans('form.february'),
@@ -47,77 +48,8 @@ class AppServiceProvider extends ServiceProvider
             'Yukon Territory'           => 'YT',
         ];
 
-        $viewData['festivals'] = [
-            'halifax' => [
-                'id'       => '1',
-                'slug'     => 'halifax',
-                'start'    => 'August 11, 2018 16:00 CDT',
-                'end'      => 'August 11, 2018 22:00 CDT',
-                'artists'  => [
-                    ['Blue Rodeo', 'Matt Anderson'],
-                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
-                    ['Logan Staats', 'Kongos', 'Edward'],
-                ],
-                'tickets' => false,
-                'link' => false,
-            ],
+        $viewData['festivals'] = config('festivals');
 
-            'quebec' => [
-                'id'       => '2',
-                'slug'     => 'quebec',
-                'start'    => 'August 11, 2018 18:00 EDT',
-                'end'      => 'August 11, 2018 23:00 EDT',
-                'artists'  => [
-                    ['Blue Rodeo', 'Matt Anderson'],
-                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
-                    ['Logan Staats', 'Kongos', 'Edward'],
-                ],
-                'tickets' => false,
-                'link' => 'http://restodelice.com',
-            ],
-
-            'toronto' => [
-                'id'       => '3',
-                'slug'     => 'toronto',
-                'start'    => 'August 11, 2018 18:00 EDT',
-                'end'      => 'August 11, 2018 23:00 EDT',
-                'artists'  => [
-                    ['Blue Rodeo', 'Matt Anderson'],
-                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
-                    ['Logan Staats', 'Kongos', 'Edward'],
-                ],
-                'tickets' => 'https://www.eventbrite.ca/coronasunsets/toronto',
-                'link' => 'https://www.sunnysidepavilion.com',
-            ],
-
-            'winnipeg' => [
-                'id'       => '4',
-                'slug'     => 'winnipeg',
-                'start'    => 'August 11, 2018 18:00 CDT',
-                'end'      => 'August 11, 2018 24:00 CDT',
-                'artists'  => [
-                    ['Blue Rodeo', 'Matt Anderson'],
-                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
-                    ['Logan Staats', 'Kongos', 'Edward'],
-                ],
-                'tickets' => false,
-                'link' => 'http://www.tavernunited.com',
-            ],
-
-            'whistler' => [
-                'id'       => '5',
-                'slug'     => 'whistler',
-                'start'    => 'August 11, 2018 19:00 PDT',
-                'end'      => 'August 11, 2018 24:00 PDT',
-                'artists'  => [
-                    ['Blue Rodeo', 'Matt Anderson'],
-                    ['The Zolas', 'Barney Bentall', 'Kip Moore'],
-                    ['Logan Staats', 'Kongos', 'Edward'],
-                ],
-                'tickets' => 'https://www.eventbrite.ca/coronasunsets/whistler',
-                'link' => 'https://www.whistlerblackcomb.com/the-mountain/more-options/on-mountain-dining.aspx?page=viewall',
-            ],
-        ];
 
         \View::share($viewData);
     }

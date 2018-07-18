@@ -2,7 +2,8 @@
 
 return [
     'city'        => 'Quebec City',
-    'location'    => 'LEVIS, QUEBEC DELICE',
-    'date'        => 'Aug 11th - 6PM-11PM EDT',
-    'description' => 'Take in the beautiful sunset scenes as they crest Château Frontenac from the middle of our nationally-connected Corona Sunsets Festival.<br><br>We\'ll be live from Québec City August 11th at the perfectly sun-situated patio of Delice Nightclub.',
+    'location'    => 'DELICE',
+    'date'        => 'Aug 11th - 6PM-11PM EST',
+    'address'     => '146 Kennedy Street<br>Lévis, QC G6V 6C9',
+    'description' => 'Take in the sunset scenes as they crest Quebec City during our nationally-connected Corona Sunsets Festival under the open-air.<br><br>We’ll be live August 11th from Levis’ number one nightlife music venue for their biggest celebration yet - at LeDelice.',
 ];

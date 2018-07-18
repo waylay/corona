@@ -4,5 +4,6 @@ return [
     'city'        => 'Whistler',
     'location'    => 'ROUNDHOUSE LODGE',
     'date'        => 'AUGUST 11TH – 7PM-12AM PDT',
-    'description' => 'Our pinnacle location on the national Canada Sunsets Festival. Catch the final performance of our connected festival from the breathtaking mountaintop in Whistler, BC.<br><br>See the action live August 11th from the best   sunset view on the West Coast – The Whistler Roundhouse Lodge. ',
+    'address'     => 'Whistler Village Gondola, Skiers Plaza, Whistler',
+    'description' => 'Our pinnacle location on the west coast of Canada celebrating Corona’s inaugural sunsets festival. Take a gondola ride up to the top of the mountain to enjoy amazing DJ sets in fresh mountain air from three outward-facing mountainside patios.<br><br>Join us as we close our cross- Canada connected sunset journey with our global headliners on August 11th at The Whistler Roundhouse Lodge.',
 ];
