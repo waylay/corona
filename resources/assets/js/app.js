@@ -88,9 +88,12 @@ $( document ).ready( function () {
         }
       });
       
-    jQuery('#festival-list a').click(function () {
+    jQuery('#festival-list a').click(function (e) {
+        e.preventDefault();
         slider.goToSlide($(this).data('slide'));
-        return false;
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 1200);
     });
 
 
