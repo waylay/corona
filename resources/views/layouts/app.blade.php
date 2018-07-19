@@ -54,6 +54,54 @@
 </head>
 
 <body class="{{ Route::currentRouteName() }} lang-{{ app()->getLocale() }}">
+
+<script type='text/javascript'>
+
+// Conversion Name: Sunsets - Corona - Ticket Purchase
+// INSTRUCTIONS to site webmaster regarding parameters
+// to be dynamically entered by the site web/content server:
+//
+// In the code below, you'll find a [Revenue] parameter and/or a [Quantity] parameter and/or an
+// [OrderID],[ProductID][ProductInfo] parameter.
+// The [Revenue] parameter is to be dynamically set to reflect the value currently stored within the user's shopping cart.
+// The parameter should be a decimal number, for example:  var ebRev = '229.88';
+// The [Quantity] parameter is to be dynamically set to reflect the number of items currently stored within the user's shopping cart.
+// The parameter should be an integer, for example:  var ebQuantity = '3';
+// The [OrderID],[ProductID][ProductInfo] parameters are to be dynamically set to reflect
+// the order ID for this transaction. You should verify with your Sizmek
+// Account Manager that your account has the extended data collected in order for this parameter to be recorded.
+// This parameter should be a string with the max length of 36 characters
+// The parameter may be a string, for example:  var ebOrderID = '1234-5678-90';
+// The Product ID parameter should be a string with the max length of 36 characters.
+// For example: var ebProductID = ‘ax-34579-989';
+// The Product Info parameter should be a string with the max length of 100 characters.
+// For example: var ebProductInfo = ‘Colour blue, size XL..';
+//
+// The Conversion Tags should be placed at the top of the <BODY> section of the HTML page.
+//
+// NOTE: It is possible to test if the tags are working correctly before campaign launch
+// as follows:  Browse to http://bs.serving-sys.com/Serving/adServer.bs?cn=at, which is
+// a page that lets you set your local machine to 'testing' mode.  In this mode, when
+// visiting a page that includes an conversion tag, a new window will open, showing you
+// the data sent by the conversion tag to the Sizmek servers.
+//
+// END of instructions (These instruction lines can be deleted from the actual HTML)
+var ebRev = '[Revenue]';
+var ebOrderID = '[OrderID]';
+var ebProductID = '[ProductID]';
+var ebProductInfo = '[ProductInfo]';
+var ebQuantity = '[Quantity]';
+var ebRand = Math.random()+'';
+ebRand = ebRand * 1000000;
+//<![CDATA[
+document.write('<scr'+'ipt src="HTTP://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=1233465&amp;rnd=' + ebRand + '&amp;Value='+ebRev+'&amp;OrderID='+ebOrderID+'&amp;ProductID='+ebProductID+'&amp;ProductInfo='+ebProductInfo+'&amp;Quantity='+ebQuantity+'"></scr' + 'ipt>');
+//]]>
+</script>
+<noscript>
+<img width="1" height="1" style="border:0" src="HTTP://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=1233465&amp;Value=[Revenue]&amp;OrderID=[OrderID]&amp;ProductID=[ProductID]&amp;ProductInfo=[ProductInfo]&amp;Quantity=[Quantity]&amp;ns=1"/>
+</noscript>
+
+
  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile">
                         <span class="sr-only">Toggle navigation</span>
                     </button>
