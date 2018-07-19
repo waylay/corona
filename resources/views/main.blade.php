@@ -57,24 +57,23 @@
             <div class="artists">
                 <div class="row">
                     <ul class="list-inline">
-                        <li>KIDNAP</li>
-                        <li>CLAPTONE</li>
-                        <li>HOT CHIP DJ SET</li>                        
+                        <li><a href="/festival/whistler">KIDNAP</a></li>
+                        <li><a href="/festival/whistler">CLAPTONE</a></li>
+                        <li><a href="/festival/toronto">HOT CHIP DJ SET</a></li>                        
                     </ul>
                 </div>
                 <div class="row">
                     <ul class="list-inline">
-                        <li>CROOKED COLOURS</li>
-                        <li>CHRISTIAN MARTIN</li>
-                        <li>NITIN</li>
+                        <li><a href="/festival/quebec">CROOKED COLOURS</a></li>
+                        <li><a href="/festival/winnipeg">CHRISTIAN MARTIN</a></li>
+                        <li><a href="/festival/toronto">NITIN</a></li>
                     </ul>
                 </div>
                 <div class="row">
-                    <ul class="list-inline">
-                        
-                        <li>THOMAS JACK</li>
-                        <li>Christian Löffler</li>
-                        <li>DJ THREE</li>
+                    <ul class="list-inline">                        
+                        <li><a href="/festival/toronto">THOMAS JACK</a></li>
+                        <li><a href="/festival/toronto">Christian Löffler</a></li>
+                        <li><a href="/festival/halifax">Amtrac</a></li>
                     </ul>
                 </div>
             </div>

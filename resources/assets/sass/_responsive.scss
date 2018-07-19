@@ -145,11 +145,7 @@
     }
     
   }
-  #main {
-    .festival-date {
-      font-size: .7em;
-    }
-  }
+
 
   .play-trailer {
     float: none;
@@ -224,6 +220,11 @@
     h2 {
       font-size: 2.7em;
       margin-top: 15px;
+    }
+
+    .watch-wrapper .dropdown-reminder.open ul {
+      left: -30px;
+      top: 120%;
     }
 
   }
@@ -428,9 +429,4 @@
   .boxes {
     display: block;
   }
-}
-
-
-@media screen and (max-width: 374px){
-  
 }

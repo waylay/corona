@@ -100,11 +100,15 @@
                             >
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.set-reminder') }}</a>
                         </li>
+                        @else
+                        <li class="learn-more"><a href="/more">{{ trans('text.learn-more') }}</a></li>
                         @endif
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
+                        @if( request()->is('festival/*') )
                         <li class="learn-more"><a href="/more">{{ trans('text.learn-more') }}</a></li>
+                        @endif
                         <li>
                             <!-- Localization -->
                             <div class="locale">

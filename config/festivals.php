@@ -14,7 +14,7 @@ return [
         'start'    => 'August 11, 2018 16:00 CDT',
         'end'      => 'August 11, 2018 22:00 CDT',
         'artists'  => [
-            ['TBD'],
+            ['Amtrac'],
             ['Local Artists'],
         ],
         'tickets' => false,
@@ -41,7 +41,7 @@ return [
         'end'      => 'August 11, 2018 23:00 EDT',
         'artists'  => [
             ['Hot Chip DJ Set', 'Thomas Jack'],
-            ['Christian Löffler', 'Nitin', 'DJ Three'],
+            ['Christian Löffler', 'Nitin'],
         ],
         'tickets' => 'https://www.eventbrite.ca/e/corona-sunsets-festival-toronto-tickets-48062649679',
         'link' => 'https://www.sunnysidepavilion.com',

@@ -12,7 +12,7 @@
             <li><a href="/festival/{{ $slug }} ">{{ trans('festivals/'.$festival['slug'].'.city') }}</a></li>
             @endforeach
         </ul>
-        <a href="https://twitter.com/hashtag/coronasunsets" target="_blank">#CORONASUNSETS</a>
+        <a href="https://twitter.com/hashtag/coronasunsetsCA" target="_blank">#coronasunsetsCA</a>
     </div>    
 </div> <!-- END #learn-more -->
 
