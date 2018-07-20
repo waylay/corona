@@ -30,7 +30,7 @@ return [
     'festival-tickets-button'           => 'BUY TICKETS',
     'festival-tickets-door'             => 'Tickets $10 – Available at the door',
     'festival-reminder'                 => 'Live Streaming',
-    'festival-reminder-description'     => 'STREAM THE CORONA SUNSETS FESTIVAL LIVE ON AUGUST 11th RIGHT HERE OR ON FACEBOOK, YOUTUBE, OR TWITTER.',
+    'festival-reminder-description'     => 'STREAM THE CORONA SUNSETS FESTIVAL LIVE ON AUGUST 11th RIGHT HERE OR ON FACEBOOK, YOUTUBE, OR TWITTER.  To set a reminder for the live stream of your choice, please select from one of the cities above!',
     'festival-reminder-button'          => 'Set a reminder',
     'slider-static-headline'            => '5 cities<br>5 stages<br>1 FESTIVAL',
     'stream-reminder-title'             => 'Live Streaming | Corona Sunsets Festival | :City',

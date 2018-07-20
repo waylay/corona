@@ -30,7 +30,7 @@ return [
     'festival-tickets-button'           => 'ACHETEZ DES BILLETS',
     'festival-tickets-door'             => 'Billetes $10 - disponibles à l\'entrée',
     'festival-reminder'                 => 'Diffusion continue en direct',
-    'festival-reminder-description'     => 'LE 11 AOÛT PROCHAIN, REGARDEZ LE FESTIVAL DES COUCHERS DE SOLEIL CORONA PAR DIFFUSION CONTINUE EN DIRECT ICI OU ENCORE, SUR FACEBOOK, YOUTUBE OU TWITTER.',
+    'festival-reminder-description'     => 'LE 11 AOÛT PROCHAIN, REGARDEZ LE FESTIVAL DES COUCHERS DE SOLEIL CORONA PAR DIFFUSION CONTINUE EN DIRECT ICI OU ENCORE, SUR FACEBOOK, YOUTUBE OU TWITTER. Pour régler un rappel pour la diffusion en directe de votre choix, veuillez sélectionnez l’une des ville ci-dessus!',
     'festival-reminder-button'          => 'Set a reminder',
     'slider-static-headline'            => '5 VILLES<br>5 SCÈNES<br>1 FESTIVAL',
     'stream-reminder-title'             => 'Diffusion continue en direct | Corona Sunsets Festival | :City',
