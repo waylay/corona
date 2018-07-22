@@ -15,7 +15,25 @@ class PagesController extends Controller
      */
     public function gate()
     {
-        return view('gate');
+
+        $viewData           = [];
+        
+        $viewData['months'] = [
+            '1'  => trans('form.january'),
+            '2'  => trans('form.february'),
+            '3'  => trans('form.march'),
+            '4'  => trans('form.april'),
+            '5'  => trans('form.may'),
+            '6'  => trans('form.june'),
+            '7'  => trans('form.july'),
+            '8'  => trans('form.august'),
+            '9'  => trans('form.september'),
+            '10' => trans('form.october'),
+            '11' => trans('form.november'),
+            '12' => trans('form.december')
+        ];
+
+        return view('gate', $viewData);
     }
 
     /**

@@ -4,6 +4,7 @@
     --lity-close-size: 35px;
     --lity-close-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
     --lity-iframe-ratio: 5/4;  /* Or 3/4 */
+    --lity-iframe-ratio-desktop: 9/16;  /* Or 3/4 */
     --lity-transition-timing-function: ease;
     --lity-transition-duration: .3s;
 }
@@ -166,12 +167,18 @@
 .lity-iframe .lity-container {
     width: 100%;
     max-width: 640px;
+    @media screen and (min-width: 1201px){
+        max-width: 80%;
+    }
 }
 
 .lity-iframe-container {
     width: 100%;
     height: 0;
     padding-top: calc(var(--lity-iframe-ratio) * 100%);
+    @media screen and (min-width: 1201px){
+        padding-top: calc(var(--lity-iframe-ratio-desktop) * 100%);
+    }
     overflow: auto;
     pointer-events: auto;
     transform: translateZ(0);

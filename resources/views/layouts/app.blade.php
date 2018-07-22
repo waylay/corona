@@ -140,7 +140,7 @@ document.write('<scr'+'ipt src="HTTP://bs.serving-sys.com/Serving/ActivityServer
 
                         @if( request()->is('festival/*') )
                         <li class="dropdown menu-reminder"
-                            data-title="{{ trans('text.stream-reminder-title',['city' => trans('festivals/'.$festival['slug'].'.city') ]) }} "
+                            data-title="{{ trans('text.stream-reminder-title',['city' => '| '.trans('festivals/'.$festival['slug'].'.city') ]) }} "
                             data-description="{{ trans('text.stream-reminder-text') }}"
                             data-start="{{ $festival['start'] }}"
                             data-end="{{ $festival['end'] }}"
@@ -149,14 +149,22 @@ document.write('<scr'+'ipt src="HTTP://bs.serving-sys.com/Serving/ActivityServer
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.set-reminder') }}</a>
                         </li>
                         @else
-                        <li class="learn-more"><a href="/more">{{ trans('text.learn-more') }}</a></li>
+                        <li class="dropdown menu-reminder"
+                            data-title="{{ trans('text.stream-reminder-title',['city' => '']) }} "
+                            data-description="{{ trans('text.stream-reminder-text') }}"
+                            data-start="August 11, 2018 18:00 EDT"
+                            data-end="August 11, 2018 23:00 EDT"
+                            data-address="{{ trans('text.stream-reminder-text') }}"
+                            >
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.set-reminder') }}</a>
+                        </li>
                         @endif
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        @if( request()->is('festival/*') )
+                        
                         <li class="learn-more"><a href="/more">{{ trans('text.learn-more') }}</a></li>
-                        @endif
+                        
                         <li>
                             <!-- Localization -->
                             <div class="locale">
@@ -198,6 +206,16 @@ document.write('<scr'+'ipt src="HTTP://bs.serving-sys.com/Serving/ActivityServer
             data-description="{{ trans('text.stream-reminder-text') }}"
             data-start="{{ $festival['start'] }}"
             data-end="{{ $festival['end'] }}"
+            data-address="{{ trans('text.stream-reminder-text') }}"
+            >
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.set-reminder') }}</a>
+        </li>
+        @else
+        <li class="dropdown menu-reminder"
+            data-title="{{ trans('text.stream-reminder-title',['city' => '']) }} "
+            data-description="{{ trans('text.stream-reminder-text') }}"
+            data-start="August 11, 2018 18:00 EDT"
+            data-end="August 11, 2018 23:00 EDT"
             data-address="{{ trans('text.stream-reminder-text') }}"
             >
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.set-reminder') }}</a>
@@ -245,6 +263,8 @@ document.write('<scr'+'ipt src="HTTP://bs.serving-sys.com/Serving/ActivityServer
 
     <div id="footer">
         <div class="container-fluid">
+
+
             <div class="row">         
 
                 <div class="col-md-6 col-md-push-3 footer-menu">
@@ -271,6 +291,12 @@ document.write('<scr'+'ipt src="HTTP://bs.serving-sys.com/Serving/ActivityServer
                 </div> 
             
             </div> <!-- end .row  -->
+
+            <div class="row">
+                <div class="text-center"><h4 class="text-primary">{{ trans('text.legal-age') }}</h4>
+            </div> <!-- end .row  -->
+
+            </div>
 
         </div> <!-- end .container-fluid  -->
                 

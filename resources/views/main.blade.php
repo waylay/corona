@@ -25,10 +25,20 @@
 
 
     <div class="container-fluid" id="play-trailer">
-        <a class="play-trailer" href="{!! trans('text.trailer') !!}" data-lity>
+
+        <!-- Desktop Video -->
+        <a class="play-trailer hidden-sm hidden-xs" href="{!! trans('text.trailer-desktop') !!}" data-lity>
             <span>{!! trans('text.play-trailer') !!}&nbsp;</span>
             <img src="/images/play-trailer.png" alt="{!! trans('text.play-trailer') !!}">
         </a>
+
+        <!-- Mobile Video -->
+        <a class="play-trailer hidden-lg hidden-md" href="{!! trans('text.trailer-mobile') !!}" data-lity>
+            <span>{!! trans('text.play-trailer') !!}&nbsp;</span>
+            <img src="/images/play-trailer.png" alt="{!! trans('text.play-trailer') !!}">
+        </a>
+
+
     </div>  <!-- END #play-trailer -->
     
     
@@ -123,6 +133,17 @@
     <div class="col-md-6 watch-wrapper">
         <h2>{{ trans('text.festival-reminder') }}</h2>
         <p>{{ trans('text.festival-reminder-description') }}</p>
+        <ul class="set-reminder">                    
+            <li class="dropdown menu-reminder dropdown-reminder"
+                data-title="{{ trans('text.stream-reminder-title',['city' => '']) }} "
+                data-description="{{ trans('text.stream-reminder-text') }}"
+                data-start="August 11, 2018 18:00 EDT"
+                data-end="August 11, 2018 23:00 EDT"
+                data-address="{{ trans('text.stream-reminder-text') }}"
+                >
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('text.set-reminder') }}</a>
+            </li>
+        </ul>
     </div>
 
 </div>
