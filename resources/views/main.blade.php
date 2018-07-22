@@ -64,26 +64,29 @@
     <img src="/images/border-festivals.png">
     <ul id="festival-slider">
         <li class="slide">
-            <div class="artists">
+        <div class="artists">
                 <div class="row">
                     <ul class="list-inline">
-                        <li><a href="/festival/whistler">KIDNAP</a></li>
                         <li><a href="/festival/whistler">CLAPTONE</a></li>
-                        <li><a href="/festival/toronto">HOT CHIP DJ SET</a></li>                        
+                        <li><a href="/festival/toronto">HOT CHIP DJ SET</a></li>
+                        <li><a href="/festival/toronto">THOMAS JACK</a></li>                             
+                                                
                     </ul>
                 </div>
                 <div class="row">
                     <ul class="list-inline">
-                        <li><a href="/festival/quebec">CROOKED COLOURS</a></li>
+                        <li><a href="/festival/toronto">Christian Löffler</a></li>
                         <li><a href="/festival/winnipeg">CHRISTIAN MARTIN</a></li>
-                        <li><a href="/festival/toronto">NITIN</a></li>
+                        <li><a href="/festival/whistler">KIDNAP</a></li>
+                        <li><a href="/festival/halifax">Amtrac</a></li>
+                        <li><a href="/festival/quebec">CROOKED COLOURS</a></li>
                     </ul>
                 </div>
                 <div class="row">
                     <ul class="list-inline">                        
-                        <li><a href="/festival/toronto">THOMAS JACK</a></li>
-                        <li><a href="/festival/toronto">Christian Löffler</a></li>
-                        <li><a href="/festival/halifax">Amtrac</a></li>
+                        <li><a href="/festival/toronto">NITIN</a></li>
+                        <li><a href="/festival/whistler">Case of the Mondays</a></li>
+                        
                     </ul>
                 </div>
             </div>
