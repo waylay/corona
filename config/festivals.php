@@ -15,7 +15,6 @@ return [
         'end'      => 'August 11, 2018 22:00 CDT',
         'artists'  => [
             ['Amtrac'],
-            ['Local Artists'],
         ],
         'tickets' => false,
         'link' => false,
@@ -28,7 +27,6 @@ return [
         'end'      => 'August 11, 2018 23:00 EDT',
         'artists'  => [
             ['Crooked Colours'],
-            ['Local Artists']
         ],
         'tickets' => false,
         'link' => 'http://restodelice.com',
@@ -54,7 +52,6 @@ return [
         'end'      => 'August 11, 2018 24:00 CDT',
         'artists'  => [
             ['Christian Martin'],
-            ['Local artists'],
         ],
         'tickets' => false,
         'link' => 'http://www.tavernunited.com',
@@ -68,7 +65,7 @@ return [
         'artists'  => [
             ['Claptone'],
             ['Kidnap'],
-            ['Local Artists'],
+            ['Case of the Mondays'],
         ],
         'tickets' => 'https://www.eventbrite.ca/e/corona-sunsets-festival-whistler-tickets-48063124098',
         'link' => 'https://www.whistlerblackcomb.com/the-mountain/more-options/on-mountain-dining.aspx?page=viewall',

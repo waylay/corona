@@ -32,6 +32,11 @@
     <link href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css" rel="stylesheet">
     @endif
 
+    <!-- KRUX Pixel Code -->
+    <script src="//assets.adobedtm.com/359cd9f5e363552b630687b47fe25064ac50688a/satelliteLib-58f717200e74c9dd58e2901cf17ee61f2ae9b108-staging.js"></script>
+     <!-- End KRUX Pixel Code -->
+        
+        
     <!-- Facebook Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -42,11 +47,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '620806521630752');
+    fbq('init', '466512390441098');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=620806521630752&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=466512390441098&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
     
